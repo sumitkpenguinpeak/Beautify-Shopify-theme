@@ -1,0 +1,18 @@
+body {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+}
+ 
+/* Announcement Bar Start */
+.announcement-bar { width: 100%; background: #000; overflow: hidden; }
+.announcement-bar .announcementScroll { width: 100%; padding-top: 12px; padding-bottom: 12px; }
+.announcement-bar .announcementScroll .swiper-wrapper { transition-timing-function: linear !important; align-items: center; }
+.announcement-bar .announcementScroll .swiper-slide { width: auto; color: #fff; font-size: 16px; font-weight: 500; line-height: 1; white-space: nowrap; text-transform: uppercase; padding: 0px 50px; display: flex; align-items: center; justify-content: center; }
+
+@media only screen and (max-width: 991px) {
+    .announcement-bar .announcementScroll .swiper-slide {  padding: 0px 35px; }
+}
+@media only screen and (max-width: 580px) {
+    .announcement-bar .announcementScroll .swiper-slide { font-size: 14px; padding: 0px 20px; }
+}
+/* Announcement Bar End */

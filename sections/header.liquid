@@ -1,0 +1,95 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'header.js' | asset_url }}" defer></script>
+
+<header class="header">
+    <div class="page-container">
+        <div class="header_logo">
+            <a href="/"><img src="https://cdn.shopify.com/s/files/1/1037/5695/5931/files/beautify_logo.png?v=1784032958" alt="Sleek"></a>
+        </div>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Presets <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+                      {% render 'mega-menu', option: 'one' %}
+                  </li>
+                <li class="has-dropdown">
+                    <a href="#">Shop  <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+                    {% render 'mega-menu', option: 'two' %}
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Collections <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+                    {% render 'mega-menu', option: 'three' %}
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Pages <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
+                    {% render 'mega-menu', option: 'four' %}
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header_icons">
+            <a href="#">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="M20 20L17 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+            </a>
+            <a href="#">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="M5 20C5 16.5 8 14 12 14C16 14 19 16.5 19 20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+            </a>
+            <a href="#">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 8H20L19 20H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
+                    <path d="M9 8V6C9 4.3 10.3 3 12 3C13.7 3 15 4.3 15 6V8" stroke="currentColor" stroke-width="1.7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>
+
+
+{% schema %}
+{
+  "name": "Custom Header",
+  "tag": "section",
+  "class": "custom-header-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 80,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 140
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Enable sticky header",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Header"
+    }
+  ]
+}
+{% endschema %}
