@@ -42,13 +42,13 @@
           {{ shop.name }}
         {%- endif -%}
       </a>
-      <button class="drawer__close btn btn--inherit" aria-controls="MenuDrawer">
+      <button class="btfy-drawer__close btn btn--inherit" aria-controls="MenuDrawer">
         {%- render 'icon-close', size: 'large' -%}
       </button>
     </div>
     <div class="drawer__content menu-drawer__content flex-grow flex flex-col h-full w-full">
       <nav class="overflow-hidden flex-grow" role="navigation">
-        <ul class="menu-drawer__menus v-scrollable relative w-full h-full" data-parent>
+        <ul class="btfy-menu-drawer__menus v-scrollable relative w-full h-full" data-parent>
           {%- for link in menu_mobile.links -%}
             <li class="menu-drawer__item">
               {%- liquid
@@ -82,7 +82,7 @@
       <div class="drawer__footer menu-drawer__footer flex justify-center flex-col gap-y-5">
         <div class="grid gap-3">
           {%- if section.settings.enable_language_selector or section.settings.enable_country_selector -%}
-            <div class="menu-drawer__localization-form flex justify-center flex-wrap gap-x-6 gap-y-4">
+            <div class="btfy-menu-drawer__localization-form flex justify-center flex-wrap gap-x-6 gap-y-4">
               {%- liquid
                 if section.settings.enable_country_selector
                   render 'country-selector', position: 'up'
@@ -96,13 +96,13 @@
           {%- if shop.customer_accounts_enabled -%}
             <shopify-account menu="{{ section.settings.customer_account_menu }}">
               {% if customer %}
-                <div class="account-button__fallback no-empty" aria-label="{{ 'customer.account_fallback' | t }}"></div>
+                <div class="btfy-account-button__fallback no-empty" aria-label="{{ 'customer.account_fallback' | t }}"></div>
               {% else %}
                 <span
                   slot="signed-out-avatar"
                   aria-hidden="true"
                   aria-label="{{ 'customer.log_in' | t }}"
-                  class="account-button btn btn--primary w-full"
+                  class="btfy-account-button btn btn--primary w-full"
                 >
                   {{ 'customer.log_in' | t }}
                 </span>
@@ -111,7 +111,7 @@
           {%- endif -%}
         </div>
         {%- if section.settings.show_social_media_icons -%}
-          <div class="menu-drawer__social-icons">
+          <div class="btfy-menu-drawer__social-icons">
             {% render 'social-icons', size: 'large', class: 'justify-center' %}
           </div>
         {%- endif -%}

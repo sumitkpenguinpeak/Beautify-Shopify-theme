@@ -18,10 +18,10 @@
 %}
 
 <div
-  class="contact-form{% if color_inherit %} color-inherit{% endif %} section section--padding color-{{ section.settings.section_color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="contact-form{% if color_inherit %} color-inherit{% endif %} section btfy-section-padding color-{{ section.settings.section_color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="theme-width">
     <div class="contact-form__wrapper flex flex-col md:flex-row blocks-radius color-{{ section.settings.color_scheme }}">
       {%- if image_card_block -%}
         <div class="contact-form__info" {{ image_card_block.shopify_attributes }}>

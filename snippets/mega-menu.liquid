@@ -51,7 +51,7 @@
   </summary>
   <div class="mega-menu v-scrollable">
     <div class="mega-menu__container">
-      <div class="page-width mega-menu__wrapper">
+      <div class="theme-width mega-menu__wrapper">
         {%- if link.links != blank -%}
           <div class="mega-menu__list">
             {%- if collections != blank and block.type == 'product_list' -%}
@@ -72,14 +72,14 @@
                 {%- if show_menu_column_divider -%}
                   <div class="mega-menu__item-wrapper">
                 {%- endif -%}
-                <a href="{{ childlink.url }}" class="h5 mega-menu__link mega-menu__link--top font-heading">
+                <a href="{{ childlink.url }}" class="h5 btfy-mega-menu__link mega-menu__link--top font-heading">
                   {{- childlink.title | escape -}}
                 </a>
                 {%- if childlink.links != blank -%}
                   <ul class="mega-menu__item-child">
                     {%- for grandchildlink in childlink.links -%}
                       <li>
-                        <a href="{{ grandchildlink.url }}" class="reversed-link mega-menu__link">
+                        <a href="{{ grandchildlink.url }}" class="reversed-link btfy-mega-menu__link">
                           {{- grandchildlink.title | escape -}}
                         </a>
                       </li>

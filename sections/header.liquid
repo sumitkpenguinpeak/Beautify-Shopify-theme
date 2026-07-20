@@ -72,7 +72,7 @@
     <div class="header__icons header__icons--left lg:justify-start z-1 lg:hidden{% if logo_mobile_position == 'left' %} hidden{% endif %}">
       <div class="header__buttons flex items-center">
         <button
-          class="menu-drawer-button btn btn--inherit flex items-center justify-center lg:hidden"
+          class="btfy-menu-drawer-button btn btn--inherit flex items-center justify-center lg:hidden"
           aria-controls="MenuDrawer"
           aria-label="{{ 'accessibility.menu_drawer' | t }}"
         >
@@ -95,7 +95,7 @@
         </a>
         {%- if menu_mobile != blank -%}
           <button
-            class="menu-drawer-button btn btn--inherit flex items-center justify-center lg:hidden{% if logo_mobile_position == 'left' %} hidden{% endif %}"
+            class="btfy-menu-drawer-button btn btn--inherit flex items-center justify-center lg:hidden{% if logo_mobile_position == 'left' %} hidden{% endif %}"
             aria-controls="MenuDrawer"
             aria-label="{{ 'accessibility.menu_drawer' | t }}"
           >
@@ -155,7 +155,7 @@
           width="{{ logo_mobile.width }}"
           height="{{ logo_mobile.height }}"
           alt="{{ logo_mobile.alt | default: shop.name | escape }}"
-          class="logo header__logo--mobile md:hidden"
+          class="logo btfy-header__logo--mobile md:hidden"
         >
       {%- endif -%}
       <img
@@ -165,7 +165,7 @@
         width="{{ logo.width }}"
         height="{{ logo.height }}"
         alt="{{ logo.alt | default: shop.name | escape }}"
-        class="logo header__logo--desktop md:block hidden"
+        class="logo btfy-header__logo--desktop md:block hidden"
       >
       {%- if enable_transparent_header and logo_transparent != blank -%}
         {%- if logo_transparent != blank -%}
@@ -176,7 +176,7 @@
             width="{{ logo_transparent.width }}"
             height="{{ logo_transparent.height }}"
             alt="{{ logo_transparent.alt | default: shop.name | escape }}"
-            class="logo header__logo--desktop header__logo--transparent hidden md:block absolute"
+            class="logo btfy-header__logo--desktop header__logo--transparent hidden md:block absolute"
           >
         {%- endif -%}
         {%- if logo_transparent_mobile != blank -%}
@@ -187,7 +187,7 @@
             width="{{ logo_transparent_mobile.width }}"
             height="{{ logo_transparent_mobile.height }}"
             alt="{{ logo_transparent_mobile.alt | default: shop.name | escape }}"
-            class="logo header__logo--mobile header__logo--transparent md:hidden absolute"
+            class="logo btfy-header__logo--mobile header__logo--transparent md:hidden absolute"
           >
         {%- endif -%}
       {%- endif -%}
@@ -224,10 +224,10 @@
         {%- render 'icon-search', size: 'large' -%}
       </a>
       {%- if shop.customer_accounts_enabled -%}
-        <header-account class="header__account block">
+        <header-account class="btfy-header__account block">
           <shopify-account menu="{{ section.settings.customer_account_menu }}">
             {% if customer %}
-              <div class="account-button__fallback no-empty" aria-label="{{ 'customer.account_fallback' | t }}"></div>
+              <div class="btfy-account-button__fallback no-empty" aria-label="{{ 'customer.account_fallback' | t }}"></div>
             {% else %}
               <span
                 slot="signed-out-avatar"
@@ -264,7 +264,7 @@
       </a>
       {%- if menu_mobile != blank -%}
         <button
-          class="menu-drawer-button btn btn--inherit flex items-center justify-center lg:hidden{% if logo_mobile_position == 'center' %} hidden{% endif %}"
+          class="btfy-menu-drawer-button btn btn--inherit flex items-center justify-center lg:hidden{% if logo_mobile_position == 'center' %} hidden{% endif %}"
           aria-controls="MenuDrawer"
           aria-expanded="false"
         >

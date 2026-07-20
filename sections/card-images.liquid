@@ -37,10 +37,10 @@
 %}
 
 <div
-  class="section section-{{ section.id }} section--padding card-images{% if section.settings.enable_equal_height %} card-images--equal-height{% endif %}{% if enable_slider %} card-images--slider{% endif %} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} btfy-section-padding card-images{% if section.settings.enable_equal_height %} card-images--equal-height{% endif %}{% if enable_slider %} card-images--slider{% endif %} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="theme-width">
     <div class="section__wrapper">
       {%- unless header_empty -%}
         <div class="section__header{% if enable_slider %} md:flex justify-between gap-6{% endif %}">

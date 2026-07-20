@@ -6409,7 +6409,7 @@ body:not(.header-pinned) .header-scrolled .header {
 .mega-menu__item-child li:last-child {
   padding-bottom: 0;
 }
-.mega-menu__link--top {
+.btfy-mega-menu__link--top {
   display: block;
   margin-bottom: 0.8rem;
 }
@@ -6557,8 +6557,8 @@ body:not(.header-pinned) .header-scrolled .header {
   --text-margin-top: 0;
 }
 
-:is(.menu-drawer__submenu, .menu-drawer__menus).active > li > a,
-:is(.menu-drawer__submenu, .menu-drawer__menus).active > li > details > summary {
+:is(.menu-drawer__submenu, .btfy-menu-drawer__menus).active > li > a,
+:is(.menu-drawer__submenu, .btfy-menu-drawer__menus).active > li > details > summary {
   transform: translateX(-30%);
 }
 
