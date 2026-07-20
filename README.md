@@ -2,7 +2,7 @@
   <br>
     <img src="./assets/shoppy-x-ray.svg" alt="logo" width="200">
   <br>
-  Shopify Skeleton Theme
+  Shopify Beautivio Theme
 </h1>
 
 A minimal, carefully structured Shopify theme designed to help you quickly get started. Designed with modularity, maintainability, and Shopify's best practices in mind.
@@ -29,7 +29,7 @@ If you use VS Code:
 Clone this repository using Git or Shopify CLI:
 
 ```bash
-git clone git@github.com:Shopify/skeleton-theme.git
+git clone git@github.com:sumitkpenguinpeak/Beautify-Shopify-theme.git
 # or
 shopify theme init
 ```
