@@ -1,62 +1,188 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'header.js' | asset_url }}" defer></script>
+<script src="{{ 'header.js' | asset_url }}" defer="defer"></script>
 
-<header class="header">
-    <div class="page-container">
-        <div class="header_logo">
-            <a href="/"><img src="https://cdn.shopify.com/s/files/1/1037/5695/5931/files/beautify_logo.png?v=1784032958" alt="Sleek"></a>
+
+
+<header class="header page-container grid items-center header--left-center">
+        <div class="header__logo">
+            <a href="/" class="relative flex header__logo--image"><img src="https://cdn.shopify.com/s/files/1/1037/5695/5931/files/beautify_logo.png?v=1784032958" width="" height="" alt="Sleek"></a>
         </div>
-        <nav class="header_nav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li class="has-dropdown">
-                    <a href="#">Presets <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
-                      {% render 'mega-menu', option: 'one' %}
-                  </li>
-                <li class="has-dropdown">
-                    <a href="#">Shop  <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
-                    {% render 'mega-menu', option: 'two' %}
-                </li>
-                <li class="has-dropdown">
-                    <a href="#">Collections <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
-                    {% render 'mega-menu', option: 'three' %}
-                </li>
-                <li class="has-dropdown">
-                    <a href="#">Pages <span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></a>
-                    {% render 'mega-menu', option: 'four' %}
-                </li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header_icons">
-            <a href="#">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/>
-                    <path d="M20 20L17 17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                </svg>
-            </a>
-            <a href="#">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/>
-                    <path d="M5 20C5 16.5 8 14 12 14C16 14 19 16.5 19 20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                </svg>
-            </a>
-            <a href="#">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 8H20L19 20H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
-                    <path d="M9 8V6C9 4.3 10.3 3 12 3C13.7 3 15 4.3 15 6V8" stroke="currentColor" stroke-width="1.7"/>
-                </svg>
-            </a>
+        <div class="header__navigation hidden lg:flex">
+            <nav class="header__menu flex"> 
+                <ul class="flex flex-wrap">
+                   <li><a href="/" class="menu__item flex relative z-2 font-navigation">Home</a></li>
+                   <li><a href="/" class="menu__item flex relative z-2 font-navigation">Presets <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+                        <div class="mega-menu v-scrollable needs-reverse">
+                            <div class="mega-menu__container">
+                                <div class="mega-menu__wrapper">
+                                    <div class="mega-menu__promotions mega-menu__promotions-grid">
+                                        <div class="promotion-item">
+                                            <div class="custom-card custom-card--small blocks-radius">
+                                                <a href="#" class="custom-card__wrapper flex flex-col">
+                                                    <div class="custom-card__media media-wrapper hover-wrapper">
+                                                        <figure>
+                                                            <img src="https://sleek-theme-demo.myshopify.com/cdn/shop/files/Wildpeak.jpg" width="" height="" alt="" title="">
+                                                        </figure>
+                                                    </div> 
+                                                    <div class="custom-card__info blocks-radius-bottom-left-right md:flex items-center gap-2 z-1">
+                                                        <div class="custom-card__summary flex-1">
+                                                            <h3 class="custom-card__title h5">Wildpeak</h3>
+                                                            <div class="text-subtext rte text-body-sm"><p>Clothing</p></div>
+                                                        </div>
+                                                        <button class="btn btn--icon-circle btn--secondary hidden xl:flex">
+                                                            <svg class="icon icon--medium rtl-flip-x" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M5 15L15 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                <path d="M6.875 5H15V13.125" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                       <div class="promotion-item">
+                                            <div class="custom-card custom-card--small blocks-radius">
+                                                <a href="#" class="custom-card__wrapper flex flex-col">
+                                                    <div class="custom-card__media media-wrapper hover-wrapper">
+                                                        <figure>
+                                                            <img src="https://sleek-theme-demo.myshopify.com/cdn/shop/files/Wildpeak.jpg" width="" height="" alt="" title="">
+                                                        </figure>
+                                                    </div> 
+                                                    <div class="custom-card__info blocks-radius-bottom-left-right md:flex items-center gap-2 z-1">
+                                                        <div class="custom-card__summary flex-1">
+                                                            <h3 class="custom-card__title h5">Jumped</h3>
+                                                            <div class="text-subtext rte text-body-sm"><p>Sports</p></div>
+                                                        </div>
+                                                        <button class="btn btn--icon-circle btn--secondary hidden xl:flex">
+                                                            <svg class="icon icon--medium rtl-flip-x" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M5 15L15 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                <path d="M6.875 5H15V13.125" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="promotion-item">
+                                            <div class="custom-card custom-card--small blocks-radius">
+                                                <a href="#" class="custom-card__wrapper flex flex-col">
+                                                    <div class="custom-card__media media-wrapper hover-wrapper">
+                                                        <figure>
+                                                            <img src="https://sleek-theme-demo.myshopify.com/cdn/shop/files/Wildpeak.jpg" width="" height="" alt="" title="">
+                                                        </figure>
+                                                    </div> 
+                                                    <div class="custom-card__info blocks-radius-bottom-left-right md:flex items-center gap-2 z-1">
+                                                        <div class="custom-card__summary flex-1">
+                                                            <h3 class="custom-card__title h5">Sleek</h3>
+                                                            <div class="text-subtext rte text-body-sm"><p>Health & Beauty</p></div>
+                                                        </div>
+                                                        <button class="btn btn--icon-circle btn--secondary hidden xl:flex">
+                                                            <svg class="icon icon--medium rtl-flip-x" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M5 15L15 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                <path d="M6.875 5H15V13.125" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="promotion-item">
+                                            <div class="custom-card custom-card--small blocks-radius">
+                                                <a href="#" class="custom-card__wrapper flex flex-col">
+                                                    <div class="custom-card__media media-wrapper hover-wrapper">
+                                                        <figure>
+                                                            <img src="https://sleek-theme-demo.myshopify.com/cdn/shop/files/Wildpeak.jpg" width="" height="" alt="" title="">
+                                                        </figure>
+                                                    </div> 
+                                                    <div class="custom-card__info blocks-radius-bottom-left-right md:flex items-center gap-2 z-1">
+                                                        <div class="custom-card__summary flex-1">
+                                                            <h3 class="custom-card__title h5">Modiva</h3>
+                                                            <div class="text-subtext rte text-body-sm"><p>Home & Decor</p></div>
+                                                        </div>
+                                                        <button class="btn btn--icon-circle btn--secondary hidden xl:flex">
+                                                            <svg class="icon icon--medium rtl-flip-x" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M5 15L15 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                <path d="M6.875 5H15V13.125" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="promotion-item">
+                                            <div class="custom-card custom-card--small blocks-radius">
+                                                <a href="#" class="custom-card__wrapper flex flex-col">
+                                                    <div class="custom-card__media media-wrapper hover-wrapper">
+                                                        <figure>
+                                                            <img src="https://sleek-theme-demo.myshopify.com/cdn/shop/files/Wildpeak.jpg" width="" height="" alt="" title="">
+                                                        </figure>
+                                                    </div> 
+                                                    <div class="custom-card__info blocks-radius-bottom-left-right md:flex items-center gap-2 z-1">
+                                                        <div class="custom-card__summary flex-1">
+                                                            <h3 class="custom-card__title h5">Glint</h3>
+                                                            <div class="text-subtext rte text-body-sm"><p>Accessories</p></div>
+                                                        </div>
+                                                        <button class="btn btn--icon-circle btn--secondary hidden xl:flex">
+                                                            <svg class="icon icon--medium rtl-flip-x" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M5 15L15 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                <path d="M6.875 5H15V13.125" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                   <li><a href="/" class="menu__item flex relative z-2 font-navigation">Shop
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
+                     </li>
+                      <li><a href="/" class="menu__item flex relative z-2 font-navigation">Collections
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.75 4.5L6 8.25L2.25 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a>
+                     </li>
+                   <li><a href="/" class="menu__item flex relative z-2 font-navigation">Pages</a></li>
+                   <li><a href="/" class="menu__item flex relative z-2 font-navigation">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-</header>
+        <div class="header__icons header__icons--right flex justify-end">
+            <div class="header__buttons flex items-center justify-center">
+                <a href="#" class="search-drawer-button flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-search icon--large" viewBox="0 0 24 24" fill="none">
+                        <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M16.4434 16.4453L20.9997 21.0016" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
+                <a href="#" class="flex items-center justify-center">
+                    <svg class="icon icon-account icon--large" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 15C15.3137 15 18 12.3137 18 9C18 5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9C6 12.3137 8.68629 15 12 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M2.90625 20.2508C3.82775 18.6544 5.15328 17.3287 6.74958 16.407C8.34588 15.4853 10.1567 15 12 15C13.8433 15 15.6541 15.4853 17.2504 16.407C18.8467 17.3287 20.1722 18.6544 21.0938 20.2508" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
+                <a href="#" class="cart-drawer-button flex items-center justify-center relative">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-shopping-bag icon--large" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.575 6.75H4.425C4.24045 6.75087 4.06254 6.81891 3.92451 6.94141C3.78648 7.06391 3.69778 7.23249 3.675 7.41562L2.34375 19.4156C2.33191 19.5202 2.34221 19.6261 2.37396 19.7264C2.40572 19.8267 2.45823 19.9192 2.52808 19.9979C2.59794 20.0766 2.68357 20.1397 2.77941 20.1831C2.87525 20.2266 2.97916 20.2494 3.08438 20.25H20.9156C21.0209 20.2494 21.1248 20.2266 21.2206 20.1831C21.3164 20.1397 21.4021 20.0766 21.4719 19.9979C21.5418 19.9192 21.5943 19.8267 21.626 19.7264C21.6578 19.6261 21.6681 19.5202 21.6563 19.4156L20.325 7.41562C20.3022 7.23249 20.2135 7.06391 20.0755 6.94141C19.9375 6.81891 19.7596 6.75087 19.575 6.75V6.75Z"></path>
+                        <path d="M8.25 6.75C8.25 5.75544 8.64509 4.80161 9.34835 4.09835C10.0516 3.39509 11.0054 3 12 3C12.9946 3 13.9484 3.39509 14.6517 4.09835C15.3549 4.80161 15.75 5.75544 15.75 6.75"></path>
+                    </svg>
+                    <span class="cart-count cart-count--absolute">2</span>
+                </a>
+            </div>
+        </div>
+</header> 
+
 
 
 {% schema %}
 {
   "name": "Custom Header",
   "tag": "section",
-  "class": "custom-header-section",
+  "class": "custom-header-section header-section",
   "settings": [
     {
       "type": "image_picker",

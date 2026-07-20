@@ -24,8 +24,10 @@
     {% render 'meta-tags' %}
 
     {{ content_for_header }}
- 
+    
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    
     <script src="{{ 'main.js' | asset_url }}" defer></script>
 
     {%- render 'assets' -%}
