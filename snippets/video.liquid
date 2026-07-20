@@ -1,7 +1,7 @@
 {%- liquid
   assign loading = loading | default: 'lazy'
   assign fetchpriority = fetchpriority | default: 'auto'
-  assign sizes = sizes | default: 'min(100vw, var(--page-width))'
+  assign sizes = sizes | default: 'min(100vw, var(--theme-width))'
   assign widths = '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200'
 
   # Allow override video url type and id

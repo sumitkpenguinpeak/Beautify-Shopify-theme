@@ -34,7 +34,7 @@
 %}
 
 <div class="video-hero section--padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
-  <div class="{% if section.settings.container == 'full' %} w-full{% else %} page-width{% endif %}">
+  <div class="{% if section.settings.container == 'full' %} w-full{% else %} theme-width{% endif %}">
     <div class="relative overflow-hidden{% unless section.settings.container == 'full' %} blocks-radius{% endunless %}">
       <parallax-element
         class="block overflow-hidden"
