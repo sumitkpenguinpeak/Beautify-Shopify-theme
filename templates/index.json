@@ -16,6 +16,7 @@
           "type": "slide",
           "settings": {
             "color_scheme": "scheme-1",
+            "background": "shopify://shop_images/s-1.jpg",
             "image_overlay_opacity": 0,
             "show_content_in_container": true,
             "content_position": "middle-left",
@@ -36,6 +37,7 @@
           "type": "slide",
           "settings": {
             "color_scheme": "scheme-1",
+            "background": "shopify://shop_images/s-2.jpg",
             "image_overlay_opacity": 0,
             "show_content_in_container": true,
             "content_position": "middle-right",
