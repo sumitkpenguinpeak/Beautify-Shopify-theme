@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow_q3U4Jn": {
@@ -7,6 +16,7 @@
           "type": "slide",
           "settings": {
             "color_scheme": "scheme-1",
+            "background": "shopify://shop_images/s-1.jpg",
             "image_overlay_opacity": 0,
             "show_content_in_container": true,
             "content_position": "middle-left",
@@ -14,10 +24,12 @@
             "text_alignment": "center",
             "title": "Get the skin you want to feel",
             "heading_size": "hd1",
+            "heading_tag": "h2",
             "subheading": "Blend beauty in you",
             "description": "",
             "description_size": "text-base",
             "button_label": "Shop Now",
+            "button_link": "",
             "button_style": "btn--primary"
           }
         },
@@ -25,6 +37,7 @@
           "type": "slide",
           "settings": {
             "color_scheme": "scheme-1",
+            "background": "shopify://shop_images/s-2.jpg",
             "image_overlay_opacity": 0,
             "show_content_in_container": true,
             "content_position": "middle-right",
@@ -32,15 +45,18 @@
             "text_alignment": "center",
             "title": "Get the skin you want to feel",
             "heading_size": "hd1",
+            "heading_tag": "h2",
             "subheading": "Blend beauty in you",
             "description": "",
             "description_size": "text-base",
             "button_label": "Shop Now",
+            "button_link": "",
             "button_style": "btn--primary"
           }
         },
         "slide_pEkPxY": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "color_scheme": "scheme-1",
             "image_overlay_opacity": 0,
@@ -50,10 +66,12 @@
             "text_alignment": "center",
             "title": "Get the skin you want to feel",
             "heading_size": "hd1",
+            "heading_tag": "h2",
             "subheading": "Blend beauty in you",
             "description": "",
             "description_size": "text-base",
             "button_label": "Shop Now",
+            "button_link": "",
             "button_style": "btn--primary"
           }
         }
@@ -88,19 +106,22 @@
         "tab_Yz8Mnz": {
           "type": "tab",
           "settings": {
-            "title": "What’s hot"
+            "title": "What’s hot",
+            "collection": ""
           }
         },
         "tab_9cGBUe": {
           "type": "tab",
           "settings": {
-            "title": "Best sellers"
+            "title": "Best sellers",
+            "collection": ""
           }
         },
         "tab_AfgNn8": {
           "type": "tab",
           "settings": {
-            "title": "Sale"
+            "title": "Sale",
+            "collection": ""
           }
         }
       },
@@ -114,6 +135,7 @@
         "header_layout": "horizontal",
         "heading": "",
         "heading_size": "h1",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "limit": 8,
         "columns": 4,
@@ -125,6 +147,7 @@
         "swipe_on_mobile": false,
         "show_all_button_on_top": true,
         "button_label": "Shop All Products",
+        "button_link": "",
         "button_style": "btn--underline",
         "tabs_nav_style": "design-2",
         "padding_top": 100,
@@ -140,6 +163,7 @@
         "image_URaWGC": {
           "type": "image",
           "settings": {
+            "image_link": "",
             "image_width": 220,
             "image_width_mobile": 110
           }
@@ -147,6 +171,7 @@
         "image_DyKWHM": {
           "type": "image",
           "settings": {
+            "image_link": "",
             "image_width": 220,
             "image_width_mobile": 110
           }
@@ -154,6 +179,7 @@
         "image_NGQQmW": {
           "type": "image",
           "settings": {
+            "image_link": "",
             "image_width": 220,
             "image_width_mobile": 110
           }
@@ -185,6 +211,7 @@
         "featured_collection_VHfaMD": {
           "type": "featured_collection",
           "settings": {
+            "collection": "",
             "title": "Skincare Advance",
             "description": ""
           }
@@ -192,6 +219,7 @@
         "featured_collection_H3VHEr": {
           "type": "featured_collection",
           "settings": {
+            "collection": "",
             "title": "Natural Self Care",
             "description": ""
           }
@@ -199,6 +227,7 @@
         "featured_collection_ytHAXL": {
           "type": "featured_collection",
           "settings": {
+            "collection": "",
             "title": "The Sweetest Thing",
             "description": ""
           }
@@ -206,6 +235,7 @@
         "featured_collection_inyzwk": {
           "type": "featured_collection",
           "settings": {
+            "collection": "",
             "title": "",
             "description": ""
           }
@@ -223,6 +253,7 @@
         "subheading": "Care for your skin",
         "heading": "Natural self care products",
         "heading_size": "h1",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "description": "<p>We create safe products that really work and are designed to make you feel good</p>",
         "text_size": "text-base",
@@ -251,6 +282,7 @@
         "product_tNmVzg": {
           "type": "product",
           "settings": {
+            "product": "",
             "color_scheme": "",
             "horizontal_position": 77,
             "vertical_position": 48
@@ -259,6 +291,7 @@
         "product_63XUQd": {
           "type": "product",
           "settings": {
+            "product": "",
             "color_scheme": "",
             "horizontal_position": 45,
             "vertical_position": 54
@@ -267,6 +300,7 @@
         "product_bNtrwr": {
           "type": "product",
           "settings": {
+            "product": "",
             "color_scheme": "",
             "horizontal_position": 19,
             "vertical_position": 41
@@ -285,6 +319,7 @@
         "color_scheme": "",
         "heading": "Level up skincare routine with the bundle",
         "heading_size": "h1",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "subheading": "Shop skincare set",
         "description": "",
@@ -305,6 +340,7 @@
             "image_width": "extra-large",
             "title": "",
             "heading_size": "h4",
+            "heading_tag": "h3",
             "text": "<p>“ Also the customer service is phenomenal.<br/>I would purchase again.”</p>",
             "text_size": "text-lg",
             "button_label": "",
@@ -320,6 +356,7 @@
             "image_width": "extra-large",
             "title": "",
             "heading_size": "h4",
+            "heading_tag": "h3",
             "text": "<p>“Great product line. <br/>Very attentive staff to deal with.”</p>",
             "text_size": "text-lg",
             "button_label": "",
@@ -335,6 +372,7 @@
             "image_width": "extra-large",
             "title": "",
             "heading_size": "h4",
+            "heading_tag": "h3",
             "text": "<p>\"Looking to affordably upgrade your everyday dinnerware? Look no further than e.Space\"</p>",
             "text_size": "text-lg",
             "button_label": "",
@@ -358,6 +396,7 @@
         "color_scheme": "",
         "heading": "Featured by Press",
         "heading_size": "h1",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "subheading": "",
         "description": "",
@@ -392,6 +431,7 @@
             "content_position": "middle-left",
             "content_alignment": "left",
             "content_spacing": "large",
+            "card_link": "",
             "content_position_mobile": "top-center",
             "content_alignment_mobile": "center"
           }
@@ -411,6 +451,7 @@
             "content_position": "middle-left",
             "content_alignment": "left",
             "content_spacing": "large",
+            "card_link": "",
             "content_position_mobile": "top-center",
             "content_alignment_mobile": "center"
           }
@@ -430,6 +471,7 @@
             "content_position": "middle-left",
             "content_alignment": "left",
             "content_spacing": "large",
+            "card_link": "",
             "content_position_mobile": "top-center",
             "content_alignment_mobile": "center"
           }
@@ -449,6 +491,7 @@
         "subheading": "",
         "heading": "Hot this week",
         "heading_size": "h1",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "description": "",
         "description_size": "text-base",
@@ -528,6 +571,7 @@
         "subheading": "",
         "heading": "",
         "heading_size": "h2",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "description": "",
         "text_size": "text-base",
@@ -549,6 +593,7 @@
           "settings": {
             "heading": "Because you need time for yourself. Blend beauty in you",
             "heading_size": "h1",
+            "heading_tag": "h2",
             "heading_highlight_style": "none"
           }
         },
@@ -556,6 +601,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop All Products",
+            "button_link": "",
             "button_style": "btn--underline"
           }
         }
@@ -597,6 +643,7 @@
             "content_position": "top-center",
             "content_alignment": "center",
             "content_spacing": "large",
+            "card_link": "",
             "color_scheme_mobile": "scheme-inverse",
             "show_text_below": false,
             "content_alignment_mobile": "center",
@@ -671,6 +718,7 @@
           "settings": {
             "heading": "Made for sensitive skin",
             "heading_size": "hd1",
+            "heading_tag": "h2",
             "heading_highlight_style": "none"
           }
         },
@@ -685,6 +733,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Now",
+            "button_link": "",
             "button_style": "btn--primary"
           }
         }
@@ -721,7 +770,9 @@
         "color_scheme": "",
         "heading": "The core products",
         "heading_size": "h2",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
+        "products": [],
         "pcard_title_size": "hd2",
         "pcard_description_display": "3-lines",
         "pcard_description_size": "text-lg",
@@ -744,6 +795,7 @@
           "settings": {
             "image_height": 80,
             "image_rounded": true,
+            "image_link": "",
             "image_height_mobile": 90
           }
         },
@@ -751,6 +803,7 @@
           "type": "text",
           "settings": {
             "text": "New Season Essential",
+            "text_link": "",
             "text_size": "h2",
             "font_weight": "font-body",
             "font_style": "normal",
@@ -766,6 +819,7 @@
           "settings": {
             "image_height": 80,
             "image_rounded": true,
+            "image_link": "",
             "image_height_mobile": 90
           }
         },
@@ -773,6 +827,7 @@
           "type": "text",
           "settings": {
             "text": "Rescue Your Skin",
+            "text_link": "",
             "text_size": "h2",
             "font_weight": "font-body",
             "font_style": "normal",
@@ -788,6 +843,7 @@
           "settings": {
             "image_height": 80,
             "image_rounded": true,
+            "image_link": "",
             "image_height_mobile": 90
           }
         },
@@ -795,6 +851,7 @@
           "type": "text",
           "settings": {
             "text": "Made with love",
+            "text_link": "",
             "text_size": "h2",
             "font_weight": "font-body",
             "font_style": "normal",
@@ -810,6 +867,7 @@
           "settings": {
             "image_height": 80,
             "image_rounded": true,
+            "image_link": "",
             "image_height_mobile": 90
           }
         },
@@ -817,6 +875,7 @@
           "type": "text",
           "settings": {
             "text": "New Season Essential",
+            "text_link": "",
             "text_size": "h2",
             "font_weight": "font-body",
             "font_style": "normal",
@@ -861,28 +920,36 @@
           "type": "tab",
           "settings": {
             "title": "Safe for Sensitive Skin",
-            "description": "<p>We’re strict about what goes into our products (and what stays out). Our therapist calls it setting healthy boundaries.</p>"
+            "description": "<p>We’re strict about what goes into our products (and what stays out). Our therapist calls it setting healthy boundaries.</p>",
+            "products": [],
+            "collection": ""
           }
         },
         "tab_NLRDMg": {
           "type": "tab",
           "settings": {
             "title": "Safe for Dry Skin",
-            "description": "<p>Explore the Benefits of Using Safe-for-Dry Products in Your Everyday Life.</p>"
+            "description": "<p>Explore the Benefits of Using Safe-for-Dry Products in Your Everyday Life.</p>",
+            "products": [],
+            "collection": ""
           }
         },
         "tab_hhgdKc": {
           "type": "tab",
           "settings": {
             "title": "Organic Skincare",
-            "description": "<p>Unlock the Power of Nature with Effective Organic Skincare Solutions.</p>"
+            "description": "<p>Unlock the Power of Nature with Effective Organic Skincare Solutions.</p>",
+            "products": [],
+            "collection": ""
           }
         },
         "tab_PQhFrR": {
           "type": "tab",
           "settings": {
             "title": "High-End Products",
-            "description": "<p>Experience Sophistication and Elegance with Our Range of High-End Products.</p>"
+            "description": "<p>Experience Sophistication and Elegance with Our Range of High-End Products.</p>",
+            "products": [],
+            "collection": ""
           }
         }
       },
@@ -897,6 +964,7 @@
         "enable_video_autoplay": true,
         "heading": "Customers enjoy their journey everyday",
         "heading_size": "h1",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "subheading": "Photos & Videos",
         "description": "",
@@ -923,7 +991,9 @@
             "show_image": true,
             "text": "<p>This clay mask deeply cleanses my pores and leaves my skin feeling smooth and refreshed. Perfect for weekly use.</p>",
             "author": "Jaroslava K.",
-            "bio": "Verified Buyer"
+            "bio": "Verified Buyer",
+            "product": "",
+            "icon": "none"
           }
         },
         "testimonial_D7Mq7i": {
@@ -932,7 +1002,9 @@
             "show_image": true,
             "text": "<p>This moisturizer left my skin feeling incredibly soft and hydrated. No greasy residue. Perfect for daily use!</p>",
             "author": "Alexandra M.",
-            "bio": "Verified Buyer"
+            "bio": "Verified Buyer",
+            "product": "",
+            "icon": "none"
           }
         },
         "testimonial_33tAjm": {
@@ -941,7 +1013,9 @@
             "show_image": true,
             "text": "<p>The serum noticeably reduced my fine lines after a few weeks. Lightweight and absorbs quickly. Highly recommend!</p>",
             "author": "Danielle S.",
-            "bio": "Verified Buyer"
+            "bio": "Verified Buyer",
+            "product": "",
+            "icon": "none"
           }
         },
         "testimonial_dDRMwy": {
@@ -950,7 +1024,9 @@
             "show_image": true,
             "text": "<p>Great cleanser! It removes makeup effortlessly without drying out my skin. My face feels refreshed and clean.</p>",
             "author": "Elizabeth R.",
-            "bio": "Verified Buyer"
+            "bio": "Verified Buyer",
+            "product": "",
+            "icon": "none"
           }
         },
         "testimonial_RgfDDw": {
@@ -959,7 +1035,9 @@
             "show_image": true,
             "text": "<p>Love this sunscreen! It's non-greasy and blends well with makeup. Offers great protection without causing breakouts.</p>",
             "author": "Kimberly J.",
-            "bio": "Verified Buyer"
+            "bio": "Verified Buyer",
+            "product": "",
+            "icon": "none"
           }
         },
         "testimonial_abi6JN": {
@@ -968,7 +1046,9 @@
             "show_image": true,
             "text": "<p>This eye cream is a game-changer. Reduced puffiness and dark circles significantly. Gentle on sensitive skin.</p>",
             "author": "Victoria H.",
-            "bio": "Verified Buyer"
+            "bio": "Verified Buyer",
+            "product": "",
+            "icon": "none"
           }
         }
       },
@@ -985,12 +1065,14 @@
         "color_scheme": "scheme-2",
         "heading": "Over 2,000 Happy reviews",
         "heading_size": "h2",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "subheading": "",
         "description": "",
         "text_size": "text-base",
         "card_color_scheme": "",
         "card_layout": "1",
+        "card_text_size": "text-base",
         "columns_desktop": 4,
         "column_gap": "medium",
         "enable_slider": true,
@@ -1057,6 +1139,7 @@
             "desktop_image_position": "left",
             "image_width": 50,
             "alignment": "start",
+            "image_extend": false,
             "image_ratio": "adapt",
             "image_overlay_opacity": 0,
             "heading": "",
@@ -1068,6 +1151,7 @@
             "content_position": "bottom-center",
             "content_alignment": "center",
             "content_spacing": "medium",
+            "card_link": "",
             "order_first": true
           }
         }
@@ -1089,11 +1173,13 @@
         "header_layout": "standing-column",
         "heading": "We're answerable!",
         "heading_size": "h2",
+        "heading_tag": "h2",
         "heading_highlight_style": "none",
         "subheading": "",
         "description": "<p>We create safe products that really work and are designed to make you feel good. Any question about our products? </p><p>Check if you can find them here or <br/>Contact us</p>",
         "text_size": "text-base",
         "button_label": "See More Answers",
+        "button_link": "",
         "button_style": "btn--primary",
         "column_gap": "large",
         "row_gap": "large",
@@ -1101,6 +1187,7 @@
         "item_color_scheme": "scheme-1",
         "item_heading_font": "heading",
         "item_heading_size": "h5",
+        "item_heading_tag": "h2",
         "item_icon_size": "extra-large",
         "padding_top": 60,
         "padding_bottom": 100,
@@ -1117,6 +1204,7 @@
           "settings": {
             "heading": "Spring styles to wear together or apart, whatever the weather.",
             "heading_size": "h1",
+            "heading_tag": "h2",
             "heading_highlight_style": "none"
           }
         },
@@ -1124,6 +1212,7 @@
           "type": "button",
           "settings": {
             "button_label": "About Us",
+            "button_link": "",
             "button_style": "btn--underline"
           }
         }
@@ -1164,6 +1253,7 @@
             "content_position": "bottom-center",
             "content_alignment": "center",
             "content_spacing": "large",
+            "card_link": "",
             "color_scheme_mobile": "",
             "show_text_below": false,
             "content_alignment_mobile": "center",
@@ -1188,6 +1278,7 @@
             "content_position": "bottom-center",
             "content_alignment": "center",
             "content_spacing": "large",
+            "card_link": "",
             "color_scheme_mobile": "",
             "show_text_below": false,
             "content_alignment_mobile": "center",
@@ -1212,6 +1303,7 @@
             "content_position": "bottom-center",
             "content_alignment": "center",
             "content_spacing": "large",
+            "card_link": "",
             "color_scheme_mobile": "",
             "show_text_below": false,
             "content_alignment_mobile": "center",
