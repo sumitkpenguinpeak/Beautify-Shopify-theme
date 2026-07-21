@@ -1,10 +1,10 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
 <div
-  class="customer account section section--padding"
+  class="customer account section btfy-section-padding"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="theme-width">
     <header class="customer__header flex md:flex-row flex-col justify-between items-center gap-4">
       <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
       <a href="{{ routes.account_logout_url }}" class="btn btn--primary">

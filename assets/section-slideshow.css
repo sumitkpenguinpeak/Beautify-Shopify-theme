@@ -1,11 +1,11 @@
-.section--slideshow.page-width .page-width {
+.section--slideshow.theme-width .theme-width {
   padding: 0 1.5rem;
 }
-.section--slideshow.page-width .slideshow-layout--split .page-width {
+.section--slideshow.theme-width .slideshow-layout--split .theme-width {
   padding: 0;
 }
 @media (max-width: 767.98px) {
-  .section--slideshow.page-width .slideshow-layout--split .page-width:not(.color-scheme-inherit) {
+  .section--slideshow.theme-width .slideshow-layout--split .theme-width:not(.color-scheme-inherit) {
     padding: 0 1.5rem;
   }
 }
@@ -73,7 +73,7 @@
   }
 }
 @media (min-width: 768px) {
-  .slideshow-layout--centered .page-width {
+  .slideshow-layout--centered .theme-width {
     padding: 0 3.2rem;
   }
   .slideshow-layout--centered .swiper-slide {

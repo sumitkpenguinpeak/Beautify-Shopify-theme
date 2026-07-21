@@ -6,10 +6,10 @@
 {%- endstyle -%}
 
 <div
-  class="customer order section section--padding"
+  class="customer order section btfy-section-padding"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="theme-width">
     <header class="customer__header flex flex-col items-center md:items-start gap-y-3">
       <h1 class="customer__title">{{ 'customer.order.title' | t: name: order.name }}</h1>
       <a href="{{ routes.account_url }}" class="text-subtext reversed-link inline-flex items-center gap-x-2">

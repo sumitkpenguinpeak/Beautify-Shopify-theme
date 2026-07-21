@@ -8,10 +8,10 @@
 {%- assign motion_delay = 50 -%}
 
 <div
-  class="section section--padding store-locator color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section btfy-section-padding store-locator color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width page-width--narrow">
+  <div class="theme-width theme-width--narrow">
     {%- for block in section.blocks -%}
       {% liquid
         assign row = 0

@@ -27,7 +27,7 @@
 <div
   id="FeaturedProduct-{{ section.id }}"
   data-section="{{ section.id }}"
-  class="featured-product section section-{{ section.id }} section--padding page-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="featured-product section section-{{ section.id }} btfy-section-padding theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}

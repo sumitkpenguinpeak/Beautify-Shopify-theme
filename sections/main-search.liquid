@@ -37,10 +37,10 @@
 {%- endif -%}
 {%- endcapture -%}
 <div
-  class="collection {{ section.index }} template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section--padding color-{{ section.settings.color_scheme }}"
+  class="collection {{ section.index }} template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} btfy-section-padding color-{{ section.settings.color_scheme }}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="theme-width">
     <div data-motion="fade-up" class="template-search__header grid gap-6">
       <{{ section.settings.heading_tag }} class="{{ section.settings.heading_size }} text-center" tabindex="-1">
         <motion-element class="block" data-motion="fade-up">

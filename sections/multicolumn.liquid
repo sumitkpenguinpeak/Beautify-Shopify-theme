@@ -30,10 +30,10 @@
   divider_width: section.settings.divider_width
 %}
 <div
-  class="section section--padding multicolumn color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section btfy-section-padding multicolumn color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="theme-width">
     {%- if has_richtext -%}
       <div class="section__header text-{{ section_header_alignment_mobile }} md:text-{{ section_header_alignment }} rich-text spacing--large">
         {%- if section.settings.subheading != blank -%}

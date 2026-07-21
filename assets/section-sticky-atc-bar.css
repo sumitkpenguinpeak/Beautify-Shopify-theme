@@ -84,7 +84,7 @@ body.sticky-atc-bar-enabled {
   }
 }
 @media (min-width: 1280px) {
-  .sticky-atc-bar.page-width--full {
+  .sticky-atc-bar.theme-width--full {
     --page-padding: 5rem;
   }
 }

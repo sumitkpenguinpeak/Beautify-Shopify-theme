@@ -12,8 +12,8 @@
   <script src="{{ 'gift-wrapping.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<div class="cart section--padding{% if cart == empty %} is-empty{% endif %}">
-  <div class="page-width">
+<div class="cart btfy-section-padding{% if cart == empty %} is-empty{% endif %}">
+  <div class="theme-width">
     <div class="cart__header text-center">
       <{{ section.settings.heading_tag }} class="cart__title {{ section.settings.heading_size }}">
         <motion-element data-motion="fade-up" class="inline-flex">{{ 'sections.cart.title' | t }}</motion-element>

@@ -52,10 +52,10 @@
 %}
 
 <div
-  class="section--padding color-{{ section.settings.color_scheme }}"
+  class="btfy-section-padding color-{{ section.settings.color_scheme }}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="collection page-width">
+  <div class="collection theme-width">
     {%- paginate collection.products by section.settings.products_per_page -%}
       <div class="collection__content flex">
         {%- if collection.all_products_count > 0 -%}

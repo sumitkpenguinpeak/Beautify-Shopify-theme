@@ -45,10 +45,10 @@
 %}
 
 <div
-  class="section section-{{ section.id }} section--padding featured-blog color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} btfy-section-padding featured-blog color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="theme-width">
     {% render 'section-heading', section_settings: section.settings %}
     <grid-list class="block relative swiper-show-nav-on-hover">
       <featured-blog

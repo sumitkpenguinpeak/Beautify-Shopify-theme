@@ -36,7 +36,7 @@
 
 {% style %}
   {% if color_scheme_first != section.settings.color_scheme %}
-    #shopify-section-{{ section.id }} .page-width--narrow {
+    #shopify-section-{{ section.id }} .theme-width--narrow {
       padding-inline: 1.5rem;
     }
   {% endif %}
@@ -48,7 +48,7 @@
 %}
 
 <div
-  class="section section-{{ section.id }} section--padding section--collapsible-tabs section-header-{{ section.settings.header_layout }} theme-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }}{{ section_css_class }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} btfy-section-padding section--collapsible-tabs section-header-{{ section.settings.header_layout }} theme-width theme-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }}{{ section_css_class }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >

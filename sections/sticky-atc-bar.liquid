@@ -14,7 +14,7 @@
         assign wrap_class = ' block md:hidden'
     endcase
   -%}
-  <div class="sticky-atc-bar{{ wrap_class }}{% if show_dynamic_checkout_buttons %} sticky-atc-bar--with-dynamic-buttons{% endif %} page-width page-width--{{ section.settings.container }}">
+  <div class="sticky-atc-bar{{ wrap_class }}{% if show_dynamic_checkout_buttons %} sticky-atc-bar--with-dynamic-buttons{% endif %} theme-width theme-width--{{ section.settings.container }}">
     <sticky-atc-bar
       class="sticky-atc-bar__inner flex items-center justify-between"
       data-product-id="{{ product.id }}"

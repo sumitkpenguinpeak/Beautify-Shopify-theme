@@ -39,10 +39,10 @@
     assign featured_post = blog.articles | first
   %}
   <div
-    class="main-blog section section--padding"
+    class="main-blog section btfy-section-padding"
     style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   >
-    <div class="page-width">
+    <div class="theme-width">
       <div class="section__header spacing--large md:text-{{ header_alignment }} text-{{ header_alignment_mobile }}">
         <{{ section.settings.heading_tag }} class="section__heading {{ section.settings.heading_size }}">
           {{ blog.title | escape }}

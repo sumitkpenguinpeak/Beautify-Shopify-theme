@@ -26,7 +26,7 @@
 (max-width: 767px) {{ item_width_mobile }}px, {{ item_width }}px
 {%- endcapture -%}
 <div
-  class="section section--press section--padding page-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section--press btfy-section-padding theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   {% render 'section-heading', section_settings: section.settings %}

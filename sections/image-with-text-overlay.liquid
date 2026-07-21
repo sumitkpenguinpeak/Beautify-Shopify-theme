@@ -22,8 +22,8 @@
     }
   {% endif -%}
 </style>
-<div class="image-with-text-overlay section--padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
-  <div class="{% if section.settings.container == 'full' %}w-full{% else %}page-width{% endif %}">
+<div class="image-with-text-overlay btfy-section-padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+  <div class="{% if section.settings.container == 'full' %}w-full{% else %}theme-width{% endif %}">
     <div class="relative overflow-hidden{% unless section.settings.container == 'full' %} blocks-radius{% endunless %}">
       <parallax-element
         class="block w-full h-full overflow-hidden"
@@ -65,7 +65,7 @@
         </motion-element>
       </parallax-element>
       <div class="image-with-text-ovelay__content">
-        <div class="image-with-text-ovelay__content-wrapper content-overlay content-overlay--{{ section.settings.content_position }} color-{{ section.settings.color_scheme }}{% if section.settings.container == 'full' %} page-width{% endif %}">
+        <div class="image-with-text-ovelay__content-wrapper content-overlay content-overlay--{{ section.settings.content_position }} color-{{ section.settings.color_scheme }}{% if section.settings.container == 'full' %} theme-width{% endif %}">
           <div class="relative z-1 rich-text text-{{ section.settings.content_alignment }}">
             {%- assign motion_delay = 50 -%}
             {% for block in section.blocks %}

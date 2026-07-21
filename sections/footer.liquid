@@ -18,14 +18,14 @@
     show_divider: section.settings.show_section_divider,
     divider_width: section.settings.divider_width
   %}
-  <div class="footer__wrapper">
+  <div class="btfy-footer__wrapper">
     {%- if section.blocks.size > 0 -%}
-      <div class="footer__top theme-width">
-        <div class="footer__top-wrapper f-flex">
+      <div class="btfy-footer__top theme-width"> 
+        <div class="btfy-footer__top-wrapper f-flex">
           {%- if section.blocks.size > 0 -%}
             {%- for block in section.blocks -%}
               <div
-                class="footer-block footer-block--{{ block.type }} f-column w-full{% if block.type == 'newsletter' %} lg:order-none{% if block.settings.order_first %} order-first{% else %} order-last{% endif %}{% endif %}{% if block.settings.show_divider %} has-border relative{% endif %}"
+                class="btfy-footer-block footer-block--{{ block.type }} f-column w-full{% if block.type == 'newsletter' %} lg:order-none{% if block.settings.order_first %} order-first{% else %} order-last{% endif %}{% endif %}{% if block.settings.show_divider %} has-border relative{% endif %}"
                 style="--col-width:{{ block.settings.block_width }}%;{% if block.type == 'newsletter' %}--form-width: {{ block.settings.form_width }}px;{% endif %}"
                 {{ block.shopify_attributes }}
               >
@@ -55,19 +55,19 @@
                             open
                             data-open-default="{{ block.settings.open_default }}"
                           {% endif %}
-                          class="accordion-details footer-accordion-details"
+                          class="accordion-details btfy-footer-accordion-details"
                         >
                           {%- if block.settings.heading != blank -%}
                             <summary class="accordion-details__summary flex items-center justify-between gap-2">
-                              <h3 class="footer-block__heading inline-richtext {{ block.settings.heading_size }}">
+                              <h3 class="btfy-footer-block__heading inline-richtext {{ block.settings.heading_size }}">
                                 {{- block.settings.heading -}}
                               </h3>
                               <span class="flex items-center lg:hidden">{%- render 'icon-plus-toggle' -%}</span>
                             </summary>
                           {%- endif -%}
-                          <div class="accordion-details__content footer-block__contact-info footer-info">
+                          <div class="accordion-details__content btfy-footer-block__contact-info btfy-footer-info">
                             {% unless address == blank %}
-                              <div class="footer-info__item footer-info__address">
+                              <div class="btfy-footer-info__item btfy-footer-info__address">
                                 <svg
                                   width="20"
                                   height="20"
@@ -82,7 +82,7 @@
                               </div>
                             {% endunless %}
                             {% unless email == blank %}
-                              <div class="footer-info__item footer-info__email">
+                              <div class="btfy-footer-info__item btfy-footer-info__email">
                                 <svg
                                   width="20"
                                   height="20"
@@ -97,7 +97,7 @@
                               </div>
                             {% endunless %}
                             {% unless phone == blank %}
-                              <div class="footer-info__item footer-info__phone">
+                              <div class="btfy-footer-info__item btfy-footer-info__phone">
                                 <svg
                                   width="20"
                                   height="20"
@@ -112,7 +112,7 @@
                               </div>
                             {% endunless %}
                             {% unless working_hours == blank %}
-                              <div class="footer-info__item footer-info__working-hours">
+                              <div class="btfy-footer-info__item btfy-footer-info__working-hours">
                                 <svg
                                   width="20"
                                   height="20"
@@ -150,17 +150,17 @@
                             open
                             data-open-default="{{ block.settings.open_default }}"
                           {% endif %}
-                          class="accordion-details footer-accordion-details"
+                          class="accordion-details btfy-footer-accordion-details"
                         >
                           {%- if block_title != blank -%}
                             <summary class="accordion-details__summary flex items-center justify-between gap-2">
-                              <h3 class="footer-block__heading inline-richtext {{ block.settings.heading_size }}">
+                              <h3 class="btfy-footer-block__heading inline-richtext {{ block.settings.heading_size }}">
                                 {{- block_title -}}
                               </h3>
                               <span class="flex items-center lg:hidden">{%- render 'icon-plus-toggle' -%}</span>
                             </summary>
                           {%- endif -%}
-                          <ul class="accordion-details__content linklist linklist--vertical list-unstyled">
+                          <ul class="accordion-details__content btfy-linklist btfy-linklist--vertical list-unstyled">
                             {%- for link in block.settings.menu.links -%}
                               <li>
                                 <a
@@ -189,20 +189,20 @@
                           open
                           data-open-default="{{ block.settings.open_default }}"
                         {% endif %}
-                        class="accordion-details footer-accordion-details"
+                        class="accordion-details btfy-footer-accordion-details"
                       >
                         {%- if block.settings.heading != blank -%}
                           <summary class="accordion-details__summary flex items-center justify-between gap-2">
-                            <h3 class="footer-block__heading inline-richtext {{ block.settings.heading_size }}">
+                            <h3 class="btfy-footer-block__heading inline-richtext {{ block.settings.heading_size }}">
                               {{- block.settings.heading -}}
                             </h3>
                             <span class="flex items-center lg:hidden">{%- render 'icon-plus-toggle' -%}</span>
                           </summary>
                         {%- endif -%}
-                        <div class="accordion-details__content footer-image-box">
+                        <div class="accordion-details__content btfy-footer-image-box">
                           {% if block.settings.image != blank %}
                             <div
-                              class="footer-image-box__image media-wrapper"
+                              class="btfy-footer-image-box__image media-wrapper"
                               style="width: {{ block.settings.image_width }}px"
                             >
                               {{
@@ -217,12 +217,12 @@
                             </div>
                           {% endif %}
                           {%- if block.settings.text != blank -%}
-                            <div class="footer-image-box__text rte">
+                            <div class="btfy-footer-image-box__text rte">
                               {{ block.settings.text }}
                             </div>
                           {%- endif -%}
                           {%- if block.settings.button_label != blank -%}
-                            <div class="footer-image-box__btn">
+                            <div class="btfy-footer-image-box__btn">
                               <a
                                 {% if block.settings.button_link != blank %}
                                   href="{{ block.settings.button_link }}"
@@ -239,22 +239,22 @@
                       </{{ tag }}>
                       {%- assign motion_delay = motion_delay | plus: 50 -%}
                     {%- when 'newsletter' -%}
-                      <div class="footer-newsletter text-{{ block.settings.newsletter_text_alignment }}">
+                      <div class="btfy-footer-newsletter text-{{ block.settings.newsletter_text_alignment }}">
                         {%- if block.settings.heading != blank -%}
-                          <h3 class="footer-block__heading inline-richtext {{ block.settings.heading_size }}">
+                          <h3 class="btfy-footer-block__heading inline-richtext {{ block.settings.heading_size }}">
                             {{- block.settings.heading -}}
                           </h3>
                         {%- endif -%}
                         {%- if block.settings.newsletter_description != blank -%}
-                          <div class="footer-newsletter__description rte">
+                          <div class="btfy-footer-newsletter__description rte">
                             {{ block.settings.newsletter_description }}
                           </div>
                         {%- endif -%}
-                        <div class="footer-newsletter__form">
+                        <div class="btfy-footer-newsletter__form">
                           {% render 'newsletter-form', custom_id: block.id %}
                         </div>
                         {%- if block.settings.newsletter_term != blank -%}
-                          <div class="footer-newsletter__term text-sm rte">{{ block.settings.newsletter_term }}</div>
+                          <div class="btfy-footer-newsletter__term text-sm rte">{{ block.settings.newsletter_term }}</div>
                         {%- endif -%}
                       </div>
                       {%- assign motion_delay = motion_delay | plus: 50 -%}
@@ -266,7 +266,7 @@
         </div>
       </div>
     {% endif %}
-    <div class="footer__bottom page-width">
+    <div class="btfy-footer__bottom theme-width">
       {% liquid
         assign enable_country_selector = false
         assign enable_language_selector = false
@@ -286,8 +286,8 @@
       %}
       <motion-element class="block" data-motion="fade-up" data-motion-delay="50">
         {% if enable_country_selector or enable_language_selector or show_social %}
-          <div class="footer__bottom-row flex justify-between">
-            <div class="footer__localization relative z-2 flex items-center">
+          <div class="btfy-footer__bottom-row flex justify-between">
+            <div class="btfy-footer__localization relative z-2 flex items-center">
               {%- if enable_language_selector -%}
                 {% render 'language-selector', position: 'up', plain: true %}
               {%- endif -%}
@@ -302,16 +302,16 @@
             {%- endif -%}
           </div>
         {% endif %}
-        <div class="footer__bottom-row flex justify-between items-center">
-          <div class="footer__copyright">
-            <p class="footer__copyright-content">
+        <div class="btfy-footer__bottom-row flex justify-between items-center">
+          <div class="btfy-footer__copyright">
+            <p class="btfy-footer__copyright-content">
               &copy; {{ 'now' | date: '%Y' }}
-              <a class="link-underline" href="{{ routes.root_url }}">{{ shop.name }}</a>.
+              <a class="btfy-link-underline" href="{{ routes.root_url }}">{{ shop.name }}</a>.
               <span>{{ powered_by_link }}</span>
             </p>
 
             {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-              <div class="footer__follow-on-shop">
+              <div class="btfy-footer__follow-on-shop">
                 {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
                 {% # theme-check-disable %}
                 {{ shop | login_button: action: 'follow' }}
@@ -319,9 +319,9 @@
               </div>
             {%- endif -%}
           </div>
-          <div class="footer__info flex items-center">
+          <div class="btfy-footer__info flex items-center">
             {% if section.settings.footer_bottom_menu != blank %}
-              <ul class="linklist linklist--horizontal list-unstyled">
+              <ul class="btfy-linklist btfy-linklist--horizontal list-unstyled">
                 {% for link in linklists[section.settings.footer_bottom_menu].links %}
                   <li>
                     <a href="{{ link.url }}" class="reversed-link">{{ link.title | escape }}</a>
@@ -330,11 +330,11 @@
               </ul>
             {% endif %}
             {%- if section.settings.payment_enable -%}
-              <div class="footer__payment">
+              <div class="btfy-footer__payment">
                 <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-                <ul class="list list-payment" role="list">
+                <ul class="list btfy-list-payment" role="list">
                   {%- for type in shop.enabled_payment_types -%}
-                    <li class="list-payment__item">
+                    <li class="btfy-list-payment__item">
                       {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
                     </li>
                   {%- endfor -%}

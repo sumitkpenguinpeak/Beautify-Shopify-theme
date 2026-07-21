@@ -148,11 +148,11 @@
   }
 }
 @media (min-width: 1280px) {
-  .page-width--narrow {
+  .theme-width--narrow {
     --page-padding: 0;
     max-width: 93rem;
   }
-  .page-width--small {
+  .theme-width--small {
     --page-padding: 1.5rem;
     max-width: 120rem;
   }
@@ -170,7 +170,7 @@
 }
 @media (min-width: 1536px) {
   :root {
-    --page-padding: max(13.5rem, 50vw - var(--scrollbar-width, 0px) / 2 - var(--page-width) / 2);
+    --page-padding: max(13.5rem, 50vw - var(--scrollbar-width, 0px) / 2 - var(--theme-width) / 2);
   }
 }
 .section__header {
@@ -2046,7 +2046,7 @@ summary::-webkit-details-marker {
 .main-content .shopify-challenge__container,
 .main-content .shopify-policy__container {
   margin: 0 auto;
-  max-width: var(--page-width);
+  max-width: var(--theme-width);
   padding-inline: var(--page-padding);
 }
 
@@ -4432,10 +4432,10 @@ input:is([type=radio])::after {
   word-break: break-word;
 }
 
-.linklist--vertical li + li {
+.btfy-linklist--vertical li + li {
   padding-top: 1.2rem;
 }
-.linklist--horizontal {
+.btfy-linklist--horizontal {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem 2.4rem;
@@ -5811,7 +5811,7 @@ input:is([type=radio])::after {
   }
 }
 @media (hover: hover) {
-  .link-underline:hover {
+  .btfy-link-underline:hover {
     text-decoration: underline;
   }
 }
@@ -6628,18 +6628,18 @@ shopify-account::part(dialog)::backdrop {
   white-space: nowrap;
 }
 
-.list-payment {
+.btfy-list-payment {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: -0.5rem;
 }
-.list-payment__item {
+.btfy-list-payment__item {
   align-items: center;
   display: flex;
   padding: 0.5rem;
 }
-.list-payment .icon {
+.btfy-list-payment .icon {
   width: auto;
   height: auto;
 }
@@ -6647,91 +6647,91 @@ shopify-account::part(dialog)::backdrop {
 .footer .list-social {
   justify-content: flex-end;
 }
-.footer__wrapper {
+.btfy-footer__wrapper {
   padding-top: 7.8rem;
   padding-bottom: 7rem;
 }
-.footer__copyright-content {
+.btfy-footer__copyright-content {
   color: rgba(var(--color-foreground), 0.8);
   margin: 0;
 }
 @media (hover: hover) {
-  .footer__copyright-content a:hover {
+  .btfy-footer__copyright-content a:hover {
     color: rgba(var(--color-foreground), 1);
   }
 }
-.footer__copyright-content span a {
+.btfy-footer__copyright-content span a {
   text-decoration: underline;
 }
-.footer__info {
+.btfy-footer__info {
   gap: var(--element-gap);
 }
 .footer__policies {
   gap: var(--element-gap);
 }
-.footer__localization {
+.btfy-footer__localization {
   gap: var(--element-gap);
 }
-.footer__follow-on-shop {
+.btfy-footer__follow-on-shop {
   margin-top: 1.2rem;
 }
-.footer__top summary {
+.btfy-footer__top summary {
   padding-top: 0;
   padding-bottom: 1.2rem;
 }
-.footer__bottom {
+.btfy-footer__bottom {
   --element-gap: 2.4rem;
   padding-top: 8rem;
 }
-.footer__bottom-row {
+.btfy-footer__bottom-row {
   gap: var(--element-gap);
 }
-.footer__bottom-row + .footer__bottom-row {
+.btfy-footer__bottom-row + .btfy-footer__bottom-row {
   margin-top: 2rem;
 }
 
-.footer-accordion-details {
+.btfy-footer-accordion-details {
   border: none;
 }
-.footer-accordion-details .accordion-details__content {
+.btfy-footer-accordion-details .accordion-details__content {
   padding-bottom: 0;
 }
 
-.footer-info__item {
+.btfy-footer-info__item {
   display: flex;
   align-items: center;
   gap: 6px;
 }
-.footer-info__item svg {
+.btfy-footer-info__item svg {
   flex-shrink: 0;
 }
-.footer-info__item + .footer-info__item {
+.btfy-footer-info__item + .btfy-footer-info__item {
   margin-top: 1.2rem;
 }
 
-.footer-image-box > * + * {
+.btfy-footer-image-box > * + * {
   margin-top: 12px;
 }
 
-.footer-newsletter {
+.btfy-footer-newsletter {
   width: var(--form-width);
   max-width: 100%;
 }
-.footer-newsletter__description {
+.btfy-footer-newsletter__description {
   margin-top: 0.8rem;
 }
-.footer-newsletter__term {
+.btfy-footer-newsletter__term {
   margin-top: 1.6rem;
 }
-.footer-newsletter__form {
+.btfy-footer-newsletter__form {
   margin-top: 2.4rem;
 }
-.footer-newsletter.text-center {
+.btfy-footer-newsletter.text-center {
   margin-inline: auto;
 }
 
 @media (min-width: 768px) {
-  .list-payment {
+  .btfy-list-payment {
     justify-content: flex-end;
   }
 }
@@ -6739,10 +6739,10 @@ shopify-account::part(dialog)::backdrop {
   .footer summary {
     pointer-events: none;
   }
-  .footer-block {
+  .btfy-footer-block {
     width: var(--col-width);
   }
-  .footer__top-wrapper {
+  .btfy-footer__top-wrapper {
     --column-gap: 3rem;
   }
 }
@@ -6754,14 +6754,14 @@ shopify-account::part(dialog)::backdrop {
     margin-bottom: 2.4rem;
     margin-top: 0;
   }
-  .footer__top summary {
+  .btfy-footer__top summary {
     padding-top: 1.2rem;
     min-height: 5.2rem;
   }
-  .footer__bottom {
+  .btfy-footer__bottom {
     padding-top: 4.8rem;
   }
-  .footer-block.has-border:after {
+  .btfy-footer-block.has-border:after {
     content: "";
     position: absolute;
     left: 0;
@@ -6770,10 +6770,10 @@ shopify-account::part(dialog)::backdrop {
     width: 100%;
     background: rgba(var(--color-foreground), 0.1);
   }
-  div.footer-accordion-details {
+  div.btfy-footer-accordion-details {
     padding-block: 1.2rem;
   }
-  details.footer-accordion-details .accordion-details__content {
+  details.btfy-footer-accordion-details .accordion-details__content {
     padding-bottom: 1.2rem;
   }
 }
@@ -6781,29 +6781,29 @@ shopify-account::part(dialog)::backdrop {
   .footer .list-social {
     justify-content: flex-start;
   }
-  .footer__wrapper {
+  .btfy-footer__wrapper {
     padding-top: 3.2rem;
     padding-bottom: 3.2rem;
   }
-  .footer-block {
+  .btfy-footer-block {
     width: 100%;
   }
-  .footer__bottom {
+  .btfy-footer__bottom {
     padding-top: 2.4rem;
   }
-  .footer__bottom-row {
+  .btfy-footer__bottom-row {
     flex-direction: column;
     align-items: flex-start;
   }
-  .footer__bottom-row + .footer__bottom-row {
+  .btfy-footer__bottom-row + .btfy-footer__bottom-row {
     margin-top: 2.4rem;
     gap: 1.6rem;
   }
-  .footer__info {
+  .btfy-footer__info {
     flex-direction: column;
     align-items: flex-start;
   }
-  .footer__copyright {
+  .btfy-footer__copyright {
     order: 2;
   }
 }

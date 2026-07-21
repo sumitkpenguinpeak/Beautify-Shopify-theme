@@ -24,7 +24,7 @@
   divider_width: section.settings.divider_width
 %}
 <div
-  class="section section-{{ section.id }} section--padding section--custom-content{% if section.settings.container != 'full' %} page-width{% endif %} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} btfy-section-padding section--custom-content{% if section.settings.container != 'full' %} theme-width{% endif %} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >

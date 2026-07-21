@@ -26,13 +26,13 @@
     {%- endif -%}
   }
 </style>
-<div class="section section-{{ section.id }}{% if container == 'full' %} w-full{% else %} page-width{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+<div class="section section-{{ section.id }}{% if container == 'full' %} w-full{% else %} theme-width{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
   <div
     class="countdown relative z-0 overflow-hidden{% unless container == 'full' %} blocks-radius{% endunless %} color-{{ section.settings.color_schema }}"
     data-section-type="countdown-timer"
     data-section-id="{{ section.id }}"
   >
-    <div class="countdown__wrapper section--padding flex flex-col relative">
+    <div class="countdown__wrapper btfy-section-padding flex flex-col relative">
       {%- if background_image != blank -%}
         <div class="bg-image" style="--aspect-ratio: {{ background_image.aspect_ratio }}">
           {%- liquid

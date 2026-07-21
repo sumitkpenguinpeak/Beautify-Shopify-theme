@@ -33,7 +33,7 @@
   divider_width: section.settings.divider_width
 %}
 
-<div class="video-hero section--padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+<div class="video-hero btfy-section-padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
   <div class="{% if section.settings.container == 'full' %} w-full{% else %} theme-width{% endif %}">
     <div class="relative overflow-hidden{% unless section.settings.container == 'full' %} blocks-radius{% endunless %}">
       <parallax-element
@@ -61,7 +61,7 @@
         </motion-element>
       </parallax-element>
       <div class="video-hero__content absolute inset-0">
-        <div class="content-overlay content-overlay--{{ section.settings.content_position }} color-{{ section.settings.color_scheme }}{% if section.settings.container == 'full' %} page-width{% endif %}">
+        <div class="content-overlay content-overlay--{{ section.settings.content_position }} color-{{ section.settings.color_scheme }}{% if section.settings.container == 'full' %} theme-width{% endif %}">
           <div class="video-hero__content-wrapper relative z-1 rich-text text-{{ section.settings.content_alignment }}">
             {%- assign motion_delay = 50 -%}
             {% for block in section.blocks %}

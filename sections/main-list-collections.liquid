@@ -40,10 +40,10 @@
 (max-width: 767px) calc((100vw - 3rem) / {{ columns_mobile_int }}), (max-width: 1023px) calc((100vw - 3rem) / {{ columns_tablet }}), calc(min(100vw, {{ settings.page_width }}px) / {{ columns_desktop }} )
 {%- endcapture -%}
 <div
-  class="section section-{{ section.id }} section--padding collection-list-template"
+  class="section section-{{ section.id }} btfy-section-padding collection-list-template"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="theme-width">
     {%- if section.settings.title != blank -%}
       <div class="section__header spacing--large md:text-{{ header_alignment }} text-{{ header_alignment_mobile }}">
         <{{ section.settings.heading_tag }} class="inline-richtext {{ section.settings.heading_size }}">
