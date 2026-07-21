@@ -5,13 +5,13 @@
 
   assign current = current | default: 1
 %}
-<div class="product-card {{ custom_class }}">
-  <div class="product-card__wrapper">
-    <div class="product-card__image-wrapper" style="--aspect-ratio: {{ image_ratio }};">
+<div class="btfy-product-card {{ custom_class }}">
+  <div class="btfy-product-card__wrapper">
+    <div class="btfy-product-card__image-wrapper" style="--aspect-ratio: {{ image_ratio }};">
       {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
-    <div class="product-card__info">
-      <h3 class="product-card__title text-pcard-title">{{- 'onboarding.product_title' | t -}}</h3>
+    <div class="btfy-product-card__info">
+      <h3 class="btfy-product-card__title text-pcard-title">{{- 'onboarding.product_title' | t -}}</h3>
       {% render 'price' %}
     </div>
   </div>

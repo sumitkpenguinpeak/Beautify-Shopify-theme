@@ -95,16 +95,16 @@
   assign image_widths = '70, 140, 165, 355, 450, 535, 710, 900, 1070, 1420'
 -%}
 <div
-  class="product-card product-card-style-{{ settings.pcard_style }}{% if settings.pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}{{ card_wrapper_class }}{% if list_on_mobile %} product-card-list-on-mobile{% endif %}"
+  class="btfy-product-card btfy-product-card-style-{{ settings.pcard_style }}{% if settings.pcard_style == 'card' %} btfy-color-{{ settings.pcard_color_scheme }}{% endif %}{{ card_wrapper_class }}{% if list_on_mobile %} btfy-product-card-list-on-mobile{% endif %}"
 >
-  <div class="product-card__wrapper h-full">
-    <div class="product-card__image-wrapper{% if second_image == blank %} product-card__image-wrapper--main-only{% endif %} {% if list_on_mobile %}desktop-{% endif %}color-{{ settings.pcard_overlay_color_scheme }} bg-none">
+  <div class="btfy-product-card__wrapper h-full">
+    <div class="btfy-product-card__image-wrapper{% if second_image == blank %} btfy-product-card__image-wrapper--main-only{% endif %} {% if list_on_mobile %}desktop-{% endif %}color-{{ settings.pcard_overlay_color_scheme }} btfy-bg-none">
       <a href="{{ product.url }}" aria-label="{{ product.title | escape }}" tabindex="-1">
         <motion-element data-motion="zoom-out-sm" class="block">
           {%- if featured_media -%}
             {%- unless first_media_type == 'video' or first_media_type == 'external_video' -%}
               <div
-                class="media-wrapper product-card__image product-card__image--main"
+                class="btfy-media-wrapper btfy-product-card__image btfy-product-card__image--main"
                 style="--aspect-ratio: {{ image_ratio }}"
               >
                 {%- assign first_image_widths = image_widths | append: ', ' | append: featured_media.width -%}
@@ -122,7 +122,7 @@
               </div>
               {%- unless second_image == blank -%}
                 <div
-                  class="media-wrapper product-card__image product-card__image--second inset-full hidden md:block"
+                  class="btfy-media-wrapper btfy-product-card__image btfy-product-card__image--second inset-full hidden md:block"
                   style="--aspect-ratio: {{ image_ratio }}"
                 >
                   {%- assign second_image_widths = image_widths | append: ', ' | append: second_image.width -%}
@@ -139,7 +139,7 @@
                 </div>
               {%- endunless -%}
             {%- else -%}
-              <div class="media media--adapt" style="--media-ratio: {{ image_ratio }};">
+              <div class="btfy-media btfy-media--adapt" style="--media-ratio: {{ image_ratio }};">
                 {% render 'video',
                   video: product.featured_media,
                   muted: true,
@@ -151,16 +151,16 @@
               </div>
             {%- endunless -%}
           {%- else -%}
-            <div class="product-card__image product-card__image--main" style="--aspect-ratio: {{ image_ratio }};">
+            <div class="btfy-product-card__image btfy-product-card__image--main" style="--aspect-ratio: {{ image_ratio }};">
               {{- 'product-1' | placeholder_svg_tag: 'placeholder-svg' -}}
             </div>
           {%- endif -%}
         </motion-element>
       </a>
       {%- if product.available == false or on_sale or custom_tags.size > 0 -%}
-        <div class="product-card__badge">
+        <div class="btfy-product-card__badge">
           {%- if product.available == false and show_soldout -%}
-            <span class="f-badge f-badge--soldout" aria-hidden="true">
+            <span class="btfy-f-badge btfy-f-badge--soldout" aria-hidden="true">
               {{- 'products.product.sold_out' | t -}}
             </span>
           {%- endif -%}
@@ -183,7 +183,7 @@
                   assign sale_badge = 'products.product.on_sale' | t
               endcase
             -%}
-            <span class="f-badge f-badge--sale" aria-hidden="true">{{- sale_badge -}}</span>
+            <span class="btfy-f-badge btfy-f-badge--sale" aria-hidden="true">{{- sale_badge -}}</span>
           {%- endif -%}
           {%- for tag in custom_tags -%}
             {%- liquid
@@ -191,13 +191,13 @@
               assign type = tag_content | split: '_' | first
               assign tag_name = tag_content | split: '_' | last
             -%}
-            <span class="f-badge f-badge--{{ type }}">{{ tag_name }}</span>
+            <span class="btfy-f-badge btfy-f-badge--{{ type }}">{{ tag_name }}</span>
           {%- endfor -%}
         </div>
       {%- endif -%}
       {%- if enable_quick_view -%}
         <button
-          class="product-card__quickview btn btn--icon-circle {{ settings.quickview_button_style }} no-js-hidden"
+          class="btfy-product-card__quickview btn btn--icon-circle {{ settings.quickview_button_style }} no-js-hidden"
           aria-label="{{ 'products.product.quick_view' | t }}"
           aria-controls="{{ quick_view_modal_id }}"
           aria-haspopup="dialog"
@@ -229,7 +229,7 @@
           endif
         -%}
         {%- if product.variants.size > 1 or qty_rules -%}
-          <div class="product-card__actions product-card__main-actions">
+          <div class="btfy-product-card__actions btfy-product-card__main-actions">
             <{{ atc_button_tag }}
               {% if settings.pcard_choose_options_actions == 'product_page' %}
                 href="{{- product_url -}}"
@@ -237,12 +237,12 @@
                 aria-controls="{{ quick_view_modal_id }}"
                 aria-haspopup="dialog"
               {% endif %}
-              class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
+              class="btfy-product-card__atc btfy-product-card__action-button btn {{ settings.pcard_button_style }}"
             >
-              <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
+              <span class="btfy-product-card__atc-icon btfy-product-card__action-icon inline-flex md:hidden">
                 {%- render 'icon-cart', name: settings.cart_icon -%}
               </span>
-              <span class="product-card__atc-text product-card__action-text">
+              <span class="btfy-product-card__atc-text btfy-product-card__action-text">
                 {{- 'products.product.choose_options' | t -}}
               </span>
             </{{ atc_button_tag }}>
@@ -260,7 +260,7 @@
               type="hidden"
               name="id"
               value="{{- variant.id -}}"
-              class="product-variant-id"
+              class="btfy-product-variant-id"
               {% if variant.available == false %}
                 disabled
               {% endif %}
@@ -273,12 +273,12 @@
                 disabled
               {% endif %}
               aria-label="{{ 'products.product.add_to_cart' | t }}"
-              class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
+              class="btfy-product-card__atc btfy-product-card__action-button btn {{ settings.pcard_button_style }}"
             >
               <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
                 {%- render 'icon-cart', name: settings.cart_icon -%}
               </span>
-              <span class="product-card__atc-text product-card__action-text">
+              <span class="btfy-product-card__atc-text btfy-product-card__action-text">
                 {%- if variant.available -%}
                   {{- 'products.product.add_to_cart' | t -}}
                 {%- else -%}
@@ -291,20 +291,20 @@
         {%- endif -%}
       {%- endif -%}
     </div>
-    <div class="product-card__info text-{{ settings.pcard_content_alignment }}">
+    <div class="btfy-product-card__info btfy-text-{{ settings.pcard_content_alignment }}">
       {%- if show_vendor -%}
-        <p class="product-card__vendor text-sm m-0">
+        <p class="btfy-product-card__vendor text-sm m-0">
           <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
           {{ product.vendor }}
         </p>
       {%- endif -%}
       {%- if show_type -%}
-        <p class="product-card__type text-sm m-0">
+        <p class="btfy-product-card__type text-sm m-0">
           <span class="visually-hidden">{{ 'accessibility.product_type' | t }}</span>
           {{ product.type }}
         </p>
       {%- endif -%}
-      <h3 class="product-card__title text-pcard-title">
+      <h3 class="btfy-product-card__title text-pcard-title">
         <a class="reversed-link" href="{{ product.url }}">{{- product.title -}}</a>
       </h3>
       {% render 'price', product: product, alignment: settings.pcard_content_alignment %}
