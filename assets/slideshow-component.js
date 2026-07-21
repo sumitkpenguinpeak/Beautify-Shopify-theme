@@ -72,7 +72,7 @@ if (!customElements.get('slideshow-component')) {
 
         if (this.layout !== 'centered' && this.items === 1) {
           this.sliderOptions.loop = false;
-          this.classList.remove('slideshow-controls-visible--yes');
+          this.classList.remove('btfy-slideshow-controls-visible--yes');
         }
 
         const autoplayDelay = parseInt(this.dataset.autoplay);
@@ -224,7 +224,7 @@ if (!customElements.get('slideshow-component')) {
         const slides = this.querySelectorAll('.swiper-slide');
         slides &&
           slides.forEach((slide) => {
-            const slideText = slide.querySelector('.slideshow__text');
+            const slideText = slide.querySelector('.btfy-slideshow__text');
             if (slideText) {
               const slideTextHeight = slideText.offsetHeight;
               if (slideTextHeight > maxHeight) {

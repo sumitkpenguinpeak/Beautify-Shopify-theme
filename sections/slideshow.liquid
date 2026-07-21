@@ -22,14 +22,14 @@
 {{ 'section-slideshow.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'slideshow-component.js' | asset_url }}" defer="defer"></script>
 <div
-  class="section section-{{ section.id }} section--slideshow{% if section.settings.container != 'full' %} theme-width{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} btfy-section--slideshow{% if section.settings.container != 'full' %} theme-width{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   data-id="{{ section.id }}"
   role="region"
   aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
   aria-label="{{ section.settings.accessibility_info | escape }}"
 >
   <slideshow-component
-    class="swiper slideshow-wrapper slideshow-layout--{{ slider_layout }} slideshow-height--{{ slide_height }}{% if show_text_below %} slideshow-content-mobile--below{% endif %}{% if show_dots %} slideshow-controls-visible--yes slideshow-controls-position--{{ section.settings.controls_position }}{% endif %}{% if section.settings.container != 'full' and slider_layout != 'centered' %} blocks-radius{% endif %}"
+    class="swiper btfy-slideshow-wrapper slideshow-layout--{{ slider_layout }} slideshow-height--{{ slide_height }}{% if show_text_below %} btfy-slideshow-content-mobile--below{% endif %}{% if show_dots %} btfy-slideshow-controls-visible--yes slideshow-controls-position--{{ section.settings.controls_position }}{% endif %}{% if section.settings.container != 'full' and slider_layout != 'centered' %} blocks-radius{% endif %}"
     aria-live="polite"
     aria-atomic="true"
     {% if autoplay > 0 %}
@@ -68,13 +68,13 @@
           {{ block.shopify_attributes }}
         >
           <div
-            class="slideshow__item-wrap"
+            class="btfy-slideshow__item-wrap"
             {% if slide_height == 'adapt' and slider_layout != 'split' %}
               style="--aspect-ratio: {{ aspect_ratio }};--aspect-ratio-mobile: {{ aspect_ratio_mobile }};"
             {% endif %}
           >
             <div
-              class="slideshow__bg bg-image overflow-hidden{% if slider_layout == 'centered' %} blocks-radius{% endif %}"
+              class="btfy-slideshow__bg bg-image overflow-hidden{% if slider_layout == 'centered' %} blocks-radius{% endif %}"
               style="--aspect-ratio: {{ aspect_ratio }};--aspect-ratio-mobile: {{ aspect_ratio_mobile }};"
             >
               {%- case block.type -%}
@@ -106,12 +106,12 @@
                     assign background_default = block.settings.background
                     assign background_mobile = block.settings.background_mobile
                   -%}
-                  <div class="slideshow__slide-bg absolute inset-full">
+                  <div class="btfy-slideshow__slide-bg absolute inset-full">
                     {%- if background_default == blank -%}
                       <motion-element
                         data-motion="zoom-out"
                         hold
-                        class="slideshow__slide-placeholder h-full{% if background_mobile != blank %} hidden md:block{% else %} block{% endif %}"
+                        class="btfy-slideshow__slide-placeholder h-full{% if background_mobile != blank %} hidden md:block{% else %} block{% endif %}"
                       >
                         {% capture current %}{% cycle 1, 2 %}{% endcapture %}
                         {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg w-full h-full' }}
@@ -163,7 +163,7 @@
               {%- endcase -%}
               {%- if block.settings.image_overlay_opacity > 0 -%}
                 <div
-                  class="slideshow__overlay bg-overlay"
+                  class="btfy-slideshow__overlay bg-overlay"
                   style="--color-overlay-alpha: {{ block.settings.image_overlay_opacity }}"
                 ></div>
               {%- endif -%}
@@ -174,12 +174,12 @@
               assign animate_delay = 250
             -%}
             <div
-              class="slideshow__content content-overlay--{{ block.settings.content_position_mobile }} md:content-overlay--{{ block.settings.content_position }} flex flex-col theme-width focus-none color-{{ block.settings.color_scheme }}{% if show_text_below and slider_layout != 'split' %} mobile-color-scheme-1{% endif %}{% if color_scheme_inherit %} color-scheme-inherit{% endif %}{% if block.settings.show_content_in_container %} slideshow__content--in-container{% endif %}"
+              class="btfy-slideshow__content content-overlay--{{ block.settings.content_position_mobile }} md:content-overlay--{{ block.settings.content_position }} flex flex-col theme-width focus-none color-{{ block.settings.color_scheme }}{% if show_text_below and slider_layout != 'split' %} btfy-mobile-color-scheme-1{% endif %}{% if color_scheme_inherit %} color-scheme-inherit{% endif %}{% if block.settings.show_content_in_container %} btfy-slideshow__content--in-container{% endif %}"
               tabindex="-1"
             >
-              <div class="slideshow__text rich-text text-{{ text_alignment_mobile }} md:text-{{ text_alignment }}">
+              <div class="btfy-slideshow__text rich-text text-{{ text_alignment_mobile }} md:text-{{ text_alignment }}">
                 {%- unless block.settings.subheading == blank -%}
-                  <div class="slideshow__subtitle rich-text__subheading text-subheading">
+                  <div class="btfy-slideshow__subtitle rich-text__subheading text-subheading">
                     <motion-element
                       data-motion="fade-up"
                       data-motion-delay="{{ animate_delay }}"
@@ -193,7 +193,7 @@
                   {%- assign animate_delay = animate_delay | plus: 100 -%}
                 {%- endunless -%}
                 {%- unless block.settings.title == blank -%}
-                  <{{ block.settings.heading_tag }} class="slideshow__title {{ block.settings.heading_size }} rich-text__heading">
+                  <{{ block.settings.heading_tag }} class="btfy-slideshow__title {{ block.settings.heading_size }} rich-text__heading">
                     <motion-element
                       data-motion="fade-up"
                       data-motion-delay="{{ animate_delay }}"
@@ -208,7 +208,7 @@
                 {%- endunless -%}
                 {%- unless block.settings.description == blank -%}
                   <motion-element
-                    class="block slideshow__description {{ description_size }} rich-text__text rte"
+                    class="block btfy-slideshow__description {{ description_size }} rich-text__text rte"
                     data-motion="fade-up"
                     data-motion-delay="{{ animate_delay }}"
                     data-text
@@ -219,7 +219,7 @@
                   {%- assign animate_delay = animate_delay | plus: 100 -%}
                 {%- endunless -%}
                 {%- unless block.settings.button_label == blank -%}
-                  <div class="slideshow__buttons rich-text__button">
+                  <div class="btfy-slideshow__buttons rich-text__button">
                     <motion-element
                       data-motion="fade-up"
                       data-motion-delay="{{ animate_delay }}"
