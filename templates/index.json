@@ -19,7 +19,7 @@
             "background": "shopify://shop_images/s-1.jpg",
             "image_overlay_opacity": 0,
             "show_content_in_container": true,
-            "content_position": "middle-left",
+            "content_position": "middle-center",
             "content_position_mobile": "middle-center",
             "text_alignment": "center",
             "title": "Get the skin you want to feel",
