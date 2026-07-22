@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -77,13 +86,16 @@
       "settings": {
         "container": "fixed",
         "color_scheme": "scheme-1",
+        "menu": "main-menu",
+        "menu_mobile": "",
         "header_layout": "left-center",
         "sticky_header": "always",
         "menu_trigger": "hover",
-        "show_sperator_line": true,
+        "show_sperator_line": false,
         "hide_sperator_on_pages": "index",
-        "enable_transparent_header": false,
+        "enable_transparent_header": true,
         "transparent_header_color": "#ffffff",
+        "customer_account_menu": "customer-account-main-menu",
         "logo_mobile_position": "center",
         "show_social_media_icons": true,
         "enable_language_selector": false,
