@@ -35,7 +35,7 @@
   divider_width: section.settings.divider_width
 %}
 <div
-  class="section{% if enable_slider %} slider-enabled{% endif %} section--lookbook-cards section-header-{{ header_layout }} btfy-section-padding theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section{% if enable_slider %} slider-enabled{% endif %} section--lookbook-cards section-header-{{ header_layout }} section-padding theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >

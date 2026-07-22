@@ -57,7 +57,7 @@
 %}
 
 <div
-  class="collection-hero collection-hero--image-{{ section.settings.image_position }} hero hero--{{ section.settings.image_height }} hero--mobile-{{ section.settings.image_height_mobile }}{% if color_inherit %} color-inherit{% endif %} section btfy-section-padding"
+  class="collection-hero collection-hero--image-{{ section.settings.image_position }} hero hero--{{ section.settings.image_height }} hero--mobile-{{ section.settings.image_height_mobile }}{% if color_inherit %} color-inherit{% endif %} section section-padding"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="theme-width">
@@ -136,7 +136,7 @@
           {%- case block.type -%}
             {%- when 'collection_info' -%}
               <div
-                class="collection-hero__info btfy-section-padding"
+                class="collection-hero__info section-padding"
                 {{ block.shopify_attributes }}
                 style="--section-padding-top: {{ block.settings.padding_top }}px; --section-padding-bottom: {{ block.settings.padding_bottom }}px;"
               >

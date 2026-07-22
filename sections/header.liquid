@@ -13,7 +13,7 @@
   assign menu_mobile = section.settings.menu_mobile
   assign logo_mobile_position = section.settings.logo_mobile_position
   assign enable_transparent_header = section.settings.enable_transparent_header
-  assign classes = 'btfy-header btfy-section-padding grid items-center' | append: ' header--' | append: header_layout
+  assign classes = 'btfy-header section-padding grid items-center' | append: ' header--' | append: header_layout
   assign classes = classes | append: ' color-' | append: section.settings.color_scheme
   assign classes = classes | append: ' btfy-header-mobile--' | append: logo_mobile_position
 

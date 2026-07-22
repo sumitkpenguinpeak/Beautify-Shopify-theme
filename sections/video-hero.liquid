@@ -33,7 +33,7 @@
   divider_width: section.settings.divider_width
 %}
 
-<div class="video-hero btfy-section-padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+<div class="video-hero section-padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
   <div class="{% if section.settings.container == 'full' %} w-full{% else %} theme-width{% endif %}">
     <div class="relative overflow-hidden{% unless section.settings.container == 'full' %} blocks-radius{% endunless %}">
       <parallax-element

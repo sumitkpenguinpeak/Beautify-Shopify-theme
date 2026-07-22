@@ -101,7 +101,7 @@ lookbook-card-slider .lookbook-card__product {
   min-width: 200px;
 }
 @media (min-width: 768px) {
-  lookbook-card-slider.is-hovering .lookbook-slider .swiper-slide:not(.swiper-slide-active) .product-card {
+  lookbook-card-slider.is-hovering .lookbook-slider .swiper-slide:not(.swiper-slide-active) .btfy-product-card {
     opacity: 0.3;
   }
 }

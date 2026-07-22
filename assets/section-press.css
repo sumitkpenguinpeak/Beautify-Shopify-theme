@@ -4,11 +4,11 @@
 .press-thumbs .swiper-slide {
   width: 16rem;
 }
-.press-thumbs .swiper-slide .media-wrapper {
+.press-thumbs .swiper-slide .btfy-media-wrapper {
   transition: 0.3s opacity;
   cursor: pointer;
 }
-.press-thumbs .swiper-slide:not(.swiper-slide-thumb-active) .media-wrapper {
+.press-thumbs .swiper-slide:not(.swiper-slide-thumb-active) .btfy-media-wrapper {
   opacity: 0.4;
 }
 

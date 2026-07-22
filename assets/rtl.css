@@ -46,7 +46,7 @@
 [dir=rtl] .drawer:not([active]).drawer--right .drawer__inner {
   --translate-x: -100%;
 }
-[dir=rtl] .product-card {
+[dir=rtl] .btfy-product-card {
   --pcard-quickview-offset: -15px;
 }
 [dir=rtl] .scrolling-promotion--left .promotion--animated {

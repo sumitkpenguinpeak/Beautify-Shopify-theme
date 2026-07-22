@@ -36,7 +36,7 @@
 calc({{ settings.page_width }} * {{ col_products_width }} / 100 / {{ columns_desktop }})
 {%- endcapture -%}
 <div
-  class="section section--product-list-with-details btfy-section-padding theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section--product-list-with-details section-padding theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >

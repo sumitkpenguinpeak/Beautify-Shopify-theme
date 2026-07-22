@@ -25,7 +25,7 @@
   divider_width: section.settings.divider_width
 %}
 
-<div class="video-with-text btfy-section-padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+<div class="video-with-text section-padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
   <div class="theme-width">
     <div class="flex flex-col items-center blocks-radius color-{{ section.settings.color_scheme }}{% if section.settings.video_placement == 'second' %} md:flex-row-reverse{% else %} md:flex-row{% endif %}">
       <div class="video-with-text__video overflow-hidden w-full lg:w-1/2">

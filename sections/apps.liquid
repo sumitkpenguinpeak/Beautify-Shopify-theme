@@ -4,7 +4,7 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 </style>
-<div class="section section-app btfy-section-padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+<div class="section section-app section-padding{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
   <div class="{% if section.settings.include_margins %}theme-width{% endif %}">
     {%- for block in section.blocks -%}
       {% render block %}

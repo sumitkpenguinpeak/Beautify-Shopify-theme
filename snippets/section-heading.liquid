@@ -45,7 +45,7 @@
       assign header_layout = section_settings.header_layout | default: 'vertical'
     endif
 
-    assign header_class = 'btfy-section__header--' | append: header_layout
+    assign header_class = 'section__header--' | append: header_layout
     assign header_text_alignment = header_alignment
     if header_layout == 'horizontal'
       assign header_class = header_class | append: ' md:flex md:flex-col md:flex-row md:justify-between md:items-center gap-x-4'
@@ -64,8 +64,8 @@
 
     assign motion_delay = motion_delay | default: 50
   -%}
-  <div class="btfy-section__header {{ header_class }} btfy-spacing--{{ spacing | default: 'normal' }}{{ custom_css_class }}">
-    <div class="btfy-section__header--text btfy-text-{{ header_alignment_mobile }} md:text-{{ header_text_alignment }}">
+  <div class="section__header {{ header_class }} spacing--{{ spacing | default: 'normal' }}{{ custom_css_class }}">
+    <div class="section__header--text text-{{ header_alignment_mobile }} md:text-{{ header_text_alignment }}">
       {%- if section_settings.subheading != blank -%}
         <p class="section__subheading text-subheading">
           <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
@@ -75,7 +75,7 @@
         {%- assign motion_delay = motion_delay | plus: 50 -%}
       {%- endif -%}
       {%- if section_settings.heading != blank -%}
-        <{{ heading_tag }} class="btfy-section__heading{% if section_settings.heading_size %} {{ section_settings.heading_size }}{% endif %}">
+        <{{ heading_tag }} class="section__heading{% if section_settings.heading_size %} {{ section_settings.heading_size }}{% endif %}">
           <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
             {% render 'highlight-text',
               text: section_settings.heading,
@@ -87,7 +87,7 @@
       {%- endif -%}
       {%- if description != blank -%}
         <motion-element
-          class="btfy-section__description block rte {{ description_size }}"
+          class="section__description block rte {{ description_size }}"
           data-motion="fade-up"
           data-motion-delay="{{ motion_delay }}"
         >
@@ -98,7 +98,7 @@
     </div>
     {%- if button_visible and button_label != blank -%}
       <motion-element
-        class="btfy-section__header--button block text-{{ header_alignment_mobile }} md:text-{{ header_alignment }}"
+        class="section__header--button block text-{{ header_alignment_mobile }} md:text-{{ header_alignment }}"
         data-motion="fade-up"
         data-motion-delay="{{ motion_delay }}"
       >

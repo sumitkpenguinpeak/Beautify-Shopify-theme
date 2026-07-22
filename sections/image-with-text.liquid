@@ -26,7 +26,7 @@
 %}
 
 <div
-  class="section btfy-section-padding image-with-text image-with-text--{{ section.settings.layout | replace: '_', '-' }} color-{{ section.settings.section_color_scheme }}{% if color_inherit %} color-inherit{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-padding image-with-text image-with-text--{{ section.settings.layout | replace: '_', '-' }} color-{{ section.settings.section_color_scheme }}{% if color_inherit %} color-inherit{% endif %}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="theme-width">

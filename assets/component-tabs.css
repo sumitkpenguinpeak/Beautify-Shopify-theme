@@ -8,7 +8,7 @@
   --header-padding-bottom: 0;
   --header-padding-bottom-mobile: 1.2rem;
 }
-.tabs__nav-wrap {
+.btfy-tabs__nav-wrap {
   display: flex;
   position: relative;
   overflow: hidden;
@@ -112,7 +112,7 @@
   .tabs__header {
     margin-bottom: var(--header-padding-bottom-mobile);
   }
-  .tabs__nav-wrap {
+  .btfy-tabs__nav-wrap {
     justify-content: center;
     min-width: 100%;
     max-width: calc(100% + 3rem);

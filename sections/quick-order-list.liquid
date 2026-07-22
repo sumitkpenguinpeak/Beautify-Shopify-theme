@@ -19,7 +19,7 @@
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
 %}
-<div class="quick-order-list section btfy-section-padding section-{{ section.id }} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+<div class="quick-order-list section section-padding section-{{ section.id }} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
   <div class="theme-width">
     {% render 'section-heading',
       section_settings: section.settings,

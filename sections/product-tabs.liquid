@@ -50,7 +50,7 @@
 %}
 
 <div
-  class="section section-{{ section.id }} btfy-section-padding section--product-tabs theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} section-padding btfy-section--product-tabs theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
@@ -80,7 +80,7 @@
         {%- if header_layout == 'horizontal' -%}
           {% render 'section-heading', section_settings: section.settings %}
         {%- endif -%}
-        <div class="tabs__nav-wrap">
+        <div class="btfy-tabs__nav-wrap">
           <div class="tabs__nav" role="tablist">
             {%- for block in section.blocks -%}
               {%- liquid
@@ -107,7 +107,7 @@
           </div>
         </div>
         {%- if section.settings.button_label != blank and show_all_button_on_top -%}
-          <div class="btfy-section__btn hidden md:block">
+          <div class="section__btn hidden md:block">
             <a
               class="btn {{ section.settings.button_style }}"
               {% if section.settings.button_link != blank %}

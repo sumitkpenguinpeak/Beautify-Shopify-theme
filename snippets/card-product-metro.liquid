@@ -143,20 +143,11 @@
     endif
   endif
 -%}
-{% comment %}
-  {%- if is_metro_item -%}
-    {%- capture current_image_sizes -%}
-    (max-width: 767px) calc(100vw - 30px),
-    (max-width: 1023px) calc(((100vw - 30px) / {{ columns_tablet }}) * 2),
-    {{ settings.page_width | divided_by: columns_desktop | times: 2 }}px
-    {%- endcapture -%}
-  {%- endif -%}
-{% endcomment %}
 <div
-  class="btfy-product-card btfy-product-card-style-{{ settings.pcard_style }}{% if settings.pcard_style == 'card' %} btfy-color-{{ settings.pcard_color_scheme }}{% endif %}{{ card_wrapper_class }}"
+  class="btfy-product-card product-card-style-{{ settings.pcard_style }}{% if settings.pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}{{ card_wrapper_class }}"
 >
   <div class="btfy-product-card__wrapper h-full">
-    <div class="btfy-product-card__image-wrapper{% if second_image == blank %} btfy-product-card__image-wrapper--main-only{% endif %} btfy-color-{{ settings.pcard_overlay_color_scheme }} btfy-bg-none">
+    <div class="btfy-product-card__image-wrapper{% if second_image == blank %} btfy-product-card__image-wrapper--main-only{% endif %} color-{{ settings.pcard_overlay_color_scheme }} bg-none">
       <a href="{{ product.url }}" aria-label="{{ product.title | escape }}" tabindex="-1">
         <motion-element data-motion="zoom-out-sm" class="block">
           {%- if featured_media -%}
@@ -178,7 +169,7 @@
                     assign test_class = test_class | append: ' sm-metro'
                   endif
                 %}
-                <picture class="btfy-bg-image{{ test_class }}">
+                <picture class="bg-image{{ test_class }}">
                   {%- if landscape_image != blank -%}
                     {%- capture landscape_srcset -%}
                       {{ landscape_image | image_url: width: '355x' }} 355w,
@@ -244,7 +235,7 @@
                 </div>
               {%- endunless -%}
             {%- else -%}
-              <div class="btfy-media btfy-media--adapt" style="--media-ratio: {{ image_ratio }};">
+              <div class="media media--adapt" style="--media-ratio: {{ image_ratio }};">
                 {% render 'video',
                   video: product.featured_media,
                   muted: true,
@@ -256,7 +247,7 @@
               </div>
             {%- endunless -%}
           {%- else -%}
-            <div class="btfy-product-card__image btfy-product-card__image--main" style="--aspect-ratio: {{ image_ratio }};">
+            <div class="product-card__image product-card__image--main" style="--aspect-ratio: {{ image_ratio }};">
               {{- 'product-1' | placeholder_svg_tag: 'placeholder-svg' -}}
             </div>
           {%- endif -%}
@@ -288,7 +279,7 @@
                   assign sale_badge = 'products.product.on_sale' | t
               endcase
             -%}
-            <span class="btfy-f-badge btfy-f-badge--sale" aria-hidden="true">{{- sale_badge -}}</span>
+            <span class="f-badge f-badge--sale" aria-hidden="true">{{- sale_badge -}}</span>
           {%- endif -%}
           {%- for tag in custom_tags -%}
             {%- liquid
@@ -344,7 +335,7 @@
               {% endif %}
               class="btfy-product-card__atc btfy-product-card__action-button btn {{ settings.pcard_button_style }}"
             >
-              <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
+              <span class="btfy-product-card__atc-icon btfy-product-card__action-icon inline-flex md:hidden">
                 {%- render 'icon-cart', name: settings.cart_icon -%}
               </span>
               <span class="btfy-product-card__atc-text btfy-product-card__action-text">
@@ -356,7 +347,7 @@
           {%- form 'product',
             product,
             id: product_form_id,
-            class: 'product-card__actions product-card__main-actions',
+            class: 'btfy-product-card__actions btfy-product-card__main-actions',
             novalidate: 'novalidate',
             data-type: 'add-to-cart-form',
             is: 'product-form'
@@ -365,7 +356,7 @@
               type="hidden"
               name="id"
               value="{{- variant.id -}}"
-              class="btfy-product-variant-id"
+              class="product-variant-id"
               {% if variant.available == false %}
                 disabled
               {% endif %}
@@ -378,12 +369,12 @@
                 disabled
               {% endif %}
               aria-label="{{ 'products.product.add_to_cart' | t }}"
-              class="btfy-product-card__atc btfy-product-card__action-button btfy-btn {{ settings.pcard_button_style }}"
+              class="btfy-product-card__atc btfy-product-card__action-button btn {{ settings.pcard_button_style }}"
             >
               <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
                 {%- render 'icon-cart', name: settings.cart_icon -%}
               </span>
-              <span class="btfy-product-card__atc-text btfy-product-card__action-text">
+              <span class="product-card__atc-text product-card__action-text">
                 {%- if variant.available -%}
                   {{- 'products.product.add_to_cart' | t -}}
                 {%- else -%}
@@ -396,7 +387,7 @@
         {%- endif -%}
       {%- endif -%}
     </div>
-    <div class="btfy-product-card__info btfy-text-{{ settings.pcard_content_alignment }}">
+    <div class="btfy-product-card__info text-{{ settings.pcard_content_alignment }}">
       {%- if show_vendor -%}
         <p class="btfy-product-card__vendor text-sm m-0">
           <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -409,7 +400,7 @@
           {{ product.type }}
         </p>
       {%- endif -%}
-      <h3 class="btfy-product-card__title text-pcard-title">
+      <h3 class="btfy-product-card__title btfy-text-pcard-title">
         <a class="reversed-link" href="{{ product.url }}">{{- product.title -}}</a>
       </h3>
       {% render 'price', product: product, alignment: settings.pcard_content_alignment %}

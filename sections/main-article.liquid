@@ -28,7 +28,7 @@
   itemscope
   itemtype="http://schema.org/BlogPosting"
 >
-  <div class="article__main-info btfy-section-padding" style="--section-padding-bottom: 10rem;">
+  <div class="article__main-info section-padding" style="--section-padding-bottom: 10rem;">
     {%- if article.image -%}
       {% liquid
         assign image_alt = article.image.alt | escape
@@ -191,7 +191,7 @@
       assign show_excerpt = section.settings.show_excerpt
       assign show_button = section.settings.show_button
     -%}
-    <div class="related-posts section btfy-section-padding" style="--section-padding-bottom: 10rem;">
+    <div class="related-posts section section-padding" style="--section-padding-bottom: 10rem;">
       <div class="theme-width">
         <div class="section__header text-center">
           <h2 class="{{ section.settings.related_heading_size }}">{{ 'blogs.article.related_posts_title' | t }}</h2>
@@ -223,13 +223,13 @@
   {%- endif -%}
 
   {%- if blog.comments_enabled? -%}
-    <div class="article-comment section btfy-section-padding" style="--section-padding-bottom: 10rem;">
+    <div class="article-comment section section-padding" style="--section-padding-bottom: 10rem;">
       <div
         id="comments"
         class="theme-width theme-width--narrow"
       >
         <div class="article-comment__wrapper">
-          <div class="article-comment__comment-area section btfy-section-padding" style="--section-padding-bottom: 10rem;">
+          <div class="article-comment__comment-area section section-padding" style="--section-padding-bottom: 10rem;">
             {%- if article.comments_count > 0 -%}
               {%- assign anchor_id = '#Comments-' | append: article.id -%}
 
