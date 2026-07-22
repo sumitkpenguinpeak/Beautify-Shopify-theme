@@ -132,7 +132,7 @@
       ],
       "settings": {
         "color_scheme": "",
-        "header_layout": "horizontal",
+        "header_layout": "vertical",
         "heading": "",
         "heading_size": "h1",
         "heading_tag": "h2",
