@@ -132,7 +132,7 @@
       ],
       "settings": {
         "color_scheme": "",
-        "header_layout": "horizontal",
+        "header_layout": "vertical",
         "heading": "",
         "heading_size": "h1",
         "heading_tag": "h2",
@@ -142,7 +142,7 @@
         "column_gap": "extra-small",
         "row_gap": "inherit",
         "grid_layout": "standard",
-        "pcard_image_ratio": "",
+        "pcard_image_ratio": "adapt",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "show_all_button_on_top": true,
