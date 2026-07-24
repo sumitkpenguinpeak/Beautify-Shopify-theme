@@ -6,7 +6,7 @@ if (!customElements.get('testimonials-component')) {
 
     connectedCallback() {
       this.selectors = {
-        sliderWrapper: '.testimonials__items',
+        sliderWrapper: '.btfy-testimonials__items',
         pagination: '.swiper-pagination',
         nextEl: '.swiper-btn-next',
         prevEl: '.swiper-btn-prev',
