@@ -24,7 +24,7 @@
   divider_width: section.settings.divider_width
 %}
 <div
-  class="section section-{{ section.id }} section-padding section--custom-content{% if section.settings.container != 'full' %} theme-width{% endif %} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} section-padding btfy-section--custom-content{% if section.settings.container != 'full' %} theme-width{% endif %} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
@@ -67,7 +67,7 @@
           data-block-type="{{ block.type }}"
           {{ block.shopify_attributes }}
         >
-          <div class="custom__block custom__block--{{ block.type }} w-full text-{{ block.settings.content_alignment }}{% if enable_sticky_column %} sticky-element{% endif %}{% if block.settings.full_column_height %} h-full{% endif %}">
+          <div class="btfy-custom__block custom__block--{{ block.type }} w-full text-{{ block.settings.content_alignment }}{% if enable_sticky_column %} sticky-element{% endif %}{% if block.settings.full_column_height %} h-full{% endif %}">
             {%- case block.type -%}
               {%- when 'text' -%}
                 {%- assign motion_delay = 50 -%}
@@ -270,7 +270,7 @@
                 (max-width: 767px) calc(100vw - 3rem), (max-width: 1023px) calc((100vw - 3rem) / 2), calc(min(100vw, {{ settings.page_width }}px) * {{ block_width_int }})
                 {%- endif -%}
                 {%- endcapture -%}
-                <div class="custom-card-collection card-width-{{ block.settings.card_width }}">
+                <div class="btfy-custom-card-collection card-width-{{ block.settings.card_width }}">
                   <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
                     {% render 'card-collection',
                       collection: collection,
@@ -287,7 +287,7 @@
               {%- when 'collections' -%}
                 {{ 'component-collection-item-slider.css' | asset_url | stylesheet_tag }}
                 <script src="{{ 'collection-item-slider.js' | asset_url }}" defer="defer"></script>
-                <div class="collection-list__sliders block w-full">
+                <div class="btfy-collection-list__sliders block w-full">
                   {%- if block.settings.collection_list != blank -%}
                     {%- for collection in block.settings.collection_list -%}
                       {% render 'collection-item-slider', collection: collection, block: block %}
@@ -315,14 +315,14 @@
                   endif
                   assign motion_delay = 50
                 -%}
-                <div class="custom-image-with-text__wrapper flex flex-col lg:flex-row items-{{ block.settings.alignment }}{% if block.settings.image_badge_text == blank %} custom-image-with-text--no-badge{% endif %}">
+                <div class="btfy-custom-image-with-text__wrapper flex flex-col lg:flex-row items-{{ block.settings.alignment }}{% if block.settings.image_badge_text == blank %} btfy-custom-image-with-text--no-badge{% endif %}">
                   <div
-                    class="custom-image-with-text__image relative"
+                    class="btfy-custom-image-with-text__image relative"
                   >
                     {%- if block.settings.image_badge_text != blank -%}
                       <motion-element
                         data-motion="zoom-out-sm"
-                        class="custom-image-with-text__badge absolute flex justify-center items-center color-{{ block.settings.image_badge_color_scheme }}"
+                        class="btfy-custom-image-with-text__badge absolute flex justify-center items-center color-{{ block.settings.image_badge_color_scheme }}"
                       >
                         <div class="text-center font-heading">{{- block.settings.image_badge_text -}}</div>
                       </motion-element>
@@ -351,7 +351,7 @@
                       </motion-element>
                     </div>
                   </div>
-                  <div class="custom-image-with-text__text">
+                  <div class="btfy-custom-image-with-text__text">
                     <div class="rich-text">
                       {%- if block.settings.subheading != blank -%}
                         <motion-element
@@ -411,7 +411,7 @@
                   assign image = block.settings.image
                   assign motion_delay = 50
                 -%}
-                <div class="custom-text-card-with-image relative h-full flex items-center blocks-radius color-{{ block.settings.color_scheme }}">
+                <div class="btfy-custom-text-card-with-image relative h-full flex items-center blocks-radius color-{{ block.settings.color_scheme }}">
                   <div class="rich-text text-center w-full">
                     {%- if block.settings.subheading != blank -%}
                       <motion-element
@@ -439,7 +439,7 @@
                         endif
                       -%}
                       <motion-element
-                        class="custom-text-card-with-image__image block"
+                        class="btfy-custom-text-card-with-image__image block"
                         data-motion="fade-up"
                         data-motion-delay="{{ motion_delay }}"
                         style="--image-width: {{ block.settings.image_width }}%"

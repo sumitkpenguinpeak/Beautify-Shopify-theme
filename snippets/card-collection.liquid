@@ -52,17 +52,17 @@
     endif
   endif
 -%}
-<div class="collection-card collection-card--{{ card_style }}{% if has_bg %} collection-card--has-bg blocks-radius{% endif %} color-{{ color_scheme }}">
+<div class="btfy-collection-card btfy-collection-card--{{ card_style }}{% if has_bg %} btfy-collection-card--has-bg blocks-radius{% endif %} color-{{ color_scheme }}">
   <a
     {% if collection != blank %}
       href="{{ collection.url }}"
     {% else %}
       role="link" aria-disabled="true"
     {% endif %}
-    class="collection-card__wrapper relative flex flex-col gap-6 focus-inset"
+    class="btfy-collection-card__wrapper relative flex flex-col gap-6 focus-inset"
     aria-label="{{ collection_title | default: default_label }}"
   >
-    <div class="collection-card__image media-wrapper hover-wrapper{% unless has_bg %} blocks-radius{% endunless %}">
+    <div class="btfy-collection-card__image btfy-media-wrapper hover-wrapper{% unless has_bg %} blocks-radius{% endunless %}">
       <motion-element data-motion="zoom-out-sm" class="block" style="--aspect-ratio: {{ image_ratio }};">
         {%- if featured_image != blank -%}
           {%- liquid
@@ -80,19 +80,19 @@
               is: 'image-lazy'
           }}
         {%- else -%}
-          <div class="collection-card__placeholder hover-scale-up">
+          <div class="btfy-collection-card__placeholder hover-scale-up">
             {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
             {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
           </div>
         {%- endif -%}
       </motion-element>
     </div>
-    <div class="collection-card__inner{% if card_style == 'style-2' %} content-overlay content-overlay--bottom-left{% endif %} pointer-events-none">
-      <div class="collection-card__info flex items-center gap-2 w-full">
-        <div class="collection-card__summary flex-1 flex flex-col gap-1 text-{{ content_alignment | default: 'left' }}">
-          <h3 class="collection-card__title {{ heading_size }}">{{ collection_title | default: default_label }}</h3>
+    <div class="btfy-collection-card__inner{% if card_style == 'style-2' %} content-overlay content-overlay--bottom-left{% endif %} pointer-events-none">
+      <div class="btfy-collection-card__info flex items-center gap-2 w-full">
+        <div class="btfy-collection-card__summary flex-1 flex flex-col gap-1 text-{{ content_alignment | default: 'left' }}">
+          <h3 class="btfy-collection-card__title {{ heading_size }}">{{ collection_title | default: default_label }}</h3>
           {%- if show_product_count -%}
-            <div class="collection-card__count text-subtext">
+            <div class="btfy-collection-card__count text-subtext">
               {{ 'collections.general.collection_items' | t: title: all_products_count }}
             </div>
           {%- endif -%}

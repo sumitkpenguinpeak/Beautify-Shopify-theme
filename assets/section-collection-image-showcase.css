@@ -62,7 +62,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
   }
-  .cis__image .media-wrapper {
+  .cis__image .btfy-media-wrapper {
     animation: none;
   }
 }

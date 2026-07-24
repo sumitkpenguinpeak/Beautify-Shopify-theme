@@ -40,7 +40,7 @@
 (max-width: 767px) calc((100vw - 30px) / {{ columns_mobile }}), (max-width: 1023px) calc((58vw - 60px) / {{ columns }}), 345px
 {%- endcapture -%}
 <collection-item-slider
-  class="collection-item-slider flex flex-col"
+  class="btfy-collection-item-slider flex flex-col"
   data-block-id="{{ block.id }}"
   data-enable-slider-desktop="{{ enable_slider_desktop }}"
   data-enable-slider-mobile="{{ enable_slider_mobile }}"
@@ -82,8 +82,8 @@
     </div>
   {%- endif -%}
   <grid-list class="block w-full">
-    <div class="collection-item-slider__products-wrap swiper swiper-equal-height{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ columns_mobile }}-cols{% endif %}">
-      <div class="collection-item-slider__products swiper-wrapper f-grid f-grid-{{ columns_mobile }}-cols md:f-grid-{{ columns_tablet }}-cols lg:f-grid-{{ columns }}-cols f-grid--gap-{{ block.settings.column_gap }} f-grid--row-gap-{{ block.settings.row_gap }}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
+    <div class="btfy-collection-item-slider__products-wrap swiper swiper-equal-height{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ columns_mobile }}-cols{% endif %}">
+      <div class="btfy-collection-item-slider__products swiper-wrapper f-grid f-grid-{{ columns_mobile }}-cols md:f-grid-{{ columns_tablet }}-cols lg:f-grid-{{ columns }}-cols f-grid--gap-{{ block.settings.column_gap }} f-grid--row-gap-{{ block.settings.row_gap }}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
         {%- for product in collection.products limit: products_to_display -%}
           <div class="f-column swiper-slide">
             {% render 'card-product',
@@ -106,7 +106,7 @@
     </div>
   </grid-list>
   {%- if button_label != blank -%}
-    <div class="collection-item-slider__footer flex items-center justify-center">
+    <div class="btfy-collection-item-slider__footer flex items-center justify-center">
       <a
         class="btn {{ button_style }}"
         {% if button_link != blank %}

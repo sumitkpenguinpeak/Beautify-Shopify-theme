@@ -1,4 +1,4 @@
-.collection-item-slider {
+.btfy-collection-item-slider {
   gap: 2.4rem;
 }
 .collection-item-slider + .collection-item-slider {
@@ -9,10 +9,10 @@
 }
 
 @media (min-width: 768px) {
-  .collection-item-slider {
+  .btfy-collection-item-slider {
     gap: 3.2rem;
   }
-  .collection-item-slider + .collection-item-slider {
+  .btfy-collection-item-slider + .btfy-collection-item-slider {
     margin-top: 6rem;
   }
   .collection-item-slider__header .swiper-button-prev,

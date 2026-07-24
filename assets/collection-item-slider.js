@@ -13,8 +13,8 @@ if (!customElements.get('collection-item-slider')) {
         if (!this.enableSliderDesktop && !this.enableSliderMobile) return;
 
         this.selectors = {
-          productsWrap: '.collection-item-slider__products-wrap',
-          products: '.collection-item-slider__products',
+          productsWrap: '.btfy-collection-item-slider__products-wrap',
+          products: '.btfy-collection-item-slider__products',
         };
 
         this.classes = {

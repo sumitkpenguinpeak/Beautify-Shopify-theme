@@ -52,7 +52,7 @@
       </div>
     {%- endif -%}
     {%- paginate collections by paginate_by -%}
-      <grid-list class="collection-list__items f-grid f-grid-{{ columns_mobile_int }}-cols md:f-grid-{{ columns_tablet }}-cols lg:f-grid-{{ columns_desktop }}-cols f-grid--gap-{{ section.settings.column_gap }}">
+      <grid-list class="btfy-collection-list__items f-grid f-grid-{{ columns_mobile_int }}-cols md:f-grid-{{ columns_tablet }}-cols lg:f-grid-{{ columns_desktop }}-cols f-grid--gap-{{ section.settings.column_gap }}">
         {%- for collection in collections -%}
           <div class="f-column">
             {% render 'card-collection',

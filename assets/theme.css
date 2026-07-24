@@ -1485,7 +1485,7 @@ video-element[suspended] ~ * {
   width: 100%;
   height: 100%;
 }
-.media .media-wrapper {
+.media .btfy-media-wrapper {
   position: absolute;
   top: 0;
   right: 0;
@@ -1563,7 +1563,7 @@ video-element[suspended] ~ * {
   .media--adapt {
     padding-block-start: calc(100% / (0 + var(--media-ratio-mobile, var(--media-ratio, 1))));
   }
-  .media-wrapper {
+  .btfy-media-wrapper {
     --play-button-size: 7.2rem;
     --play-button-icon-size: 3rem;
   }
@@ -5984,19 +5984,19 @@ input:is([type=radio])::after {
   cursor: pointer;
 }
 
-.media-mover .media-wrapper {
+.media-mover .btfy-media-wrapper {
   animation: move-up-down var(--mover-duration, 2s) linear infinite alternate;
 }
 
-.media-mover-slower .media-wrapper {
+.media-mover-slower .btfy-media-wrapper {
   animation: move-up-down var(--mover-duration, 3s) linear infinite alternate;
 }
 
-.media-mover-reverse .media-wrapper {
+.media-mover-reverse .btfy-media-wrapper {
   animation: move-up-down-reverse var(--mover-duration, 2s) linear infinite alternate;
 }
 
-.media-mover-reverse-slower .media-wrapper {
+.media-mover-reverse-slower .btfy-media-wrapper {
   animation: move-up-down-reverse var(--mover-duration, 3s) linear infinite alternate;
 }
 
@@ -6083,22 +6083,22 @@ input:is([type=radio])::after {
     padding: var(--v-spacing-mobile) calc(var(--h-spacing-mobile) / 2);
   }
 }
-.promotion__item-collection .collection-card {
+.promotion__item-collection .btfy-collection-card {
   width: 34rem;
 }
 .promotion__item--custom-width {
   --card-tablet-width: calc(var(--card-desktop-width) * var(--card-tablet-width-scale, 1));
 }
-.promotion__item--custom-width .collection-card {
+.promotion__item--custom-width .btfy-collection-card {
   width: var(--card-mobile-width);
 }
 @media (min-width: 768px) {
-  .promotion__item--custom-width .collection-card {
+  .promotion__item--custom-width .btfy-collection-card {
     width: var(--card-tablet-width);
   }
 }
 @media (min-width: 1280px) {
-  .promotion__item--custom-width .collection-card {
+  .promotion__item--custom-width .btfy-collection-card {
     width: var(--card-desktop-width);
   }
 }

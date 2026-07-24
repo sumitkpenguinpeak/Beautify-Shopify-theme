@@ -1,4 +1,4 @@
-.multicolumn-card__image {
+.btfy-multicolumn-card__image {
   display: inline-block;
   vertical-align: top;
   max-width: 100%;
@@ -6,25 +6,25 @@
   margin-bottom: var(--image-spacing-bottom, 2.4rem);
 }
 @media (max-width: 767.98px) {
-  .multicolumn-card__image {
+  .btfy-multicolumn-card__image {
     width: var(--image-width-mobile, var(--image-width));
     margin-bottom: var(--image-spacing-bottom-mobile, 2rem);
   }
 }
-.multicolumn-card__info .multicolumn-card__title + .multicolumn-card__text {
+.btfy-multicolumn-card__info .btfy-multicolumn-card__title + .btfy-multicolumn-card__text {
   margin-top: 0.8rem;
 }
-.multicolumn-card__info .btn {
+.btfy-multicolumn-card__info .btn {
   margin-top: 1.6rem;
 }
-.multicolumn-card__info > *:first-child {
+.btfy-multicolumn-card__info > *:first-child {
   margin-top: 0 !important;
 }
 @media (max-width: 767.98px) {
-  .multicolumn-card__info .multicolumn-card__title + .multicolumn-card__text {
+  .btfy-multicolumn-card__info .btfy-multicolumn-card__title + .btfy-multicolumn-card__text {
     margin-top: 0.4rem;
   }
-  .multicolumn-card__info .btn {
+  .btfy-multicolumn-card__info .btn {
     margin-top: 1.2rem;
   }
 }
@@ -57,7 +57,7 @@
     gap: 1.6rem;
     text-align: start;
   }
-  .multicolumn-card-mobile-horizontal .multicolumn-card__image {
+  .multicolumn-card-mobile-horizontal .btfy-multicolumn-card__image {
     flex-shrink: 0;
     margin: 0;
     width: 4rem;

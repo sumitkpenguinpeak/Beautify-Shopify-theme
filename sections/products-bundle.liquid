@@ -22,8 +22,8 @@
 %}
 
 <div class="products-bundle theme-width section-padding color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
-  <products-bundle class="products-bundle__wrapper f-grid items-center lg:f-grid-2-cols">
-    <div class="products-bundle__image relative overflow-hidden blocks-radius">
+  <products-bundle class="btfy-products-bundle__wrapper f-grid items-center lg:f-grid-2-cols">
+    <div class="btfy-products-bundle__image relative overflow-hidden blocks-radius">
       <motion-element
         class="block"
         data-motion="zoom-out-sm"
@@ -58,7 +58,7 @@
           <a
             href="{{ card_product.url }}"
             data-block-id="{{ block.id }}"
-            class="product-bundle-hotspot z-1 absolute"
+            class="btfy-product-bundle-hotspot z-1 absolute"
             style="--horizontal: {{ block.settings.horizontal_position }}%; --vertical: {{ block.settings.vertical_position }}%;"
             {{ block.shopify_attributes }}
           >
@@ -73,7 +73,7 @@
         {%- else -%}
           <div
             data-block-id="{{ block.id }}"
-            class="product-bundle-hotspot z-1 absolute"
+            class="btfy-product-bundle-hotspot z-1 absolute"
             style="--horizontal: {{ block.settings.horizontal_position }}%; --vertical: {{ block.settings.vertical_position }}%;"
             {{ block.shopify_attributes }}
           >
@@ -88,7 +88,7 @@
         {%- endif -%}
       {%- endfor -%}
     </div>
-    <div class="products-bundle__content">
+    <div class="btfy-products-bundle__content">
       {% render 'section-heading', section_settings: section.settings, motion_delay: motion_delay %}
       <motion-element data-motion="fade-up" data-motion-delay="{{ motion_delay }}" class="grid">
         {%- for block in section.blocks -%}
@@ -97,15 +97,15 @@
           -%}
           <product-bundle-variant-selector
             data-block-id="{{ block.id }}"
-            class="product-bundle-card flex items-center gap-4"
+            class="btfy-product-bundle-card flex items-center gap-4"
           >
             {%- if card_product != blank -%}
               {%- liquid
                 assign has_products = true
               -%}
-              <div class="product-bundle-card__count flex items-center justify-center">{{ forloop.index }}</div>
+              <div class="btfy-product-bundle-card__count flex items-center justify-center">{{ forloop.index }}</div>
               {%- if card_product.featured_image -%}
-                <div class="product-bundle-card__image">
+                <div class="btfy-product-bundle-card__image">
                   <a href="{{ card_product.url }}" class="media-wrapper blocks-radius-md focus-inset">
                     <motion-element class="block" data-motion="zoom-out-sm">
                       {{
@@ -121,8 +121,8 @@
                   </a>
                 </div>
               {%- endif -%}
-              <div class="product-bundle-card__details flex flex-col flex-grow gap-2">
-                <div class="product-bundle-card__title flex flex-col md:flex-row items-start justify-between gap-1">
+              <div class="btfy-product-bundle-card__details flex flex-col flex-grow gap-2">
+                <div class="btfy-product-bundle-card__title flex flex-col md:flex-row items-start justify-between gap-1">
                   <a class="text-pcard-title" href="{{ card_product.url }}">{{ card_product.title }}</a>
                   {%- render 'price',
                     product: card_product,
@@ -132,7 +132,7 @@
                   -%}
                 </div>
                 {%- if card_product.available -%}
-                  <div class="product-bundle-card__option relative flex items-center{% if card_product.has_only_default_variant %} hidden{% endif %}">
+                  <div class="btfy-product-bundle-card__option relative flex items-center{% if card_product.has_only_default_variant %} hidden{% endif %}">
                     <select-element class="select-element relative flex items-center gap-2">
                       <select
                         name="id"
@@ -165,15 +165,15 @@
                 {%- endif -%}
               </div>
             {%- else -%}
-              <div class="product-bundle-card__count flex items-center justify-center">{{ forloop.index }}</div>
-              <div class="product-bundle-card__image blocks-radius-md">
+              <div class="btfy-product-bundle-card__count flex items-center justify-center">{{ forloop.index }}</div>
+              <div class="btfy-product-bundle-card__image blocks-radius-md">
                 <motion-element class="block" data-motion="zoom-out-sm">
                   {%- assign index = forloop.index | modulo: 3 | plus: 1 -%}
                   {{ 'product-' | append: index | placeholder_svg_tag: 'placeholder-svg' }}
                 </motion-element>
               </div>
-              <div class="product-bundle-card__details">
-                <div class="product-bundle-card__title">
+              <div class="btfy-product-bundle-card__details">
+                <div class="btfy-product-bundle-card__title">
                   <p class="h5">{{ 'onboarding.product_title' | t }}</p>
                 </div>
               </div>
@@ -185,7 +185,7 @@
         <motion-element
           data-motion="fade-up"
           data-motion-delay="150"
-          class="products-bundle__button flex flex-col justify-center items-center gap-4"
+          class="btfy-products-bundle__button flex flex-col justify-center items-center gap-4"
         >
           <div class="product-form__error-message blocks-radius-md alert alert--error" role="alert" hidden></div>
           <button type="button" class="btn btn--primary">

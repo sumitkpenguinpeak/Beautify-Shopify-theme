@@ -21,7 +21,7 @@
 %}
 
 <div
-  class="section section-padding feature-list color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-padding btfy-feature-list color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="theme-width">
@@ -65,22 +65,22 @@
       </div>
     {% endif %}
     <div class="section__content text-{{ section.settings.item_alignment }}{% if section.settings.swipe_on_mobile %} swipe-mobile{% endif %}">
-      <div class="feature-list__items inline-flex justify-{{ section.settings.item_alignment | replace: 'left', 'start' | replace: 'right', 'end' }}{% if section.settings.swipe_on_mobile %} flex-nowrap md:flex-wrap{% else %} flex-wrap{% endif %}">
+      <div class="btfy-feature-list__items inline-flex justify-{{ section.settings.item_alignment | replace: 'left', 'start' | replace: 'right', 'end' }}{% if section.settings.swipe_on_mobile %} flex-nowrap md:flex-wrap{% else %} flex-wrap{% endif %}">
         {%- for block in section.blocks -%}
           {%- assign item_motion_delay = item_motion_delay | plus: 50 -%}
           <motion-element
             data-motion="fade-up"
             data-motion-delay="{{ item_motion_delay }}"
-            class="feature-item flex items-center gap-x-2 rounded color-{{ block.settings.color_scheme }}"
+            class="btfy-feature-item flex items-center gap-x-2 rounded color-{{ block.settings.color_scheme }}"
             {{ block.shopify_attributes }}
           >
             {% if block.settings.icon != 'none' %}
-              <div class="feature-item__icon flex shrink-0 rounded btn btn--icon {{ block.settings.icon_style }}">
+              <div class="btfy-feature-item__icon flex shrink-0 rounded btn btn--icon {{ block.settings.icon_style }}">
                 {% render 'icons', icon: block.settings.icon, size: section.settings.icon_size %}
               </div>
             {%- endif -%}
             {% if block.settings.text != blank %}
-              <div class="feature-item__text">{{ block.settings.text }}</div>
+              <div class="btfy-feature-item__text">{{ block.settings.text }}</div>
             {%- endif -%}
           </motion-element>
         {%- endfor -%}

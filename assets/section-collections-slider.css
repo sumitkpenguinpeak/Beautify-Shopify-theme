@@ -3,7 +3,7 @@
   opacity: 0.4;
   width: fit-content;
 }
-.text-hovering .collection-card__count {
+.text-hovering .btfy-collection-card__count {
   font-size: 1.8rem;
   line-height: 2.8rem;
 }
@@ -26,7 +26,7 @@
 .collections-slider .collection-media__desc p {
   margin: 0;
 }
-.collections-slider .collection-card__count {
+.collections-slider .btfy-collection-card__count {
   vertical-align: super;
   margin-inline-start: 1.2rem;
 }

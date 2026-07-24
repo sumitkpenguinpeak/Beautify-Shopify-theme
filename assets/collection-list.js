@@ -6,7 +6,7 @@ if (!customElements.get('collection-list')) {
 
     connectedCallback() {
       this.selectors = {
-        sliderWrapper: '.collection-list__items',
+        sliderWrapper: '.btfy-collection-list__items',
         pagination: '.swiper-pagination',
         nextEl: '.swiper-btn-next',
         prevEl: '.swiper-btn-prev',

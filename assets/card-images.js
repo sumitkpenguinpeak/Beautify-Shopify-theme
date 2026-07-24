@@ -6,7 +6,7 @@ if (!customElements.get('card-images')) {
 
     connectedCallback() {
       this.selectors = {
-        sliderWrapper: '.card-images__items',
+        sliderWrapper: '.btfy-card-images__items',
         pagination: '.swiper-pagination',
         nextEl: '.swiper-btn-next',
         prevEl: '.swiper-btn-prev',

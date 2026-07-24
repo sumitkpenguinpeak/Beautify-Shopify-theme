@@ -30,7 +30,7 @@
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="theme-width">
-    <div class="image-with-text__wrapper hero hero--{{ section.settings.image_height }} f-grid f-grid-1-cols md:f-grid-2-cols f-grid--gap-none blocks-radius">
+    <div class="btfy-image-with-text__wrapper hero hero--{{ section.settings.image_height }} f-grid f-grid-1-cols md:f-grid-2-cols f-grid--gap-none blocks-radius">
       <parallax-element
         class="block overflow-hidden{% if color_inherit %} blocks-radius{% endif %}"
         {% if section.settings.enable_parallax %}
@@ -39,7 +39,7 @@
       >
         <motion-element data-motion="zoom-out" class="block w-full h-full">
           <div
-            class="image-with-text__media hero__media media-wrapper hover-wrapper"
+            class="btfy-image-with-text__media hero__media media-wrapper hover-wrapper"
             style="{% if section.settings.image_height == 'adapt' %}--aspect-ratio: {{ section.settings.image.aspect_ratio | default: '16/9' }};{% endif %}"
           >
             {% if section.settings.image != blank %}
@@ -62,8 +62,8 @@
           </div>
         </motion-element>
       </parallax-element>
-      <div class="image-with-text__inner md:flex items-{{ section.settings.desktop_content_position }} text-{{ section.settings.mobile_content_alignment }} md:text-{{ section.settings.desktop_content_alignment }} color-{{ section.settings.color_scheme }}">
-        <div class="image-with-text__content rich-text">
+      <div class="btfy-image-with-text__inner md:flex items-{{ section.settings.desktop_content_position }} text-{{ section.settings.mobile_content_alignment }} md:text-{{ section.settings.desktop_content_alignment }} color-{{ section.settings.color_scheme }}">
+        <div class="btfy-image-with-text__content rich-text">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'subheading' %}

@@ -91,12 +91,12 @@
           data-motion="fade-up"
           data-motion-delay="{{ motion_delay }}"
         >
-          <div class="multicolumn__items f-grid f-grid-{{ columns_mobile_int }}-cols md:f-grid-{{ columns_tablet }}-cols lg:f-grid-{{ columns_desktop }}-cols{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
+          <div class="btfy-multicolumn__items f-grid f-grid-{{ columns_mobile_int }}-cols md:f-grid-{{ columns_tablet }}-cols lg:f-grid-{{ columns_desktop }}-cols{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
             {%- for block in section.blocks -%}
               <div class="f-column" {{ block.shopify_attributes }}>
-                <div class="multicolumn-card multicolumn-card--image-{{ block.settings.image_width }} text-{{ section.settings.column_alignment }}">
+                <div class="btfy-multicolumn-card multicolumn-card--image-{{ block.settings.image_width }} text-{{ section.settings.column_alignment }}">
                   {% if block.settings.image != blank %}
-                    <div class="multicolumn-card__image media-wrapper hover-wrapper{% if block.settings.image_width == 'full' %} blocks-radius{% endif %}">
+                    <div class="btfy-multicolumn-card__image media-wrapper hover-wrapper{% if block.settings.image_width == 'full' %} blocks-radius{% endif %}">
                       <motion-element data-motion="zoom-out-sm" class="block w-full h-full">
                         {{
                           block.settings.image
@@ -110,14 +110,14 @@
                       </motion-element>
                     </div>
                   {% endif %}
-                  <div class="multicolumn-card__info">
+                  <div class="btfy-multicolumn-card__info">
                     {% if block.settings.title != blank %}
-                      <{{ block.settings.heading_tag }} class="multicolumn-card__title {{ block.settings.heading_size }}">
+                      <{{ block.settings.heading_tag }} class="btfy-multicolumn-card__title {{ block.settings.heading_size }}">
                         {{ block.settings.title }}
                       </{{ block.settings.heading_tag }}>
                     {% endif %}
                     {% if block.settings.text != blank %}
-                      <div class="multicolumn-card__text rich-text__text rte {{ block.settings.text_size }}">
+                      <div class="btfy-multicolumn-card__text rich-text__text rte {{ block.settings.text_size }}">
                         {{ block.settings.text }}
                       </div>
                     {% endif %}

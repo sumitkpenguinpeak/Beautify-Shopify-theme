@@ -12,7 +12,7 @@
   divider_width: section.settings.divider_width
 %}
 <div
-  class="section section-{{ section.id }} section-padding section--products-showcase{% if enable_slider %} slider-enabled{% endif %} theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} section-padding btfy-section--products-showcase{% if enable_slider %} slider-enabled{% endif %} theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
@@ -79,8 +79,8 @@
                   endif
                 -%}
                 <div class="swiper-slide">
-                  <div class="product-showcase grid f-grid-1-cols md:f-grid-2-cols">
-                    <div class="product-showcase__thumbnail">
+                  <div class="btfy-product-showcase grid f-grid-1-cols md:f-grid-2-cols">
+                    <div class="btfy-product-showcase__thumbnail">
                       <div class="media-wrapper blocks-radius">
                         <a
                           href="{{ product.url }}"
@@ -125,26 +125,26 @@
                         </a>
                       </div>
                     </div>
-                    <div class="product-showcase__info flex items-center">
-                      <div class="product-showcase__info-inner w-full">
+                    <div class="btfy-product-showcase__info flex items-center">
+                      <div class="btfy-product-showcase__info-inner w-full">
                         {%- if section.settings.pcard_show_vendor -%}
-                          <p class="product-showcase__vendor h5">
+                          <p class="btfy-product-showcase__vendor h5">
                             <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
                             {{ product.vendor }}
                           </p>
                         {%- endif -%}
                         {%- if section.settings.pcard_show_type -%}
-                          <p class="product-showcase__type h5">
+                          <p class="btfy-product-showcase__type h5">
                             <span class="visually-hidden">{{ 'accessibility.product_type' | t }}</span>
                             {{ product.type }}
                           </p>
                         {%- endif -%}
-                        <h3 class="product-showcase__title {{ section.settings.pcard_title_size }}">
+                        <h3 class="btfy-product-showcase__title {{ section.settings.pcard_title_size }}">
                           <a href="{{ product.url }}">{{- product.title -}}</a>
                         </h3>
                         {% render 'price', product: product, price_class: 'f-price--large' %}
                         {%- if section.settings.pcard_description_display != 'none' -%}
-                          <div class="product-showcase__description rte {{ section.settings.pcard_description_size }}">
+                          <div class="btfy-product-showcase__description rte {{ section.settings.pcard_description_size }}">
                             <div class="text-limit-{{ section.settings.pcard_description_display }}">
                               {%- if product.metafields.foxtheme.showcase_description.value != blank -%}
                                 {{ product.metafields.foxtheme.showcase_description.value }}
@@ -155,7 +155,7 @@
                           </div>
                         {%- endif -%}
                         {%- if section.settings.pcard_button_label != blank -%}
-                          <div class="product-showcase__view-details">
+                          <div class="btfy-product-showcase__view-details">
                             <a href="{{ product.url }}" class="btn btn--primary">
                               {{- section.settings.pcard_button_label -}}
                             </a>
@@ -174,8 +174,8 @@
               -%}
               {%- for i in (1..3) -%}
                 <div class="swiper-slide">
-                  <div class="product-showcase grid f-grid-1-cols md:f-grid-2-cols">
-                    <div class="product-showcase__thumbnail">
+                  <div class="btfy-product-showcase grid f-grid-1-cols md:f-grid-2-cols">
+                    <div class="btfy-product-showcase__thumbnail">
                       <div
                         class="media-wrapper bg-none blocks-radius"
                         style="--aspect-ratio: {{ image_ratio | default: 1 }}"
@@ -183,33 +183,33 @@
                         {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
                       </div>
                     </div>
-                    <div class="product-showcase__info flex items-center">
-                      <div class="product-showcase__info-inner w-full">
+                    <div class="btfy-product-showcase__info flex items-center">
+                      <div class="btfy-product-showcase__info-inner w-full">
                         {%- if section.settings.pcard_show_vendor -%}
-                          <p class="product-showcase__vendor h5">
+                          <p class="btfy-product-showcase__vendor h5">
                             <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
                             {{ 'products.product.vendor' | t }}
                           </p>
                         {%- endif -%}
                         {%- if section.settings.pcard_show_type -%}
-                          <p class="product-showcase__type h5">
+                          <p class="btfy-product-showcase__type h5">
                             <span class="visually-hidden">{{ 'accessibility.product_type' | t }}</span>
                             {{ 'products.product.type' | t }}
                           </p>
                         {%- endif -%}
-                        <h3 class="product-showcase__title {{ section.settings.pcard_title_size }}">
+                        <h3 class="btfy-product-showcase__title {{ section.settings.pcard_title_size }}">
                           {{- 'onboarding.product_title' | t -}}
                         </h3>
                         {% render 'price', price_class: 'f-price--large' %}
                         {%- if section.settings.pcard_description_display != 'none' -%}
-                          <div class="product-showcase__description rte {{ section.settings.pcard_description_size }}">
+                          <div class="btfy-product-showcase__description rte {{ section.settings.pcard_description_size }}">
                             <div class="text-limit-{{ section.settings.pcard_description_display }}">
                               {{- 'onboarding.product_description' | t -}}
                             </div>
                           </div>
                         {%- endif -%}
                         {%- if section.settings.pcard_button_label != blank -%}
-                          <div class="product-showcase__view-details">
+                          <div class="btfy-product-showcase__view-details">
                             <a class="btn btn--primary" disabled>
                               {{- section.settings.pcard_button_label -}}
                             </a>
