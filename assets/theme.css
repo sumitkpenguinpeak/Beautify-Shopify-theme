@@ -203,7 +203,7 @@
   margin: 0;
 }
 .section__description {
-  margin-top: 2.4rem;
+  margin-top: 1.5rem;
 }
 .section__description p {
   margin-top: 0;
@@ -3913,6 +3913,9 @@ input:is([type=radio])::after {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+}
+.btfy-product-card__image-wrapper .btfy-product-card__image[style*=--aspect-ratio]:before { 
+  padding-top: 120%;
 }
 .btfy-product-card__info .product-card__swatches {
   margin-top: 0.4rem;

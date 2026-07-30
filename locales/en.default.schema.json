@@ -540,6 +540,7 @@
           "sale_badge": {
             "content": "Sale badge"
           },
+
           "sold_out_badge": {
             "content": "Sold out badge"
           }
