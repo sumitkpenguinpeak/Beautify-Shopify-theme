@@ -195,101 +195,78 @@
           {%- endfor -%}
         </div>
       {%- endif -%}
-      {%- if enable_quick_view -%}
-        <button
-          class="btfy-product-card__quickview btn btn--icon-circle {{ settings.quickview_button_style }} no-js-hidden"
-          aria-label="{{ 'products.product.quick_view' | t }}"
-          aria-controls="{{ quick_view_modal_id }}"
-          aria-haspopup="dialog"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-magnifying-glass icon--large"
+      <div class="btfy-quick--action">
+        {%- if enable_quick_view -%}
+          <button
+            class="btfy-product-card__quickview btn btn--icon-circle {{ settings.quickview_button_style }} no-js-hidden"
+            aria-label="{{ 'products.product.quick_view' | t }}"
+            aria-controls="{{ quick_view_modal_id }}"
+            aria-haspopup="dialog"
           >
-            <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z"/>
-            <path d="M16.4434 16.4453L20.9997 21.0016"/>
-          </svg>
-        </button>
-      {%- endif -%}
-      {%- if enable_quick_add -%}
-        {%- liquid
-          assign product_form_id = 'quick-add-' | append: section.id | append: product.id
-          assign qty_rules = false
-          if variant.quantity_rule.min > 1 or variant.quantity_rule.max != null or variant.quantity_rule.increment > 1
-            assign qty_rules = true
-          endif
-        -%}
-        {%- if product.variants.size > 1 or qty_rules -%}
-          <div class="btfy-product-card__actions btfy-product-card__main-actions">
-            <{{ atc_button_tag }}
-              {% if settings.pcard_choose_options_actions == 'product_page' %}
-                href="{{- product_url -}}"
-              {% else %}
-                aria-controls="{{ quick_view_modal_id }}"
-                aria-haspopup="dialog"
-              {% endif %}
-              class="btfy-product-card__atc btfy-product-card__action-button btn {{ settings.pcard_button_style }}"
-            >
-              <span class="btfy-product-card__atc-icon btfy-product-card__action-icon inline-flex md:hidden">
-                {%- render 'icon-cart', name: settings.cart_icon -%}
-              </span>
-              <span class="btfy-product-card__atc-text btfy-product-card__action-text">
-                {{- 'products.product.choose_options' | t -}}
-              </span>
-            </{{ atc_button_tag }}>
-          </div>
-        {%- else -%}
-          {%- form 'product',
-            product,
-            id: product_form_id,
-            class: 'btfy-product-card__actions btfy-product-card__main-actions',
-            novalidate: 'novalidate',
-            data-type: 'add-to-cart-form',
-            is: 'product-form'
-          -%}
-            <input
-              type="hidden"
-              name="id"
-              value="{{- variant.id -}}"
-              class="product-variant-id"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
-            >
-            <button
-              id="{{ product_form_id }}-submit"
-              type="submit"
-              name="add"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
-              aria-label="{{ 'products.product.add_to_cart' | t }}"
-              class="btfy-product-card__atc btfy-product-card__action-button btn {{ settings.pcard_button_style }}"
-            >
-              <span class="btfy-product-card__atc-icon btfy-product-card__action-icon inline-flex md:hidden">
-                {%- render 'icon-cart', name: settings.cart_icon -%}
-              </span>
-              <span class="btfy-product-card__atc-text btfy-product-card__action-text">
-                {%- if variant.available -%}
-                  {{- 'products.product.add_to_cart' | t -}}
-                {%- else -%}
-                  {{- 'products.product.sold_out' | t -}}
-                {%- endif -%}
-              </span>
-              {% render 'loading-spinner' %}
-            </button>
-          {%- endform -%}
+           {{ 'icon-quick-view.svg' | inline_asset_content }}
+          </button>
         {%- endif -%}
-      {%- endif -%}
+        {%- if enable_quick_add -%}
+          {%- liquid
+            assign product_form_id = 'quick-add-' | append: section.id | append: product.id
+            assign qty_rules = false
+            if variant.quantity_rule.min > 1 or variant.quantity_rule.max != null or variant.quantity_rule.increment > 1
+              assign qty_rules = true
+            endif
+          -%}
+          {%- if product.variants.size > 1 or qty_rules -%}
+            <div class="btfy-product-card__actions btfy-product-card__main-actions">
+              <{{ atc_button_tag }}
+                {% if settings.pcard_choose_options_actions == 'product_page' %}
+                  href="{{- product_url -}}"
+                {% else %}
+                  aria-controls="{{ quick_view_modal_id }}"
+                  aria-haspopup="dialog"
+                {% endif %}
+                class="btfy-product-card__atc btfy-product-card__action-button btn {{ settings.pcard_button_style }}"
+              >
+                <span class="btfy-product-card__atc-icon btfy-product-card__action-icon inline-flex">
+                  {%- render 'icon-cart', name: settings.cart_icon -%}
+                </span>
+              </{{ atc_button_tag }}>
+            </div>
+          {%- else -%}
+            {%- form 'product',
+              product,
+              id: product_form_id,
+              class: 'btfy-product-card__actions btfy-product-card__main-actions',
+              novalidate: 'novalidate',
+              data-type: 'add-to-cart-form',
+              is: 'product-form'
+            -%}
+              <input
+                type="hidden"
+                name="id"
+                value="{{- variant.id -}}"
+                class="product-variant-id"
+                {% if variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+              <button
+                id="{{ product_form_id }}-submit"
+                type="submit"
+                name="add"
+                {% if variant.available == false %}
+                  disabled
+                {% endif %}
+                aria-label="{{ 'products.product.add_to_cart' | t }}"
+                class="btfy-product-card__atc btfy-product-card__action-button btn {{ settings.pcard_button_style }}"
+              >
+                <span class="btfy-product-card__atc-icon btfy-product-card__action-icon inline-flex">
+                  {%- render 'icon-cart', name: settings.cart_icon -%}
+                </span>
+                {% render 'loading-spinner' %}
+              </button>
+            {%- endform -%}
+          {%- endif -%}
+        {%- endif -%}
+      </div>
     </div>
     <div class="btfy-product-card__info text-{{ settings.pcard_content_alignment }}">
       {%- if show_vendor -%}
