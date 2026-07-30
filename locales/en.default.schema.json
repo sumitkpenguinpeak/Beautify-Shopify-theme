@@ -1051,10 +1051,20 @@
           }
         }
       },
+      "label_heading": {
+        "label": "Label Heading",
+        "name": "Label Heading",
+        "content": "Label Heading"
+      },
       "heading": {
         "label": "Heading",
         "name": "Heading",
         "content": "Heading"
+      },
+      "hightheading": {
+        "label": "Hight Heading",
+        "name": "High Heading",
+        "content": "High Heading"
       },
       "subheading": {
         "label": "Subheading",

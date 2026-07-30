@@ -81,6 +81,9 @@
               text: section_settings.heading,
               style: section_settings.heading_highlight_style
             %}
+            {% if section_settings.highlight_heading %}
+              <span class="hight_light_heading">{{ section_settings.highlight_heading }}</span>
+            {% endif %}
           </motion-element>
         </{{ heading_tag }}>
         {%- assign motion_delay = motion_delay | plus: 50 -%}
