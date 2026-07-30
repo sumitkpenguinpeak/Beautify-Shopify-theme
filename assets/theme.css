@@ -6260,7 +6260,7 @@ input:is([type=radio])::after {
 }
 @media (max-width: 1023.98px) {
   .btfy-header-mobile--center {
-    --header-grid-template: "icons-left logo icons" / minmax(4rem, 1fr) auto minmax(6rem, 1fr);
+    --header-grid-template: "icons-left logo icons" / minmax(4rem, 0.5fr) auto minmax(6rem, 1fr);
     column-gap: 1.5rem;
   }
 }
@@ -6625,6 +6625,7 @@ shopify-account::part(dialog)::backdrop {
     margin: auto;
     max-height: fit-content;
     opacity: unset;
+    height: fit-content;
   }
 }
 
