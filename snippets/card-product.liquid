@@ -60,7 +60,7 @@
 
   assign mobile_hide_quick_add = settings.pcard_mobile_hide_quick_add
 
-  assign custom_tags = product.tags | where: 'tag__'
+  assign custom_tags = product.tags 
 
   assign atc_button_tag = 'a'
   unless settings.pcard_choose_options_actions == 'product_page'
