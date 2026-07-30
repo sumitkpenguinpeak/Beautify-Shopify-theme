@@ -455,6 +455,9 @@
     "colors": {
       "name": "Barvy",
       "settings": {
+        "text_highlight": {
+          "label": "Text highlight"
+        },
         "header__general": {
           "content": "Všeobecné"
         },

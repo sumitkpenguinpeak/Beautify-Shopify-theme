@@ -142,10 +142,11 @@
   padding-bottom: 10rem;
 }
 @media (min-width: 1280px) {
-  .slideshow-layout--standard .slideshow__content:not(.slideshow__content--in-container) {
+  /* .slideshow-layout--standard .slideshow__content:not(.slideshow__content--in-container) {
     --page-padding: 5rem;
-  }
+  } */
 }
+
 .slideshow__content {
   min-height: 100%;
 }

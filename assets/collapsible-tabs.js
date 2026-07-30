@@ -27,12 +27,12 @@ if (!customElements.get('collapsible-tabs')) {
       }
 
       handleOpen(details) {
-        const parent = details.closest('.accordion-item');
+        const parent = details.closest('.btfy-accordion-item');
         parent.classList.contains('accordion-card') && parent.classList.add(this.colorScheme);
       }
 
       handleClose(details) {
-        const parent = details.closest('.accordion-item');
+        const parent = details.closest('.btfy-accordion-item');
         parent.classList.contains('accordion-card') && parent.classList.remove(this.colorScheme);
       }
     }

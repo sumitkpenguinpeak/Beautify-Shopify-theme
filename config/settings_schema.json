@@ -132,6 +132,12 @@
             "default": "#000000"
           },
           {
+            "type": "color",
+            "id": "text_highlight",
+            "label": "t:settings_schema.colors.settings.text_highlight.label",
+            "default": "#EA824D"
+          },
+          {
             "type": "header",
             "content": "t:settings_schema.colors.settings.header__background.content"
           },

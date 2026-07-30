@@ -48,7 +48,7 @@
 %}
 
 <div
-  class="section section-{{ section.id }} section-padding section--collapsible-tabs section-header-{{ section.settings.header_layout }} theme-width theme-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }}{{ section_css_class }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
+  class="section section-{{ section.id }} section-padding btfy-section--collapsible-tabs section-header-{{ section.settings.header_layout }} theme-width theme-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }}{{ section_css_class }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
@@ -63,7 +63,7 @@
       description_size: section.settings.text_size
     %}
     <motion-element class="section__content block" data-motion="fade-up">
-      <div class="collapsible-tabs__wrapper f-flex f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}">
+      <div class="btfy-collapsible-tabs__wrapper f-flex f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}">
         {%- if image_block -%}
           {% liquid
             assign image_ratio = image_block.settings.image_ratio
@@ -72,7 +72,7 @@
             endif
           %}
           <div
-            class="collapsible-tabs__image-col{% if image_block.settings.image_extend %} collapsible-tabs__image-extend{% endif %} f-column w-full flex flex-col md:order-{% if image_block.settings.desktop_image_position == 'right' %}last{% else %}first{% endif %}{% if image_block.settings.order_first %} order-first{% else %} order-last{% endif %}{{ col_alignment_class }}"
+            class="btfy-collapsible-tabs__image-col{% if image_block.settings.image_extend %} btfy-collapsible-tabs__image-extend{% endif %} f-column w-full flex flex-col md:order-{% if image_block.settings.desktop_image_position == 'right' %}last{% else %}first{% endif %}{% if image_block.settings.order_first %} order-first{% else %} order-last{% endif %}{{ col_alignment_class }}"
             style="--col-width: {{ col_image_width }}%;"
             {{ image_block.shopify_attributes }}
           >
@@ -97,7 +97,7 @@
           </div>
         {%- endif -%}
         <div
-          class="collapsible-tabs__content-col f-column w-full flex flex-col items-center {{ col_alignment_class }}"
+          class="btfy-collapsible-tabs__content-col f-column w-full flex flex-col items-center {{ col_alignment_class }}"
           style="--col-width: {{ col_content_width }}%;"
         >
           <collapsible-tabs
@@ -108,7 +108,7 @@
               {%- case block.type -%}
                 {%- when 'collapsible_item' -%}
                   <div
-                    class="accordion-item accordion-{{ section.settings.item_style }}{% if section.settings.item_style == 'card' %} blocks-radius{% endif %}"
+                    class="btfy-accordion-item accordion-{{ section.settings.item_style }}{% if section.settings.item_style == 'card' %} blocks-radius{% endif %}"
                     {{ block.shopify_attributes }}
                   >
                     <details

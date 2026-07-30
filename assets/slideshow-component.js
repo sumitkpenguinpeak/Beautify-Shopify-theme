@@ -57,6 +57,11 @@ if (!customElements.get('slideshow-component')) {
             el: this.sliderControls.querySelector('.swiper-pagination'),
             clickable: true,
           };
+
+           this.sliderOptions.navigation = {
+            nextEl: this.sliderControls.querySelector('.swiper-button-next'),
+            prevEl: this.sliderControls.querySelector('.swiper-button-prev'),
+          };
         }
 
         switch (this.layout) {

@@ -455,6 +455,9 @@
     "colors": {
       "name": "Farben",
       "settings": {
+        "text_highlight": {
+          "label": "Text highlight"
+        },
         "header__general": {
           "content": "Allgemein"
         },

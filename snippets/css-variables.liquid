@@ -296,6 +296,7 @@
       --color-product-price-sale: {{ scheme.settings.product_price_sale.red }},{{ scheme.settings.product_price_sale.green }},{{ scheme.settings.product_price_sale.blue }};
       --color-foreground-lighten-60: {{ color_text_lighten_60 }};
       --color-foreground-lighten-19: {{ color_text_lighten_19 }};
+      --color-text-highlight: {{ scheme.settings.text_highlight.red }},{{ scheme.settings.text_highlight.green }},{{ scheme.settings.text_highlight.blue }};
     {%- endcapture -%}
     .color-{{ scheme.id }} {
       {{ css_vars }}
