@@ -1607,7 +1607,7 @@
       },
       "extend_to_screen_edge": {
         "label": "Extend to screen edge"
-      },
+      }
     },
     "announcement-bar": {
       "name": "Announcement bar",
@@ -4288,7 +4288,7 @@
         },
         "cart_discount": {
           "name": "Cart discount"
-        },
+        }
       }
     },
     "mobile-sticky-bar": {
