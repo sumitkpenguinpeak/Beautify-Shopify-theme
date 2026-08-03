@@ -195,7 +195,7 @@
                   </div>
                   {%- assign animate_delay = animate_delay | plus: 100 -%}
                 {%- endunless -%}
-                {%- unless block.settings.title == blank -%}
+                {%- unless block.settings.title == blank and block.settings.highlight_heading == blank -%}
                   <{{ block.settings.heading_tag }} class="btfy-slideshow__title {{ block.settings.heading_size }} rich-text__heading">
                     <motion-element
                       data-motion="fade-up"
@@ -204,9 +204,11 @@
                       hold
                       class="block"
                     >
-                      {{- block.settings.title -}}
+                      {{- block.settings.title -}}&nbsp;<span class="hight_light_heading">{{- block.settings.highlight_heading -}}</span>
+                     
                     </motion-element>
                   </{{ block.settings.heading_tag }}>
+                   
                   {%- assign animate_delay = animate_delay | plus: 100 -%}
                 {%- endunless -%}
                 {%- unless block.settings.description == blank -%}
@@ -592,6 +594,12 @@
           "default": "Image slide"
         },
         {
+          "type": "inline_richtext",
+          "id": "highlight_heading",
+          "label": "t:sections.all.hightheading.label",
+          "default": "High Light" 
+        },
+        {
           "type": "select",
           "id": "heading_size",
           "label": "t:sections.all.text_size.heading.label",
@@ -885,6 +893,12 @@
           "id": "title",
           "label": "t:sections.all.heading.label",
           "default": "Video slide"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "highlight_heading",
+          "label": "t:sections.all.hightheading.label",
+          "default": "High Light"
         },
         {
           "type": "select",

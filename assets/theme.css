@@ -1139,7 +1139,7 @@ h6,
 
 .btfy-slideshow__subtitle .heading-pattern {  width: 15px; height: 2px; background-color: rgb(0,0,0); display: inline-block; vertical-align: middle; margin-right: 10px; margin-top: -4px; }
 .btfy-slideshow__title.rich-text__heading strong, .btfy-slideshow__title.rich-text__heading span {
-  color: rgb(var(--color-text-highlight));
+  color: rgb(var(--color-text-highlight));  
 }
 
 .btfy-text-pcard-title {
@@ -2200,12 +2200,19 @@ button .button-icon,
   width: 1.8rem; 
 }
 
+@media (max-width: 767.98px) { 
+  .btfy-slideshow__text .btfy-slideshow__buttons .block {
+    justify-content: center;
+  }
+}
+
 .btfy-slideshow__buttons .block {
   display: flex;
   align-items: center;
   gap: 20px; 
   flex-wrap: wrap; 
 }
+
 @media (hover: hover) {
   /* .btn--bordered-icon:hover .button-icon,
   .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover {
@@ -6854,4 +6861,9 @@ shopify-account::part(dialog)::backdrop {
   .btfy-footer__copyright {
     order: 2;
   }
+}
+
+
+.hight_light_heading {
+  color: rgb(var(--color-text-highlight));
 }
