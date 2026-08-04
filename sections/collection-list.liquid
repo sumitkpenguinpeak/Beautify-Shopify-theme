@@ -52,7 +52,7 @@
     assign card_has_bg = true
   endif
 
-  assign motion_delay = 50 
+  assign motion_delay = 50
 -%}
 {%- capture image_sizes -%}
 {%- if enable_slider -%}
@@ -65,7 +65,7 @@
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
 %}
-<div 12
+<div
   class="section section-{{ section.id }} section-padding btfy-collection-list btfy-collection-list--{{ section.settings.layout }}{% if enable_slider %} btfy-collection-list--slider{% endif %} color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
@@ -235,7 +235,7 @@
     {
       "type": "inline_richtext",
       "id": "heading",
-      "label": "t:sections.all.heading.label", 
+      "label": "t:sections.all.heading.label",
       "default": "Product tabs"
     },
     {
