@@ -123,6 +123,9 @@
 }
 
 @media (max-width: 767.98px) {
+  .tabs__nav-design-2  .tabs__tab .tabs__tab-name {
+    padding: 4px 18px 5px;
+  }
   .tabs__header {
     margin-bottom: var(--header-padding-bottom-mobile);
   }

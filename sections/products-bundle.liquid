@@ -22,7 +22,8 @@
 %}
 
 <div class="products-bundle theme-width section-padding color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
-  <products-bundle class="btfy-products-bundle__wrapper f-grid items-center lg:f-grid-2-cols">
+  {% render 'section-heading', section_settings: section.settings %}
+  <products-bundle class="btfy-products-bundle__wrapper image-with-text--{{ section.settings.layout }} f-grid items-center lg:f-grid-2-cols">
     <div class="btfy-products-bundle__image relative overflow-hidden blocks-radius">
       <motion-element
         class="block"
@@ -89,7 +90,7 @@
       {%- endfor -%}
     </div>
     <div class="btfy-products-bundle__content">
-      {% render 'section-heading', section_settings: section.settings, motion_delay: motion_delay %}
+      {% comment %} {% render 'section-heading', section_settings: section.settings, motion_delay: motion_delay %} {% endcomment %}
       <motion-element data-motion="fade-up" data-motion-delay="{{ motion_delay }}" class="grid">
         {%- for block in section.blocks -%}
           {%- liquid
@@ -197,6 +198,14 @@
     </div>
   </products-bundle>
 </div>
+
+{% style %}
+  /* .section__header--text {
+    max-width: 44rem;
+    margin: 0 auto;
+  } */
+{% endstyle %}
+
 {% schema %}
 {
   "name": "t:sections.products-bundle.name",
@@ -222,14 +231,47 @@
       "label": "t:sections.all.image.label"
     },
     {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "t:sections.image-with-text.settings.layout.options__1.label"
+        },
+        {
+          "value": "text_first",
+          "label": "t:sections.image-with-text.settings.layout.options__2.label"
+        }
+      ],
+      "default": "image_first",
+      "label": "t:sections.image-with-text.settings.layout.label"
+    },
+    {
       "type": "header",
       "content": "t:sections.all.section_header.content"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:sections.all.subheading.label",
+      "default": "Bundle & save"
     },
     {
       "type": "inline_richtext",
       "id": "heading",
       "label": "t:sections.all.heading.label",
       "default": "Build Your Own Basket"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "highlight_heading",
+      "label": "t:sections.all.hightheading.label",
+      "default": "High Light"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.all.description.label"
     },
     {
       "type": "select",
@@ -330,17 +372,6 @@
           "label": "t:sections.all.highlight_text.settings.highlight_style.options__2.label"
         }
       ]
-    },
-    {
-      "type": "text",
-      "id": "subheading",
-      "label": "t:sections.all.subheading.label",
-      "default": "Bundle & save"
-    },
-    {
-      "type": "richtext",
-      "id": "description",
-      "label": "t:sections.all.description.label"
     },
     {
       "type": "header",

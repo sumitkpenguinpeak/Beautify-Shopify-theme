@@ -197,7 +197,7 @@
   margin-bottom: 0;
 }
 .section__subheading {
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
 }
 .section__subheading:last-child {
   margin: 0;
@@ -246,7 +246,7 @@
     margin-top: 3.2rem;
   }
   .section__subheading {
-    margin: 0 0 1.2rem;
+    margin: 0 0 1rem;
   }
   .section__description {
     margin-top: 1.2rem;
@@ -2167,7 +2167,6 @@ button .button-icon,
   align-items: center;
   justify-content: center;
 }
-
 .btn:not(.btn--plain):not(.btn--underline, .btn--inherit),
 .btn--bordered-icon .button-icon {
   z-index: 1;
@@ -2195,17 +2194,14 @@ button .button-icon,
 .btn--bordered-icon .button-icon::before {
   background-color: var(--color-button-before);
 }
-
 .btfy-slideshow__text .btn.btn--underline svg {
   width: 1.8rem; 
 }
-
 @media (max-width: 767.98px) { 
   .btfy-slideshow__text .btfy-slideshow__buttons .block {
     justify-content: center;
   }
 }
-
 .btfy-slideshow__buttons .block {
   display: flex;
   align-items: center;
@@ -2214,16 +2210,14 @@ button .button-icon,
 }
 
 @media (hover: hover) {
-  /* .btn--bordered-icon:hover .button-icon,
+  .btn--bordered-icon:hover .button-icon,
   .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover {
     --color-border: var(--color-button-hover-background);
     color: rgb(var(--color-button-hover-text));
     border-color: rgb(var(--color-border));
     background-color: rgb(var(--color-button-hover-background));
-  } */
-  
+  }
   .btfy-quick--action .btfy-product-card__quickview::before,  .btfy-quick--action .btfy-product-card__quickview::after, .btfy-quick--action .btfy-product-card__atc::before, .btfy-quick--action .btfy-product-card__atc::after { display: none; }
-
   .btn--bordered-icon:hover .button-icon::after, .btn--bordered-icon:hover .button-icon::before,
   .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover::after,
   .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover::before {
@@ -2246,7 +2240,6 @@ button .button-icon,
 .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button).btn--active::after {
   transition-delay: 0.175s;
 }
-
 .btn--primary,
 .spr-button,
 .spr-button-primary {
@@ -2258,9 +2251,9 @@ button .button-icon,
 
 .btn--primary svg,
 .btn--secondary svg {
-      width: 20px;
+    width: 20px;
     height: 20px;
-    fill: currentColor;
+    /* fill: currentColor; */
     transition: 0.3s ease;
 }
 
@@ -3910,7 +3903,7 @@ input:is([type=radio])::after {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: var(--pcard-radius);
+  border-radius: var(--pcard-radius) var(--pcard-radius) 0px 0px;
 }
 .btfy-product-card__image-wrapper video {
   object-fit: cover;
@@ -3922,7 +3915,7 @@ input:is([type=radio])::after {
   gap: 0.4rem;
 }
 .btfy-product-card__image-wrapper .btfy-product-card__image[style*=--aspect-ratio]:before { 
-  padding-top: 120%;
+  padding-top: 100%;
 }
 .btfy-product-card__info .product-card__swatches {
   margin-top: 0.4rem;
@@ -4499,10 +4492,10 @@ input:is([type=radio])::after {
   margin: var(--child-margin-top, 3.2rem) 0 0;
 }
 .rich-text > * + *:is(.rich-text__text) {
-  margin-top: var(--text-margin-top, 2.4rem);
+  margin-top: var(--text-margin-top, 1rem);
 }
 .rich-text > *:first-child:is(.rich-text__subheading) {
-  margin-bottom: var(--subheading-margin-bottom, 2rem);
+  margin-bottom: var(--subheading-margin-bottom, 1rem);
 }
 .rich-text > *:first-child:is(.rich-text__subheading) + * {
   margin-top: 0;
@@ -6867,3 +6860,7 @@ shopify-account::part(dialog)::backdrop {
 .hight_light_heading {
   color: rgb(var(--color-text-highlight));
 }
+
+
+.section__header .section__header--text .section__heading, 
+.section__header .rich-text__heading .block { text-transform: capitalize; }

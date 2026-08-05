@@ -86,3 +86,9 @@
     gap: 1.2rem;
   }
 }
+
+@media (min-width: 768px) {
+  .image-with-text--text_first .btfy-products-bundle__content {
+    order: -1;
+  }
+}
