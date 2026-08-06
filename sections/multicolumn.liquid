@@ -53,6 +53,9 @@
                 text: section.settings.heading,
                 style: section.settings.heading_highlight_style
               %}
+              {% if section.settings.highlight_heading %}
+                <span class="hight_light_heading">{{ section.settings.highlight_heading }}</span>
+              {% endif %}
             </motion-element>
           </{{ section.settings.heading_tag }}>
           {%- assign motion_delay = motion_delay | plus: 50 -%}
@@ -160,6 +163,12 @@
       "id": "heading",
       "default": "Multicolumn",
       "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "highlight_heading",
+      "label": "t:sections.all.hightheading.label",
+      "default": "High Light"
     },
     {
       "type": "select",
