@@ -71,12 +71,20 @@
           <motion-element
             data-motion="fade-up"
             data-motion-delay="{{ item_motion_delay }}"
-            class="btfy-feature-item flex items-center gap-x-2 rounded color-{{ block.settings.color_scheme }}"
+            class="btfy-feature-item flex flex-col items-center gap-x-2 gap-y-3 color-{{ block.settings.color_scheme }}"
             {{ block.shopify_attributes }}
           >
             {% if block.settings.icon != 'none' %}
-              <div class="btfy-feature-item__icon flex shrink-0 rounded btn btn--icon {{ block.settings.icon_style }}">
-                {% render 'icons', icon: block.settings.icon, size: section.settings.icon_size %}
+              <div class="btfy-feature-item__icon flex shrink-0 {{ block.settings.icon_style }}">
+                  {% if block.settings.icon != blank %}
+                    {{
+                      block.settings.icon
+                      | image_url: width: 40
+                      | image_tag:
+                        loading: 'lazy',
+                        class: 'btfy-feature-icon'
+                    }}
+                  {% endif %}
               </div>
             {%- endif -%}
             {% if block.settings.text != blank %}
@@ -277,38 +285,6 @@
       "label": "t:sections.all.text_alignment.label"
     },
     {
-      "type": "select",
-      "id": "icon_size",
-      "options": [
-        {
-          "value": "extra-small",
-          "label": "t:sections.all.icon_size.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.all.icon_size.options__2.label"
-        },
-        {
-          "value": "extra-medium",
-          "label": "t:sections.all.icon_size.options__3.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.all.icon_size.options__4.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.all.icon_size.options__5.label"
-        },
-        {
-          "value": "extra-large",
-          "label": "t:sections.all.icon_size.options__6.label"
-        }
-      ],
-      "default": "extra-medium",
-      "label": "t:sections.all.icon_size.label"
-    },
-    {
       "type": "header",
       "content": "t:sections.all.mobile.name"
     },
@@ -385,125 +361,9 @@
       "name": "Feature item",
       "settings": [
         {
-          "type": "color_scheme",
-          "id": "color_scheme",
-          "label": "t:sections.all.colors.label"
-        },
-        {
-          "type": "select",
+          "type": "image_picker",
           "id": "icon",
-          "options": [
-            {
-              "value": "none",
-              "label": "t:sections.all.icon.options__1.label"
-            },
-            {
-              "value": "certificate",
-              "label": "t:sections.all.icon.options__2.label"
-            },
-            {
-              "value": "clover",
-              "label": "t:sections.all.icon.options__3.label"
-            },
-            {
-              "value": "confetti",
-              "label": "t:sections.all.icon.options__4.label"
-            },
-            {
-              "value": "currency-circle-dollar",
-              "label": "t:sections.all.icon.options__5.label"
-            },
-            {
-              "value": "eyedropper",
-              "label": "t:sections.all.icon.options__6.label"
-            },
-            {
-              "value": "gear",
-              "label": "t:sections.all.icon.options__7.label"
-            },
-            {
-              "value": "gift",
-              "label": "t:sections.all.icon.options__8.label"
-            },
-            {
-              "value": "globe",
-              "label": "t:sections.all.icon.options__9.label"
-            },
-            {
-              "value": "heart",
-              "label": "t:sections.all.icon.options__10.label"
-            },
-            {
-              "value": "package",
-              "label": "t:sections.all.icon.options__11.label"
-            },
-            {
-              "value": "star-four",
-              "label": "t:sections.all.icon.options__12.label"
-            },
-            {
-              "value": "truck",
-              "label": "t:sections.all.icon.options__13.label"
-            },
-            {
-              "value": "ruler",
-              "label": "t:sections.all.icon.options__14.label"
-            },
-            {
-              "value": "check-circle",
-              "label": "t:sections.all.icon.options__15.label"
-            },
-            {
-              "value": "map-pin",
-              "label": "t:sections.all.icon.options__16.label"
-            },
-            {
-              "value": "tag",
-              "label": "t:sections.all.icon.options__17.label"
-            },
-            {
-              "value": "recycle",
-              "label": "t:sections.all.icon.options__18.label"
-            },
-            {
-              "value": "check",
-              "label": "t:sections.all.icon.options__19.label"
-            },
-            {
-              "value": "arrow-up-left",
-              "label": "t:sections.all.icon.options__20.label"
-            },
-            {
-              "value": "cloud",
-              "label": "t:sections.all.icon.options__21.label"
-            },
-            {
-              "value": "seal-check",
-              "label": "t:sections.all.icon.options__22.label"
-            },
-            {
-              "value": "drop-half-bottom",
-              "label": "t:sections.all.icon.options__23.label"
-            }
-          ],
-          "default": "check",
-          "label": "t:sections.all.icon.label"
-        },
-        {
-          "type": "select",
-          "id": "icon_style",
-          "label": "t:sections.all.icon_style.label",
-          "options": [
-            {
-              "value": "btn--primary",
-              "label": "t:sections.all.button.button_style.options__1.label"
-            },
-            {
-              "value": "btn--secondary",
-              "label": "t:sections.all.button.button_style.options__2.label"
-            }
-          ],
-          "default": "btn--secondary"
+          "label": "Icon"
         },
         {
           "type": "text",
@@ -517,38 +377,6 @@
   "presets": [
     {
       "name": "Feature list",
-      "blocks": [
-        {
-          "type": "feature_item",
-          "settings": {
-            "icon": "check"
-          }
-        },
-        {
-          "type": "feature_item",
-          "settings": {
-            "icon": "check"
-          }
-        },
-        {
-          "type": "feature_item",
-          "settings": {
-            "icon": "check"
-          }
-        },
-        {
-          "type": "feature_item",
-          "settings": {
-            "icon": "check"
-          }
-        },
-        {
-          "type": "feature_item",
-          "settings": {
-            "icon": "check"
-          }
-        }
-      ]
     }
   ],
   "disabled_on": {

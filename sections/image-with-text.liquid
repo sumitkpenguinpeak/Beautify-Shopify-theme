@@ -32,7 +32,7 @@
   <div class="theme-width">
     <div class="btfy-image-with-text__wrapper hero hero--{{ section.settings.image_height }} f-grid f-grid-1-cols md:f-grid-2-cols f-grid--gap-none blocks-radius">
       <parallax-element
-        class="block overflow-hidden{% if color_inherit %} blocks-radius{% endif %}"
+        class="block overflow-hidden{% if color_inherit %} blocks-radius{% endif %} color-{{ section.settings.color_scheme }}"
         {% if section.settings.enable_parallax %}
           data-parallax="0.3" data-parallax-direction="{{ section.settings.parallax_direction }}"
         {% endif %}
@@ -73,7 +73,7 @@
                   data-motion-delay="{{ motion_delay }}"
                   {{ block.shopify_attributes }}
                 >
-                  {{ block.settings.subheading }}
+                {% if block.settings.show_heading_pattern %} <span class="heading-pattern"></span>  {% endif %} {{ block.settings.subheading }}
                 </motion-element>
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
               {% when 'heading' %}
@@ -113,6 +113,9 @@
                       {{ block.shopify_attributes }}
                     >
                       {{- block.settings.button_label -}}
+                     <svg width="12" height="10" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5303 6.05328C13.8232 5.76039 13.8232 5.28551 13.5303 4.99262L8.75736 0.219648C8.46447 -0.073245 7.98959 -0.073245 7.6967 0.219648C7.40381 0.512542 7.40381 0.987415 7.6967 1.28031L11.9393 5.52295L7.6967 9.76559C7.40381 10.0585 7.40381 10.5334 7.6967 10.8263C7.98959 11.1191 8.46447 11.1191 8.75736 10.8263L13.5303 6.05328ZM0 5.52295L0 6.27295H13V5.52295V4.77295H0L0 5.52295Z" fill="currentColor"></path>
+                      </svg>
                     </a>
                   </motion-element>
                   {%- assign motion_delay = motion_delay | plus: 50 -%}
@@ -367,7 +370,13 @@
           "id": "subheading",
           "default": "Add a tagline",
           "label": "t:sections.all.subheading.label"
-        }
+        },
+        {
+          "type": "checkbox",
+          "id": "show_heading_pattern",
+          "label": "Show heading pattern/line",
+          "default": true
+        },
       ]
     },
     {

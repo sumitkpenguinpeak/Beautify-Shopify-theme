@@ -1,14 +1,11 @@
 .btfy-feature-list__items {
-  gap: 1rem;
+  gap: 15rem;
 }
-
 .btfy-feature-item {
   padding: 1rem 1.6rem;
-  border: 1px solid rgb(var(--color-border));
   transition: 0.3s background-color, 0.3s border-color, 0.3s color;
 }
 .btfy-feature-item__icon {
-  padding: 0.5rem;
   width: auto;
   height: auto;
   border: none;
@@ -19,22 +16,59 @@
 }
 .btfy-feature-item__text {
   transition: 0.3s color;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: 500;
 }
+.btfy-feature-item { position:relative; }
+.btfy-feature-item:not(:last-child)::after { content:"";  position:absolute; top:50%; right: -50%; transform: translate(-50%, -50%); width:0.70px; height:70px; background:#c6c6c6;  }
+
+@media (max-width: 1366px) { 
+    .btfy-feature-list__items { 
+      gap: 10rem;
+    }
+    .btfy-feature-item:not(:last-child)::after {
+      right: -38%;
+      transform: translate(-38%, -50%);
+    }
+}
+
+@media (max-width: 1199px) { 
+    .btfy-feature-list__items { 
+      gap: 4rem;
+    }
+    .btfy-feature-item:not(:last-child)::after {
+      right: -22%;
+      transform: translate(-22%, -50%);
+    }
+}
+
+@media (max-width: 991px) { 
+    .btfy-feature-item:not(:last-child)::after {
+      right: -8%;
+      transform: translate(-8%, -50%);
+    }
+    .btfy-feature-list__items { 
+      gap: 2rem;
+    }
+    .btfy-feature-item {
+          padding: 1rem 0.2rem;
+    }
+}
+
+
 @media (max-width: 767.98px) {
-  .swipe-mobile .btfy-feature-item__text {
+  .swipe-mobile .btfy-feature-item__text {  
     white-space: nowrap;
   }
-}
-@media (hover: hover) {
-  .btfy-feature-item:hover {
-    background: rgb(var(--color-button));
-    border-color: rgb(var(--color-button));
-  }
-  .btfy-feature-item:hover .btfy-feature-item__text {
-    color: rgb(var(--color-button-text));
-  }
-  .btfy-feature-item:hover .btfy-feature-item__icon {
-    background-color: rgb(var(--color-button-text));
-    color: rgb(var(--color-button));
-  }
+   .btfy-feature-list__items { 
+      gap: 3.5rem;
+    }
+    .btfy-feature-item {
+          padding: 1rem 1rem;
+    }
+    .btfy-feature-item:not(:last-child)::after {
+      right: -12%;
+      transform: translate(-12%, -50%);
+    }
 }
