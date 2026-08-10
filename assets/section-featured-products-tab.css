@@ -119,9 +119,6 @@
     display: none;
     margin: 1.2rem 0 0;
   }
-  .btfy-section--featured-products-tab .section__header * {
-    text-align: start;
-  }
 }
 @media (max-width: 1023.98px) {
   .tabs__nav.mobile-visible {

@@ -37,11 +37,6 @@
     assign header_alignment_mobile = header_alignment
   endif
 
-  assign card_layout = section.settings.card_layout
-  if card_layout == '2'
-    assign columns_tablet_large = columns_desktop | at_most: 2
-    assign columns_tablet = columns_tablet | at_most: 2
-  endif
 
   assign card_has_bg = false
   if section.settings.color_scheme != section.settings.card_color_scheme
@@ -367,10 +362,6 @@
         {
           "value": "1",
           "label": "t:sections.testimonials.settings.card_settings.layout.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.testimonials.settings.card_settings.layout.options__2.label"
         }
       ],
       "default": "1",

@@ -13,12 +13,18 @@
 .btfy-testimonial__content:not(:first-child) {
   margin-top: 1.6rem;
 }
+
+.btfy-testimonial__inner .btfy-testimonial__content, .btfy-testimonial__inner .btfy-testimonial__header {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .btfy-testimonial__product {
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  padding-top: 1.6rem;
-  margin-top: 4rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
   border-top: 1px solid rgb(var(--color-border));
 }
 .btfy-testimonial__product span {
@@ -89,3 +95,6 @@
     padding: 1.6rem 1.6rem 2rem;
   }
 }
+
+
+.btfy-testimonials-wrapper .testimonials .btfy-testimonials__items { padding-bottom: 0.5rem; }
