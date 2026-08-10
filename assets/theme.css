@@ -2198,9 +2198,7 @@ button .button-icon,
   width: 1.8rem; 
 }
 @media (max-width: 767.98px) { 
-  .btfy-slideshow__text .btfy-slideshow__buttons .block {
-    justify-content: center;
-  }
+  .btfy-slideshow__text .btfy-slideshow__buttons .block { justify-content: center; }
 }
 .btfy-slideshow__buttons .block {
   display: flex;
@@ -2210,9 +2208,7 @@ button .button-icon,
 }
 
 @media (hover: hover) { 
-  .btfy-quick--action .btn:not(.btn--plain):not(.btn--underline,.btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover {
-     background-color: transparent;
-  }
+  .btfy-quick--action .btn:not(.btn--plain):not(.btn--underline,.btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover { background-color: transparent; color: rgb(var(--color-foreground)); }
   .btn--bordered-icon:hover .button-icon,
   .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover {
     --color-border: var(--color-button-hover-background);
@@ -2254,8 +2250,6 @@ button .button-icon,
 
 .btn--primary svg,
 .btn--secondary svg {
-    width: 14px;
-    height: 14px;
     fill: currentColor;
     transition: 0.3s ease;
 }
@@ -4018,6 +4012,10 @@ input:is([type=radio])::after {
   .is-metro-item [style*="--aspect-ratio"]:before {
     padding-top: calc(50% / (0 + var(--aspect-ratio, 1)));
   }
+  .btfy-product-card__quickview {
+    inset-inline-end: 0;
+  }
+  .btfy-quick--action .btfy-product-card__quickview { border: none; }
 }
 
 .product-card--list {
@@ -4128,9 +4126,6 @@ input:is([type=radio])::after {
   }
 }
 @media (max-width: 767.98px) {
-  .btfy-product-card__quickview {
-    display: none;
-  }
   .btfy-product-card__main-actions {
     flex-direction: column;
     align-items: flex-end;
@@ -6754,6 +6749,10 @@ shopify-account::part(dialog)::backdrop {
   margin-top: 12px;
 }
 
+.btfy-footer-image-box .btfy-footer-image-box__btn .btn svg {
+      transform: rotate(-90deg);
+}
+
 .btfy-footer-newsletter {
   width: var(--form-width);
   max-width: 100%;
@@ -6850,10 +6849,7 @@ shopify-account::part(dialog)::backdrop {
 }
 
 
-.hight_light_heading {
-  color: rgb(var(--color-text-highlight));
-}
-
-
+.hight_light_heading { color: rgb(var(--color-text-highlight)); }
 .section__header .section__header--text .section__heading, 
 .section__header .rich-text__heading .block { text-transform: capitalize; }
+.image-with-text--text_first .custom-content-block--collections { order: -1; }

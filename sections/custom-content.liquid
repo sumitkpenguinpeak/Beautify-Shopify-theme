@@ -30,7 +30,7 @@
 >
   {% render 'section-heading', section_settings: section.settings %}
   <div class="section__content f-grid--gap-{{ section.settings.column_gap }}{% if swipe_on_tablet %} swipe-tablet{% endif %}{% if swipe_on_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile }}-cols{% endif %}">
-    <div class="f-flex f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if swipe_on_tablet %} swipe-tablet__inner{% endif %}{% if swipe_on_mobile %} swipe-mobile__inner{% endif %}">
+    <div class="image-with-text--{{ section.settings.layout }} f-flex f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if swipe_on_tablet %} swipe-tablet__inner{% endif %}{% if swipe_on_mobile %} swipe-mobile__inner{% endif %}">
       {%- for block in section.blocks -%}
         {%- liquid
           assign vertical_alignment = block.settings.alignment
@@ -557,6 +557,22 @@
       "id": "enable_sticky_column",
       "default": false,
       "label": "t:sections.all.enable_sticky_column.label"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "t:sections.image-with-text.settings.layout.options__1.label"
+        },
+        {
+          "value": "text_first",
+          "label": "t:sections.image-with-text.settings.layout.options__2.label"
+        }
+      ],
+      "default": "image_first",
+      "label": "t:sections.image-with-text.settings.layout.label"
     },
     {
       "type": "header",

@@ -41,12 +41,12 @@
 
 @media (min-width: 768px) {
   .btfy-section--featured-products-tab {
-    --zigzag-offset: 5rem;
+    /* --zigzag-offset: 5rem; */
   }
 }
 @media (min-width: 1024px) {
   .btfy-section--featured-products-tab {
-    --zigzag-offset: 10rem;
+    /* --zigzag-offset: 10rem; */
   }
   .btfy-section--featured-products-tab .tabs {
     display: flex;
@@ -67,10 +67,10 @@
     content: "";
     position: absolute;
     top: 0;
-    inset-inline-start: 0;
-    width: 2px;
+    inset-inline-start: 0; 
+    /*width: 2px;
     height: 100%;
-    background: rgba(var(--color-foreground), 0.1);
+     background: rgba(var(--color-foreground), 0.1); */
   }
   .no-js .btfy-section--featured-products-tab .tabs__nav {
     display: none;
@@ -79,7 +79,7 @@
     display: block;
     text-align: start;
     width: 100%;
-    padding: 0.4rem 2.4rem;
+    padding: 0.4rem 2.4rem 0.4rem 0;
     color: rgba(var(--color-foreground), 0.6);
   }
   .btfy-section--featured-products-tab .tabs__tab + .tabs__tab {
@@ -95,7 +95,7 @@
     inset-inline-start: 0;
     width: 2px;
     height: 100%;
-    background: rgb(var(--color-foreground));
+    /* background: rgb(var(--color-foreground)); */
     opacity: 0;
     transition: opacity 0.3s;
   }

@@ -17,7 +17,9 @@
   data-id="{{ section.id }}"
 >
   {%- unless enable_slider -%}
-    {% render 'section-heading', section_settings: section.settings %}
+    {% render 'section-heading', section_settings: section.settings 
+    style: section.settings.heading_highlight_style
+    %}
   {%- endunless -%}
   <div class="section__wrapper relative slider-controls--grouped-mobile slider-controls--below">
     {%- if enable_slider -%}
@@ -27,7 +29,6 @@
           header_layout: 'horizontal',
           custom_css_class: 'flex-grow'
         %}
-
         <div class="slider-controls--group">
           <div class="slider-controls block md:flex items-center justify-start gap-2">
             <button
@@ -155,10 +156,11 @@
                           </div>
                         {%- endif -%}
                         {%- if section.settings.pcard_button_label != blank -%}
-                          <div class="btfy-product-showcase__view-details">
+                          <div class="btfy-product-showcase__view-details 34">
                             <a href="{{ product.url }}" class="btn btn--primary">
                               {{- section.settings.pcard_button_label -}}
-                            </a>
+                              {{- 'icon-right-arrow.svg' |inline_asset_content -}} 
+                             </a>
                           </div>
                         {%- endif -%}
                       </div>
@@ -209,12 +211,13 @@
                           </div>
                         {%- endif -%}
                         {%- if section.settings.pcard_button_label != blank -%}
-                          <div class="btfy-product-showcase__view-details">
+                          <div class="btfy-product-showcase__view-details 12">
                             <a class="btn btn--primary" disabled>
                               {{- section.settings.pcard_button_label -}}
+                              {{- 'icon-right-arrow.svg' | inline_asset_content -}} 
                             </a>
                           </div>
-                        {%- endif -%}
+                        {%- endif -%} 
                       </div>
                     </div>
                   </div>
@@ -258,6 +261,17 @@
       "id": "heading",
       "label": "t:sections.all.heading.label",
       "default": "Products showcase"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "highlight_heading",
+      "label": "t:sections.all.hightheading.label",
+      "default": "High Light"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:sections.all.subheading.label"
     },
     {
       "type": "select",
@@ -433,7 +447,7 @@
       "type": "select",
       "id": "pcard_description_size",
       "label": "t:sections.all.text_size.description.label",
-      "default": "text-lg",
+      "default": "text-base",
       "options": [
         {
           "value": "text-sm",

@@ -191,6 +191,7 @@
           <div class="product-form__error-message blocks-radius-md alert alert--error" role="alert" hidden></div>
           <button type="button" class="btn btn--primary">
             <span>{{ 'products.product.add_all_to_cart' | t }}</span>
+            {{- 'icon-right-arrow.svg' |inline_asset_content -}}
             {%- render 'loading-spinner' -%}
           </button>
         </motion-element>

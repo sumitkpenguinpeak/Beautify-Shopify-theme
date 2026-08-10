@@ -66,3 +66,11 @@
     padding: 0 5rem;
   }
 }
+
+
+.btfy-product-showcase .btfy-product-showcase__thumbnail .blocks-radius {
+  border-radius: var(--blocks-radius) 0px 0px var(--blocks-radius);
+}
+
+
+.btfy-section--products-showcase .btfy-product-showcase { border: 1px solid rgb(var(--color-border));  border-radius: var(--blocks-radius); }

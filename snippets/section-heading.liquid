@@ -115,7 +115,7 @@
           {% endif %}
         >
           {% render 'button-icon', name: button_icon %}
-          {{- button_label -}}
+          {{- button_label -}} {{- 'icon-right-arrow.svg' |inline_asset_content -}}
         </a>
       </motion-element>
       {%- assign motion_delay = motion_delay | plus: 50 -%}

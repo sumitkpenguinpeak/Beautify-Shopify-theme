@@ -10,11 +10,18 @@
   divider_width: section.settings.divider_width
 %}
 
+
+
 <div
   class="section section-{{ section.id }} section-padding btfy-section--featured-products-tab theme-width color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
+
+  {% render 'section-heading', section_settings: section.settings
+       style: section.settings.heading_highlight_style
+  %}
+
   {%- if section.blocks.size > 0 -%}
     <tabs-component
       class="tabs"
@@ -24,7 +31,6 @@
         class="tabs__header btfy-tabs__header--vertical"
       >
         <div class="sticky-element z-10">
-          {% render 'section-heading', section_settings: section.settings %}
           <div
             class="tabs__nav !hidden !lg:block{% if request.design_mode %} mobile-visible{% endif %}"
             role="tablist"
@@ -183,6 +189,12 @@
       "id": "heading",
       "label": "t:sections.all.heading.label",
       "default": "Featured products tab"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "highlight_heading",
+      "label": "t:sections.all.hightheading.label",
+      "default": "High Light"
     },
     {
       "type": "select",

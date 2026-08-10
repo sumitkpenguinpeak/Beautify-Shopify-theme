@@ -11,12 +11,8 @@
   width: var(--pagination-size, 4.4rem);
 }
 .btfy-testimonials-wrapper .swiper-btn-next,
-.btfy-testimonials-wrapper .swiper-btn-prev {
-  position: relative;
-  transform: none;
-  margin: 0;
-  inset: auto;
-}
+.btfy-testimonials-wrapper .swiper-btn-prev { position: relative; transform: none; margin: 0; inset: auto; }
+
 @media (min-width: 768px) {
   .btfy-testimonials-wrapper .f-column.swiper-slide {
     padding-inline: 0;
@@ -29,3 +25,6 @@
     margin-inline-end: 0;
   }
 }
+
+
+.btfy-testimonial__image.blocks-radius { border-radius: var(--blocks-radius) var(--blocks-radius) 0px 0px; }
