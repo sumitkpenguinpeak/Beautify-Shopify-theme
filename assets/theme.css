@@ -6853,3 +6853,14 @@ shopify-account::part(dialog)::backdrop {
 .section__header .section__header--text .section__heading, 
 .section__header .rich-text__heading .block { text-transform: capitalize; }
 .image-with-text--text_first .custom-content-block--collections { order: -1; }
+.image-with-text--image_remove .custom-content-block--image_card { display: none !important; }
+.image-with-text--image_remove .custom-content-block--collections { width: 100%; max-width: 100%; flex: 0 0 100%; } 
+
+
+
+@media screen and (max-width: 768px) {
+  .btfy-product-card__image-wrapper .btfy-quick--action { padding: 0px 8px; gap: 15px; }
+  .btfy-quick--action .btfy-product-card__quickview { height: 25px; width: 25px; } 
+  .btfy-product-card__actions .btfy-product-card__action-button { width: 2.5rem !important; height: 3.8rem !important; }
+  .btfy-quick--action .btfy-product-card__quickview .icon--large { width: 2rem; height: 2rem; }
+}

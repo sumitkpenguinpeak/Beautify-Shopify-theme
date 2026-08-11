@@ -865,6 +865,9 @@
         "padding_top": "Top padding",
         "padding_bottom": "Bottom padding"
       },
+      "caption": {
+          "label": "Caption"
+        },
       "container": {
         "label": "Container",
         "options__fixed": {

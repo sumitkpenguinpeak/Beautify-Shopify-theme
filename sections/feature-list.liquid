@@ -65,13 +65,13 @@
       </div>
     {% endif %}
     <div class="section__content text-{{ section.settings.item_alignment }}{% if section.settings.swipe_on_mobile %} swipe-mobile{% endif %}">
-      <div class="btfy-feature-list__items inline-flex justify-{{ section.settings.item_alignment | replace: 'left', 'start' | replace: 'right', 'end' }}{% if section.settings.swipe_on_mobile %} flex-nowrap md:flex-wrap{% else %} flex-wrap{% endif %}">
+      <div class="btfy-feature-list__items f-grid f-grid-1-cols sm:f-grid-2-cols md:f-grid-3-cols lg:f-grid-5-cols justify-{{ section.settings.item_alignment | replace: 'left', 'start' | replace: 'right', 'end' }}{% if section.settings.swipe_on_mobile %} flex-nowrap md:flex-wrap{% else %} flex-wrap{% endif %}">
         {%- for block in section.blocks -%}
           {%- assign item_motion_delay = item_motion_delay | plus: 50 -%}
           <motion-element
             data-motion="fade-up"
             data-motion-delay="{{ item_motion_delay }}"
-            class="btfy-feature-item flex flex-col items-center gap-x-2 gap-y-3 color-{{ block.settings.color_scheme }}"
+            class="btfy-feature-item flex items-center gap-x-2 gap-y-3 color-{{ block.settings.color_scheme }}"
             {{ block.shopify_attributes }}
           >
             {% if block.settings.icon != 'none' %}
@@ -88,7 +88,10 @@
               </div>
             {%- endif -%}
             {% if block.settings.text != blank %}
-              <div class="btfy-feature-item__text">{{ block.settings.text }}</div>
+              <div class="btfy-feature-item__text">
+                <div class="btfy-feature-text">{{ block.settings.text }}</div>
+                <div class="btfy-feature-caption">{{ block.settings.caption }}</div>
+              </div>
             {%- endif -%}
           </motion-element>
         {%- endfor -%}
@@ -368,8 +371,14 @@
         {
           "type": "text",
           "id": "text",
-          "default": "Feature",
+          "default": "Feature Text",
           "label": "t:sections.all.description.label"
+        },
+       {
+          "type": "text",
+          "id": "caption",
+          "default": "Feature Caption",
+          "label": "t:sections.all.caption.label"
         }
       ]
     }

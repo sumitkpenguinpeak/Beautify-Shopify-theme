@@ -864,6 +864,9 @@
         "padding_top": "Obere Polsterung",
         "padding_bottom": "Untere Polsterung"
       },
+       "caption": {
+          "label": "Caption"
+        },
       "container": {
         "label": "Container",
         "options__fixed": {
@@ -1039,10 +1042,20 @@
           }
         }
       },
+      "label_heading": {
+        "label": "Label Heading",
+        "name": "Label Heading",
+        "content": "Label Heading"
+      },
       "heading": {
         "label": "Überschrift",
         "name": "Überschrift",
         "content": "Überschrift"
+      },
+      "hightheading": {
+        "label": "Hight Heading",
+        "name": "High Heading",
+        "content": "High Heading"
       },
       "subheading": {
         "label": "Unterüberschrift",

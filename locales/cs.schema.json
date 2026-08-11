@@ -864,6 +864,9 @@
         "padding_top": "Vrchní polstrování",
         "padding_bottom": "Spodní polstrování"
       },
+       "caption": {
+          "label": "Caption"
+        },
       "container": {
         "label": "Kontejner",
         "options__fixed": {
@@ -1039,10 +1042,20 @@
           }
         }
       },
+      "label_heading": {
+        "label": "Label Heading",
+        "name": "Label Heading",
+        "content": "Label Heading"
+      },
       "heading": {
         "label": "Nadpis",
         "name": "Nadpis",
         "content": "Nadpis"
+      },
+      "hightheading": {
+        "label": "Hight Heading",
+        "name": "High Heading",
+        "content": "High Heading"
       },
       "subheading": {
         "label": "Podnadpis",
