@@ -4,9 +4,10 @@
   %}
   <div
     id="{{ section.id }}"
-    class="section--breadcrumb"
+    class="section--breadcrumb color-{{ section.settings.color_scheme }}"
     data-section-type="breadcrumb"
     data-section-id="{{ section.id }}"
+    
   >
     {% capture separator_icon %}
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="rtl-flip-x">
@@ -95,6 +96,12 @@
     {
       "type": "paragraph",
       "content": "[Read How-to](https://foxecom.link/HE4PzP6)"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
     },
     {
       "type": "select",

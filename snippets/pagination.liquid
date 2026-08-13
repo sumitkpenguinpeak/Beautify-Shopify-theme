@@ -39,7 +39,7 @@
                 class="pagination__item pagination__item--previous pagination__item-arrow motion-reduce"
               >
                 {% render 'icon-caret', size: 'extra-small' %}
-                <span>{{ 'general.pagination.previous' | t }}</span>
+                {% comment %} <span>{{ 'general.pagination.previous' | t }}</span> {% endcomment %}
               </a>
             </li>
           {%- endif -%}
@@ -78,7 +78,7 @@
                 href="{{ paginate.next.url }}{{ anchor }}"
                 class="pagination__item pagination__item--next pagination__item-arrow motion-reduce"
               >
-                <span>{{ 'general.pagination.next' | t }}</span>
+                {% comment %} <span>{{ 'general.pagination.next' | t }}</span> {% endcomment %}
                 {% render 'icon-caret', size: 'extra-small' %}
               </a>
             </li>

@@ -19,7 +19,7 @@
   width: 100%;
   padding-inline-end: 2.4rem;
   padding-inline-start: 5.6rem;
-  border-color: transparent;
+
 }
 .search__input::-webkit-search-decoration, .search__input::-webkit-search-cancel-button, .search__input::-webkit-search-results-button, .search__input::-webkit-search-results-decoration {
   appearance: none;
@@ -132,4 +132,17 @@ body.search-template #MainContent,
 
 .predictive-search-result__list-item {
   text-transform: capitalize;
+}
+.template-search__header {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 767.98px) { 
+  .template-search__header {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
 }

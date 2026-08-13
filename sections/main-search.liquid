@@ -37,11 +37,8 @@
 {%- endif -%}
 {%- endcapture -%}
 <div
-  class="collection {{ section.index }} template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-padding color-{{ section.settings.color_scheme }}"
-  style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
->
-  <div class="theme-width">
-    <div data-motion="fade-up" class="template-search__header grid gap-6">
+  class="collection {{ section.index }} template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %}">
+    <div data-motion="fade-up" class="template-search__header grid gap-6 color-{{ section.settings.color_scheme }}">
       <{{ section.settings.heading_tag }} class="{{ section.settings.heading_size }} text-center" tabindex="-1">
         <motion-element class="block" data-motion="fade-up">
           {%- if search.performed -%}
@@ -70,8 +67,9 @@
         {%- endif -%}
       {%- endif -%}
     </div>
+    <div class="theme-width">
     {% paginate search.results by section.settings.products_per_page %}
-      <div class="collection__content flex">
+      <div class="collection__content flex section-padding" style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;">
         {%- if enable_filtering and filter_type == 'vertical' and search.results_count > 0 -%}
           <div class="hidden xl:block" id="FacetFiltersContainer">
             <div class="sticky-element z-10">
