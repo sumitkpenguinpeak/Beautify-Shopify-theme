@@ -56,7 +56,7 @@ if (!customElements.get('collection-list')) {
           nextEl: this.section.querySelector(this.selectors.nextEl),
           prevEl: this.section.querySelector(this.selectors.prevEl),
         },
-        pagination: false,
+        pagination: false, 
         breakpoints: {
           1024: {
             slidesPerView: parseInt(this.items),

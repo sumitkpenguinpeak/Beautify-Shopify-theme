@@ -21,6 +21,14 @@
   <div class="btfy-footer__wrapper">
     {%- if section.blocks.size > 0 -%}
       <div class="btfy-footer__top theme-width"> 
+        {% liquid
+
+        assign show_social = false
+
+        if section.settings.show_social and has_social_icons
+          assign show_social = true
+        endif
+      %}
         <div class="btfy-footer__top-wrapper f-flex">
           {%- if section.blocks.size > 0 -%}
             {%- for block in section.blocks -%}
@@ -238,6 +246,13 @@
                               </a>
                             </div>
                           {%- endif -%}
+                          {% if show_social %}
+                          <div class="btfy-footer__bottom-row flex justify-between">
+                            {%- if show_social -%}
+                              {%- render 'social-icons', class: 'footer__list-social', size: 'large' -%}
+                            {%- endif -%}
+                          </div>
+                        {% endif %}
                         </div>
                       </{{ tag }}>
                       {%- assign motion_delay = motion_delay | plus: 50 -%}
@@ -254,7 +269,7 @@
                           </div>
                         {%- endif -%}
                         <div class="btfy-footer-newsletter__form">
-                          {% render 'newsletter-form', custom_id: block.id %}
+                          {% render 'newsletter-form', custom_id: block.id %} 
                         </div>
                         {%- if block.settings.newsletter_term != blank -%}
                           <div class="btfy-footer-newsletter__term text-sm rte">{{ block.settings.newsletter_term }}</div>
@@ -285,7 +300,6 @@
       {% liquid
         assign enable_country_selector = false
         assign enable_language_selector = false
-        assign show_social = false
 
         if section.settings.enable_country_selector and localization.available_countries.size > 1
           assign enable_country_selector = true
@@ -295,12 +309,10 @@
           assign enable_language_selector = true
         endif
 
-        if section.settings.show_social and has_social_icons
-          assign show_social = true
-        endif
+      
       %}
       <motion-element class="block" data-motion="fade-up" data-motion-delay="50">
-        {% if enable_country_selector or enable_language_selector or show_social %}
+        {% if enable_country_selector or enable_language_selector %}
           <div class="btfy-footer__bottom-row flex justify-between">
             <div class="btfy-footer__localization relative z-2 flex items-center">
               {%- if enable_language_selector -%}
@@ -311,10 +323,6 @@
                 {% render 'country-selector', position: 'up', plain: true %}
               {%- endif -%}
             </div>
-
-            {%- if show_social -%}
-              {%- render 'social-icons', class: 'footer__list-social', size: 'large' -%}
-            {%- endif -%}
           </div>
         {% endif %}
         <div class="btfy-footer__bottom-row flex justify-between items-center">

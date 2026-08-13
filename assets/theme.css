@@ -2993,10 +2993,10 @@ input:is([type=radio])::after {
   position: absolute !important;
   content: "" !important;
 }
-.swiper-button-prev svg, .swiper-button-next svg {
+/* .swiper-button-prev svg, .swiper-button-next svg {
   width: var(--swiper-navigation-icon-size);
   height: var(--swiper-navigation-icon-size);
-}
+} */
 
 .swiper-button-prev.swiper-button--blank, .swiper-button-next.swiper-button--blank {
   border: none;
@@ -4225,7 +4225,7 @@ input:is([type=radio])::after {
     -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
   .card-media--mobile-color-inherit .card-media__content {
-    padding: var(--padding-y-mobile, var(--padding-y)) 0 0 0;
+    padding: var(--padding-y-mobile, var(--padding-y)) 1.5rem 1.5rem 1.5rem;
   }
 }
 @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
@@ -6863,4 +6863,27 @@ shopify-account::part(dialog)::backdrop {
   .btfy-quick--action .btfy-product-card__quickview { height: 25px; width: 25px; } 
   .btfy-product-card__actions .btfy-product-card__action-button { width: 2.5rem !important; height: 3.8rem !important; }
   .btfy-quick--action .btfy-product-card__quickview .icon--large { width: 2rem; height: 2rem; }
+}
+
+.desktop-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.desktop-swiper .swiper-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.desktop-swiper .swiper-slide {
+  flex-shrink: 0;
+  height: auto;
+  width: auto !important;
+}
+
+@media (max-width: 1023px) {
+  .desktop-swiper {
+    overflow: visible;
+  }
 }

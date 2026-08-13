@@ -4,7 +4,7 @@ if (!customElements.get('testimonials-component')) {
       super();
     }
 
-    connectedCallback() {
+    connectedCallback() { 
       this.selectors = {
         sliderWrapper: '.btfy-testimonials__items',
         pagination: '.swiper-pagination',

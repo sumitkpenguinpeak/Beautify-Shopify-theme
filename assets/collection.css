@@ -146,7 +146,7 @@
   .facet-short {
     --icon-size: 0.7rem;
   }
-  .facet-short select {
+  .facet-short select { 
     border: 0;
     background-color: transparent;
     width: var(--width);
@@ -155,7 +155,16 @@
     border-radius: 0;
   }
   .facet-short select ~ .icon {
-    inset-inline-end: 0;
+    inset-inline-end: 8px;
+  }
+  .facet-short select:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+  .collection__toolbar #SortByContainer .facet-short {
+        border: 1px solid #E5E5E5;
+        padding: 5px 20px 5px 8px;
+        border-radius: 8px;
   }
 }
 

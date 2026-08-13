@@ -63,12 +63,10 @@
     width: 4rem;
   }
 }
-
 .multicolumn__items .f-column {
   box-shadow: 0 4px 14px -10px rgba(0, 0, 0, 0.10);
   border: 1px solid rgb(var(--color-border));
   border-radius: 20px;
   background-color: rgb(var(--color-background));
 }
-
 .multicolumn__items .btfy-multicolumn-card { padding: 30px 15px; height: 100%; }
