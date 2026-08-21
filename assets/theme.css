@@ -6951,12 +6951,6 @@ shopify-account::part(dialog)::backdrop {
 
 
 
-
-
-
-
-
-.quick-view__content .pickup-availability-button { margin-left: 0px; }
 .quick-view__content .pickup-availability-button.btn--link:after { bottom: 0px; }
 .quick-view__content .product__block--icon-with-text .icon-with-text .icon-with-text__item .icon { width: 3rem; height: 3rem; padding: 4px; }
 .quick-view .drawer__inner { max-width: 96rem; }
@@ -6966,7 +6960,7 @@ shopify-account::part(dialog)::backdrop {
 .quick-view__content .product--slider-freemode [id^="GalleryViewer"] { height: 830px; overflow: hidden; }
 .quick-view__content .product--slider-freemode[id^="Slider-Gallery"], .quick-view .quick-view__content .product__media-item .product__media-container { height: 100%; }
 .quick-view .quick-view__content .product__media-wrapper .product__media-gallery { width: 100%; }
-.quick-view .quick-view__content .product__info-wrapper { height: 90%; }
+.quick-view .quick-view__content .product__info-wrapper { height: 90%; padding-top: 6rem !important; }
 
 @media screen and (max-width: 991.98px) { 
   .quick-view.drawer[active]>.drawer__inner { --translate-x: 0%; }
@@ -6976,4 +6970,5 @@ shopify-account::part(dialog)::backdrop {
 @media screen and (max-width: 767.98px) {  
   .quick-view .quick-view__content .product--slider-freemode { grid-template-columns: 1fr; }
   .quick-view__content .product--slider-freemode [id^="GalleryViewer"] { height: auto; }
+  .quick-view .quick-view__content .product__info-wrapper { padding-top: 0rem !important; }
 }
