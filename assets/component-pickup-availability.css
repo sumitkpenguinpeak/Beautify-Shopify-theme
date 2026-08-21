@@ -10,16 +10,12 @@ pickup-availability[available] {
   gap: 0.8rem;
 }
 .pickup-availability-preview .icon {
-  position: relative;
-  top: calc((var(--font-body-size) * var(--font-body-line-height) - 2rem) / 2);
   flex-shrink: 0;
 }
 .pickup-availability-info * {
   margin: 0;
 }
-.pickup-availability-button {
-  margin-top: 1.2rem;
-}
+
 .pickup-availability-header {
   margin: 0 1rem 2.4rem 0;
 }
@@ -48,4 +44,40 @@ pickup-availability[available] {
 }
 .pickup-availability-address p {
   margin: 0;
+}
+
+.product__pickup-availabilities .pickup-availability-preview {
+  background-color: rgba(233,233,233,0.5);
+  border: 1px solid #DADADA;
+  border-radius: 5px;
+  padding: 15px 13px;
+}
+
+.pickup-availability-preview .pickup-availability-icon {
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 0.8rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: calc((var(--font-body-size) * var(--font-body-line-height) - 2rem) / 2);
+}
+
+.pickup-availability-preview .pickup-availability-info {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  width: calc(100% - 50px);
+}
+
+.pickup-availability-button {
+  margin-left: auto;   
+}
+
+.pickup-availability-button.btn--link:after {
+    bottom: 0.8rem;
 }

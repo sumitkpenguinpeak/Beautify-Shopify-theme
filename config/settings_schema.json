@@ -12,7 +12,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "[Read How-to](https://foxecom.link/uJmAXn1)"
+        "content": "[Read How-to]"
       },
       {
         "type": "header",
@@ -99,7 +99,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "[Read How-to](https://foxecom.link/hfluvi)"
+        "content": "[Read How-to]"
       },
       {
         "type": "color_scheme_group",
@@ -1571,6 +1571,55 @@
         "id": "currency_code_enabled",
         "label": "t:settings_schema.currency_format.settings.currency_code_enabled.label",
         "default": true
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.product.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.product.header"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_soldout_badge",
+        "label": "t:settings_schema.product.settings.show_soldout_badge.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_sale_badge",
+        "label": "t:settings_schema.product.settings.show_sale_badge.label",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "sale_badge_type",
+        "label": "t:settings_schema.product.settings.sale_badge_type.label",
+        "default": "text",
+        "options": [
+          {
+            "value": "text",
+            "label": "t:settings_schema.product.settings.sale_badge_type.options__1.label"
+          },
+          {
+            "value": "percentage",
+            "label": "t:settings_schema.product.settings.sale_badge_type.options__2.label"
+          },
+          {
+            "value": "fixed_amount",
+            "label": "t:settings_schema.product.settings.sale_badge_type.options__3.label"
+          }
+        ],
+        "visible_if": "{{ settings.show_sale_badge == true }}"
+      },
+      {
+        "type": "text",
+        "id": "sale_badge_custom_text",
+        "label": "t:settings_schema.product.settings.sale_badge_custom_text.label",
+        "default": "Sale",
+        "visible_if": "{{ settings.show_sale_badge == true and settings.sale_badge_type == 'text' }}"
       }
     ]
   }

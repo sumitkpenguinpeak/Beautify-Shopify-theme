@@ -80,6 +80,7 @@
                 <{{ block.settings.heading_tag }}
                   class="rich-text__heading overflow-hidden {{ block.settings.heading_size }}"
                   {{ block.shopify_attributes }}
+                 style="--heading-text-color: {{ block.settings.heading_text_color }};"
                 >
                   <motion-element data-motion="fade-up" data-motion-delay="{{ motion_delay }}" class="block">
                     {% render 'highlight-text',
@@ -110,10 +111,8 @@
                         disabled
                       {% endif %}
                       class="btn {{ block.settings.button_style }}"
-                      {{ block.shopify_attributes }}
-                    >
-                      {{- block.settings.button_label -}}
-                    {{- 'icon-right-arrow.svg' | inline_asset_content -}}
+                      {{ block.shopify_attributes }} >
+                      {{- block.settings.button_label -}} {{- 'icon-right-arrow.svg' | inline_asset_content -}}
                     </a>
                   </motion-element>
                   {%- assign motion_delay = motion_delay | plus: 50 -%}
@@ -136,7 +135,7 @@
   "settings": [
     {
       "type": "paragraph",
-      "content": "[Read How-to](https://foxecom.link/9wkpv0d)"
+      "content": "[Read How-to]"
     },
     {
       "type": "header",
@@ -464,6 +463,12 @@
             }
           ],
           "info": "t:sections.all.heading_tag.info"
+        },
+        {
+          "type": "color",
+          "id": "heading_text_color",
+          "label": "Heading text color",
+          "default": "#EA824D"
         },
         {
           "type": "header",

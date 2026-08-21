@@ -157,7 +157,8 @@
           {%- endif -%}
         </motion-element>
       </a>
-      {%- if product.available == false or on_sale or custom_tags.size > 0 -%}
+      {%- render 'product-badges', product: product, custom_tags: custom_tags, on_sale: on_sale, show_soldout: show_soldout, show_on_sale_badge: show_on_sale_badge, sale_badge: sale_badge, compare_at_price: compare_at_price, price: price -%}
+      {% comment %} {%- if product.available == false or on_sale or custom_tags.size > 0 -%}
         <div class="btfy-product-card__badge">
           {%- if product.available == false and show_soldout -%}
             <span class="f-badge f-badge--soldout" aria-hidden="true">
@@ -194,7 +195,7 @@
             <span class="f-badge f-badge--{{ type }}">{{ tag_name }}</span>
           {%- endfor -%}
         </div>
-      {%- endif -%}
+      {%- endif -%}  {% endcomment %}
       <div class="btfy-quick--action"> 
         {%- if enable_quick_view -%}
           <button

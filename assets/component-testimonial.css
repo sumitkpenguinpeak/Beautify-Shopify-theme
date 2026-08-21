@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   margin-top: 1.5rem;
   border-top: 1px solid rgb(var(--color-border));
 }
@@ -39,19 +39,19 @@
     padding-top: 1.6rem;
   }
 }
-.btfy-testimonial--layout-1.btfy-testimonial--has-bg .btfy-testimonial__inner {
+/* .btfy-testimonial--layout-1.btfy-testimonial--has-bg .btfy-testimonial__inner {
   padding: 3rem 2rem;
-}
+} */
 @media (max-width: 767.98px) {
   .btfy-testimonial--layout-1.btfy-testimonial--has-bg .btfy-testimonial__inner {
     padding: 1.6rem 1.6rem 2rem;
   }
 }
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .btfy-testimonial--layout-1.btfy-testimonial--has-bg .btfy-testimonial__product {
     margin-bottom: -1rem;
   }
-}
+} */
 .btfy-testimonial--layout-2:has(.btfy-testimonial__image) .btfy-testimonial__inner {
   padding-inline-end: 2rem;
 }

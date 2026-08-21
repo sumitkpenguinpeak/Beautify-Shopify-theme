@@ -300,16 +300,12 @@
       {% liquid
         assign enable_country_selector = false
         assign enable_language_selector = false
-
         if section.settings.enable_country_selector and localization.available_countries.size > 1
           assign enable_country_selector = true
         endif
-
         if section.settings.enable_language_selector and localization.available_languages.size > 1
           assign enable_language_selector = true
         endif
-
-      
       %}
       <motion-element class="block" data-motion="fade-up" data-motion-delay="50">
         {% if enable_country_selector or enable_language_selector %}

@@ -23,51 +23,15 @@
               {{- block.settings.text -}}
             </p>
           </div>
+
         {%- when 'title' -%}
-          <div
-            class="product__block product__block--{{ block.type }}"
-            {{ block.shopify_attributes }}
-          >
-            {% if context == 'main-product' %}
-              <h1 class="product__title {{ block.settings.heading_size }}">{{ product.title | escape }}</h1>
-            {% else %}
-              <h2 class="product__title {{ block.settings.heading_size }}">
-                <a href="{{ product.url }}">{{ product.title | escape }}</a>
-              </h2>
-            {% endif %}
-          </div>
+        {% render 'product-details-heading',
+          block: block,
+          type: 'title'
+        %}
+
         {%- when 'price' -%}
-          <div
-            class="product__block product__block--{{ block.type }}"
-            {{ block.shopify_attributes }}
-          >
-            <div id="price-{{ section.id }}" role="status">
-              {%- render 'price',
-                product: product,
-                use_variant: true,
-                show_sale_badge: false,
-                price_class: 'f-price--large'
-              -%}
-            </div>
-            {%- if product.quantity_price_breaks_configured? -%}
-              <div class="volume-pricing-note" id="VolumeNote-{{ section.id }}">
-                <span class="text-sm text-subtext">{{ 'products.product.volume_pricing.note' | t }}</span>
-              </div>
-            {%- endif -%}
-            <div class="product__tax rte">
-              {%- if cart.taxes_included -%}
-                {{ 'products.product.include_taxes' | t }}
-              {%- endif -%}
-              {%- if shop.shipping_policy.body != blank -%}
-                {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-              {%- endif -%}
-            </div>
-            {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
-            {%- form 'product', product, id: product_form_installment_id, class: 'installment' -%}
-              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-              {{ form | payment_terms }}
-            {%- endform -%}
-          </div>
+
         {%- when 'inventory' -%}
           <div
             class="product__block product__block--{{ block.type }}{% if block.settings.text_style == 'uppercase' %} text-upper{% elsif block.settings.text_style == 'subtitle' %} text-upper text-subtext{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} hidden{% endif %}"
@@ -113,13 +77,6 @@
                 <span class="product__inventory-icon"></span>
                 <span class="product__inventory-text">{{- inventory_message -}}</span>
               </p>
-              {%- if inventory_status == 'low-stock' and inventory_quantity < block.settings.inventory_threshold -%}
-                <progress-bar
-                  class="product__inventory-stock-bar progress-bar"
-                  data-value="{{ inventory_quantity }}"
-                  data-max="{{ block.settings.inventory_threshold }}"
-                ></progress-bar>
-              {%- endif -%}
             {%- endif -%}
           </div>
         {%- when 'description' -%}
@@ -350,7 +307,7 @@
               product_form_id: product_form_id,
               section_id: section.id,
               product_id: product.id
-            -%}
+            -%} 
           </div>
         {%- when 'pickup_availability' -%}
           <div
@@ -359,14 +316,7 @@
           >
             {%- render 'product-pickup-availability', product: product -%}
           </div>
-        {%- when 'badges' -%}
-          <div
-            class="product__block product__block--{{ block.type }} product__badges flex flex-wrap items-center"
-            id="Badges-{{ section.id }}"
-            {{ block.shopify_attributes }}
-          >
-            {%- render 'product-badges', block: block, product: product, section_id: section.id -%}
-          </div>
+          
         {%- when 'shipping' -%}
           <div
             class="product__block product__block--{{ block.type }}"
@@ -701,7 +651,8 @@
       {%- endcase -%}
     {%- endfor -%}
   </div>
-  {%- if show_details_link == true -%}
+</div>
+ {%- if show_details_link == true -%}
     <a
       {% if product == blank %}
         role="link" aria-disabled="true"
@@ -714,4 +665,3 @@
       {% render 'icon-caret' %}
     </a>
   {%- endif -%}
-</div>

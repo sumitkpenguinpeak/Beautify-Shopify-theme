@@ -63,6 +63,18 @@
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
   <div class="product__media-gallery-viewer-wrap relative{{ slider_css_class }}">
+     {%- if settings.show_sale_badge and product.compare_at_price > product.price -%}
+    <div
+      class="btfy-product-card__badge product__badges"
+      id="GalleryBadges-{{ section.id }}"
+    >
+      {%- render 'product-badges',
+        product: product,
+        section_id: section.id
+      -%}
+    </div>
+  {%- endif -%}
+
     <div
       id="GalleryViewer-{{ section.id }}"
       class="product__media-gallery-viewer blocks-radius swiper"
@@ -180,6 +192,6 @@
           </div>
         {%- endfor -%}
       </div>
-    </div>
+     
   {%- endif -%}
 </media-gallery>

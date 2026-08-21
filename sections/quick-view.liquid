@@ -90,7 +90,8 @@
                 media_layout: media_layout,
                 mobile_thumbnails: mobile_thumbnails,
                 variant_images: variant_images,
-                enable_image_zoom: enable_image_zoom
+                enable_image_zoom: enable_image_zoom,
+                enable_desktop_slider: true
               %}
             </div>
             <div class="product__info-wrapper w-full">
@@ -101,6 +102,7 @@
               %}
             </div>
           </product-info>
+          
           <product-recently-viewed data-product-id="{{ product.id }}" class="hidden"></product-recently-viewed>
           {%- if enable_image_zoom -%}
             <script src="{{ 'photoswipe.js' | asset_url }}" defer="defer"></script>
@@ -549,6 +551,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "check-circle",
@@ -701,6 +707,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "tag",
@@ -921,6 +931,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "heart",
@@ -1029,6 +1043,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "gift",
@@ -1137,6 +1155,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "package",

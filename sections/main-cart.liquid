@@ -83,7 +83,7 @@
         </div>
       {%- else -%}
         <a class="btn btn--primary cart__empty-header" href="{{ routes.all_products_collection_url }}">
-          {{- 'general.cart.continue_shopping' | t -}}
+          {{- 'general.cart.continue_shopping' | t -}} {{- 'icon-right-arrow.svg' | inline_asset_content -}}
         </a>
       {%- endif -%}
     </div>
@@ -112,7 +112,7 @@
           assign items_in_cart = cart.item_count | minus: gift_wraps_in_cart
         endif
       -%}
-      <main-cart id="MainCart-{{ section.id }}" class="block">
+      <main-cart id="MainCart-{{ section.id }}" class="block maincart-table">
         <form class="cart__form" action="{{ routes.cart_url }}" method="POST" id="cart">
           <cart-items>
             <table role="table" class="w-full">
@@ -778,12 +778,12 @@
                   <div class="cart__footer--buttons grid gap-3" {{ block.shopify_attributes }}>
                     <noscript>
                       <button class="btn btn--primary w-full no-js-hidden" type="submit" name="update" form="cart">
-                        {{- 'sections.cart.update' | t -}}
+                        {{- 'sections.cart.update' | t -}} {{- 'icon-right-arrow.svg' | inline_asset_content -}}
                       </button>
                     </noscript>
 
                     <button class="btn btn--primary w-full" type="submit" form="cart" name="checkout">
-                      {{ 'sections.cart.checkout' | t }}
+                      {{ 'sections.cart.checkout' | t }} {{- 'icon-right-arrow.svg' | inline_asset_content -}}
                     </button>
 
                     {% if additional_checkout_buttons %}

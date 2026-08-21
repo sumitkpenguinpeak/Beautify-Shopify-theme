@@ -4,22 +4,26 @@
 {{ pickup_availability_modal_id }}
 {%- if pick_up_availabilities.size > 0 -%}
   <pickup-availability-preview class="pickup-availability-preview">
+    <div class="pickup-availability-icon">
     {%- liquid
       assign closest_location = pick_up_availabilities.first
 
       if closest_location.available
-        render 'icon-check'
+        render 'icon-store'
       endif
     -%}
+    </div>
     <div class="pickup-availability-info">
       {%- if closest_location.available -%}
-        <p class="pickup-availability-info__location font-body-bolder">
-          {{
-            'products.product.pickup_availability.pick_up_available_at_html'
-            | t: location_name: closest_location.location.name
-          }}
-        </p>
-        <p class="text-subtext text-sm pickup-availability-info__pickup-time">{{ closest_location.pick_up_time }}</p>
+        <div class="pickup-availability__text">
+          <p class="pickup-availability-info__location font-body-bolder">
+            {{
+              'products.product.pickup_availability.pick_up_available_at_html'
+              | t: location_name: closest_location.location.name
+            }}
+          </p>
+          <p class="text-subtext text-sm pickup-availability-info__pickup-time">{{ closest_location.pick_up_time }}</p>
+        </div>
         <button
           id="ShowPickupAvailabilityDrawer"
           class="pickup-availability-button btn--link tracking-normal"

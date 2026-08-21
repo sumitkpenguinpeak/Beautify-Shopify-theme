@@ -415,6 +415,33 @@
         }
       }
     },
+  "product": {
+  "name": "Product",
+  "header": "Sale badge",
+  "settings": {
+    "show_soldout_badge": {
+      "label": "Show sold out badge"
+    },
+    "show_sale_badge": {
+      "label": "Show sale badge"
+    },
+    "sale_badge_type": {
+      "label": "Sale badge type",
+      "options__1": {
+        "label": "Text"
+      },
+      "options__2": {
+        "label": "Percentage"
+      },
+      "options__3": {
+        "label": "Fixed amount"
+      }
+    },
+    "sale_badge_custom_text": {
+      "label": "Custom badge text"
+    }
+  }
+},
     "collection_cards": {
       "name": "Collection cards",
       "settings": {
@@ -1466,6 +1493,9 @@
         },
         "options__23": {
           "label": "Drop half bottom"
+        },
+         "options__24": {
+          "label": "Compare item"
         }
       },
       "icon_size": {
@@ -3804,6 +3834,22 @@
               "label": "Navigation title"
             }
           }
+        }
+      },
+      "presets": {
+        "name": "Collage tabs"
+      }
+    },
+     "collages-tab": {
+      "name": "Collages tab",
+      "settings": {
+        "tab_settings": {
+          "content": "Tab settings"
+        },
+      },
+      "blocks": {
+        "tab": {
+          "name": "Timeline item",
         }
       },
       "presets": {

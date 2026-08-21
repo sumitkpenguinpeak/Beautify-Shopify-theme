@@ -80,7 +80,6 @@
                   {% render 'icon-error', size: 'small' %}
                   {{ 'templates.contact.form.error_heading' | t }}
                 </h3>
-
                 <ul role="list">
                   <li>
                     <a href="#ContactForm-email" class="reversed-link">
@@ -360,7 +359,7 @@
               </div>
               <div class="contact__button form-footer text-center form-field--full">
                 <button type="submit" class="btn btn--primary">
-                  {{ 'templates.contact.form.send' | t }}
+                  {{ 'templates.contact.form.send' | t }} {{- 'icon-right-arrow.svg' | inline_asset_content -}}
                 </button>
               </div>
             </div>

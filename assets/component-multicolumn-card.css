@@ -69,4 +69,15 @@
   border-radius: 20px;
   background-color: rgb(var(--color-background));
 }
-.multicolumn__items .btfy-multicolumn-card { padding: 30px 15px; height: 100%; }
+.multicolumn__items .multicolumn-card--image-extra-large.btfy-multicolumn-card, 
+.multicolumn__items .multicolumn-card--image-large.btfy-multicolumn-card,
+.multicolumn__items .multicolumn-card--image-medium.btfy-multicolumn-card,
+.multicolumn__items .multicolumn-card--image-small.btfy-multicolumn-card { padding: 30px 15px; height: 100%; }
+
+.multicolumn__items .multicolumn-card--image-full.btfy-multicolumn-card .blocks-radius {
+   border-radius: var(--blocks-radius) var(--blocks-radius) 0px 0px;
+}
+.multicolumn__items .multicolumn-card--image-full.btfy-multicolumn-card .btfy-multicolumn-card__info {
+   padding: 0px 15px 30px;
+}
+

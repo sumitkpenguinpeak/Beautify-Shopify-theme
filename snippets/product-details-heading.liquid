@@ -1,0 +1,61 @@
+{% if type == 'title' %}
+  <div class="product-detail-block--title">
+    <div
+      class="product__block product__block--title"
+      {{ block.shopify_attributes }}
+    >
+      {% if context == 'main-product' %}
+        <h1 class="product__title {{ block.settings.heading_size }}">
+          {{ product.title | escape }}
+        </h1>
+      {% else %}
+        <h2 class="product__title {{ block.settings.heading_size }}">
+          <a href="{{ product.url }}">
+            {{ product.title | escape }}
+          </a>
+        </h2>
+      {% endif %}
+    </div>
+    {% assign price_block = section.blocks | where: 'type', 'price' | first %}
+    {% if price_block %}
+      <div
+        class="product__block product__block--price"
+        {{ price_block.shopify_attributes }}
+      >
+        <div id="price-{{ section.id }}" role="status">
+          {%- render 'price',
+            product: product,
+            use_variant: true,
+            show_sale_badge: false,
+            price_class: 'f-price--large'
+          -%}
+        </div>
+        {%- if product.quantity_price_breaks_configured? -%}
+          <div
+            class="volume-pricing-note"
+            id="VolumeNote-{{ section.id }}"
+          >
+            <span class="text-sm text-subtext">
+              {{ 'products.product.volume_pricing.note' | t }}
+            </span>
+          </div>
+        {%- endif -%}
+        {%- assign product_form_installment_id =
+          'product-form-installment-' | append: section.id
+        -%}
+        {%- form 'product',
+          product,
+          id: product_form_installment_id,
+          class: 'installment'
+        -%}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.selected_or_first_available_variant.id }}"
+          >
+          {{ form | payment_terms }}
+        {%- endform -%}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

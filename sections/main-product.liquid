@@ -154,7 +154,7 @@
           "type": "select",
           "id": "heading_size",
           "label": "t:sections.all.text_size.heading.label",
-          "default": "h1",
+          "default": "hd3",
           "options": [
             {
               "value": "h6",
@@ -538,6 +538,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "check-circle",
@@ -696,6 +700,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "tag",
@@ -916,6 +924,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "heart",
@@ -1024,6 +1036,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "gift",
@@ -1132,6 +1148,10 @@
             {
               "value": "drop-half-bottom",
               "label": "t:sections.all.icon.options__23.label"
+            },
+            {
+              "value": "compare-item",
+              "label": "t:sections.all.icon.options__24.label"
             }
           ],
           "default": "package",
@@ -1194,65 +1214,6 @@
       "type": "badges",
       "name": "t:sections.main-product.blocks.badges.name",
       "limit": 1,
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "[Read How-to](https://foxecom.link/Jlor06r)"
-        },
-        {
-          "type": "header",
-          "content": "t:sections.main-product.blocks.badges.settings.header__tags.content"
-        },
-        {
-          "type": "paragraph",
-          "content": "tag__hot_[DISPLAY_TEXT]"
-        },
-        {
-          "type": "paragraph",
-          "content": "tag__new_[DISPLAY_TEXT]"
-        },
-        {
-          "type": "paragraph",
-          "content": "Example: tag__hot_HOT, tag__new_NEW ARRIVAL"
-        },
-        {
-          "type": "header",
-          "content": "t:sections.main-product.blocks.badges.settings.header__badges.content"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_soldout_badge",
-          "label": "t:sections.main-product.blocks.badges.settings.show_soldout_badge.label",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "show_sale_badge",
-          "label": "t:sections.main-product.blocks.badges.settings.show_sale_badge.label",
-          "default": true
-        },
-        {
-          "type": "select",
-          "id": "sale_badge_type",
-          "label": "t:sections.main-product.blocks.badges.settings.sale_badge_type.label",
-          "default": "text",
-          "options": [
-            {
-              "value": "text",
-              "label": "t:sections.main-product.blocks.badges.settings.sale_badge_type.options__1.label"
-            },
-            {
-              "value": "percentage",
-              "label": "t:sections.main-product.blocks.badges.settings.sale_badge_type.options__2.label"
-            },
-            {
-              "value": "fixed_amount",
-              "label": "t:sections.main-product.blocks.badges.settings.sale_badge_type.options__3.label"
-            }
-          ],
-          "visible_if": "{{ block.settings.show_sale_badge == true }}"
-        }
-      ]
     },
     {
       "type": "shipping",

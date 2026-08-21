@@ -1,0 +1,518 @@
+<div style="
+    --time-cycle-bg: {{ section.settings.background_color }};
+    --time-cycle-color: {{ section.settings.accent_color }};
+    --time-cycle-card-bg: {{ section.settings.card_background }};
+  ">
+<div class="time-cycle">
+  <div class="time-cycle__line"></div>
+  {% for block in section.blocks %}
+    <div
+      class="
+        time-cycle__item
+        time-cycle__item--{{ block.settings.position }}
+      "
+      {{ block.shopify_attributes }}
+    >
+      {% if block.settings.position == 'left' %}
+        <div class="time-cycle__card">
+          <div class="time-cycle__card-top">
+
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: 500
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '250, 350, 500',
+                  sizes: '(min-width: 750px) 250px, 100vw',
+                  alt: block.settings.image.alt
+              }}
+            {% endif %}
+
+            {% if block.settings.heading != blank %}
+              <h3>
+                {{ block.settings.heading }}
+              </h3>
+            {% endif %}
+
+          </div>
+
+          {% if block.settings.description != blank %}
+            <div class="time-cycle__description">
+              {{ block.settings.description }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="time-cycle__dot">
+          {% if block.settings.icon != blank %}
+            {{
+              block.settings.icon
+              | image_url: width: 80
+              | image_tag:
+                loading: 'lazy',
+                alt: ''
+            }}
+          {% else %}
+            <span>♙</span>
+          {% endif %}
+        </div>
+
+        {% if block.settings.year != blank %}
+          <div class="time-cycle__year">
+            {{ block.settings.year }}
+          </div>
+        {% endif %}
+
+      {% else %}
+
+        {% if block.settings.year != blank %}
+          <div class="time-cycle__year">
+            {{ block.settings.year }}
+          </div>
+        {% endif %}
+
+        <div class="time-cycle__dot">
+          {% if block.settings.icon != blank %}
+            {{
+              block.settings.icon
+              | image_url: width: 80
+              | image_tag:
+                loading: 'lazy',
+                alt: ''
+            }}
+          {% else %}
+            <span>♙</span>
+          {% endif %}
+        </div>
+
+        <div class="time-cycle__card">
+          <div class="time-cycle__card-top">
+
+            {% if block.settings.image != blank %}
+              {{
+                block.settings.image
+                | image_url: width: 500
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '250, 350, 500',
+                  sizes: '(min-width: 750px) 250px, 100vw',
+                  alt: block.settings.image.alt
+              }}
+            {% endif %}
+
+            {% if block.settings.heading != blank %}
+              <h3>
+                {{ block.settings.heading }}
+              </h3>
+            {% endif %}
+
+          </div>
+
+          {% if block.settings.description != blank %}
+            <div class="time-cycle__description">
+              {{ block.settings.description }}
+            </div>
+          {% endif %}
+        </div>
+
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+</div>
+
+<style>
+  .section-time-cycle > div {
+     background: var(--time-cycle-bg);     
+   }
+  .time-cycle {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .time-cycle__line {
+      position: absolute;
+      top: 60px;
+      bottom: 60px;
+      left: 50%;
+      width: 2px;
+      background: repeating-linear-gradient(to bottom, #e6e6e6 0, #e6e6e6 6px, transparent 6px, transparent 12px);
+      transform: translateX(-50%);
+      display: block !important;   
+    }
+    .time-cycle__dot img {
+        filter: brightness(0) saturate(100%) invert(43%) sepia(4%) saturate(22%) hue-rotate(19deg) brightness(90%) contrast(90%);    
+        width: 30px;
+    }
+    .time-cycle__item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 200px;
+      margin-bottom: 40px;
+    }
+    .time-cycle__item--left {
+      justify-content: flex-start;
+    }
+    .time-cycle__item--left .time-cycle__card {
+      margin-right: auto;
+    }
+    .time-cycle__item--left .time-cycle__year {
+      left: calc(50% + 40px);
+      text-align: left;
+    }
+    .time-cycle__item--right {
+      justify-content: flex-end;
+    }
+    .time-cycle__item--right .time-cycle__card {
+      margin-left: auto;
+    }
+    .time-cycle__item--right .time-cycle__year {
+      right: calc(50% + 40px);
+      text-align: right;
+    }
+    .time-cycle__dot {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      background: #ffffff;
+      border: 1px solid var(--time-cycle-color);
+      border-radius: 8px;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      animation: timelinePulse 2.5s ease-in-out infinite;
+    }
+    .time-cycle__dot span {
+      color: #000000;
+      font-size: 16px;
+      line-height: 1;
+    }
+    .time-cycle__year {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      font-size: clamp(60px, 8vw, 110px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -2px;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--time-cycle-color);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .time-cycle__card {
+      position: relative;
+      z-index: 3;
+      width: calc(50% - 60px);
+      max-width: 440px;
+      padding: 16px;
+      background: #ffffff;
+      border: 1px solid var(--time-cycle-color);
+      border-radius: 14px;
+      box-sizing: border-box;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .time-cycle__card:hover {
+      transform: translateY(-5px);
+    }
+
+
+    .time-cycle__card-top {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .time-cycle__card img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .time-cycle__card h3 {
+      margin: 0;
+      color: #000000;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .time-cycle__card p {
+      margin: 12px 0 0 0;
+      color: #454545;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .time-cycle__item {
+      opacity: 0;
+      animation: timelineReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    .time-cycle__item--left {
+      transform: translateX(-30px);
+    }
+
+    .time-cycle__item--right {
+      transform: translateX(30px);
+    }
+
+    .time-cycle__item:nth-child(2) { animation-delay: 0.1s; }
+    .time-cycle__item:nth-child(3) { animation-delay: 0.25s; }
+    .time-cycle__item:nth-child(4) { animation-delay: 0.4s; }
+    .time-cycle__item:nth-child(5) { animation-delay: 0.55s; }
+
+    @keyframes timelineReveal {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes timelinePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); }
+      50% { box-shadow: 0 0 0 8px rgba(0, 0, 0, 0); }
+    }
+
+    @media (max-width: 850px) {
+      .time-cycle__card {
+        width: calc(50% - 45px);
+        padding: 12px;
+      }
+      
+      .time-cycle__card-top {
+        grid-template-columns: 110px 1fr;
+        gap: 12px;
+      }
+
+      .time-cycle__card img {
+        height: 75px;
+      }
+
+      .time-cycle__year {
+        font-size: 60px;
+      }
+
+      .time-cycle__item--left .time-cycle__year {
+        left: calc(50% + 25px);
+      }
+
+      .time-cycle__item--right .time-cycle__year {
+        right: calc(50% + 25px);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .time-cycle { padding: 30px 15px; }
+      .time-cycle__line { left: 35px; }
+      .time-cycle__item,
+      .time-cycle__item--left,
+      .time-cycle__item--right {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 45px;
+        margin-bottom: 35px;
+        min-height: auto;
+        transform: translateY(20px);
+      }
+      .time-cycle__item--left {
+        flex-direction: column-reverse;
+      }
+      .time-cycle__dot {
+        left: 20px;
+        top: 25px;
+        transform: translate(-50%, 0);
+      }
+      .time-cycle__year,
+      .time-cycle__item--left .time-cycle__year,
+      .time-cycle__item--right .time-cycle__year {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+        font-size: 42px;
+        margin-bottom: 6px;
+      }
+      .time-cycle__card,
+      .time-cycle__item--left .time-cycle__card,
+      .time-cycle__item--right .time-cycle__card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+      }
+      @keyframes timelineReveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+</style>
+
+
+
+{% schema %}
+{
+  "name": "t:sections.collage-tabs.name",
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.overlay"]
+  },
+  "tag": "section",
+  "class": "section-time-cycle",
+  "settings": [
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 700,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 1100
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "timeline_item",
+      "name": "Timeline item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "Year",
+          "default": "2026"
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Timeline icon"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "A fruit enzyme that helps exfoliate & soften skin"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Purifying yet non-stripping, this fruit enzyme-packed cleansing oil effortlessly melts away makeup while helping maintain skin's moisture barrier and pH balance.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.collage-tabs.name",
+      "blocks": [
+        {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2026",
+            "position": "left"
+          }
+        },
+        {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2024",
+            "position": "right"
+          }
+        },
+        {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2022",
+            "position": "left"
+          }
+        },
+        {
+          "type": "timeline_item",
+          "settings": {
+            "year": "2020",
+            "position": "right"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

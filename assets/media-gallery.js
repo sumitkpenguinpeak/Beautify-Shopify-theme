@@ -88,11 +88,19 @@ if (!customElements.get('media-gallery')) {
               },
             });
             break;
-          case 'slider-freemode':
+            case 'slider-freemode': {
+            const isQuickView = this.closest('.quick-view, quick-view-modal');
+            const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
             this.sliderOptions = Object.assign({}, this.sliderOptions, {
-              slidesPerView: 'auto',
+              direction: isQuickView && !isMobile ? 'vertical' : 'horizontal',
+              slidesPerView: isQuickView && !isMobile ? 3 : 1,
+              spaceBetween: isQuickView ? 15 : mediaItemGap,
+              autoHeight: isMobile,
             });
+
             break;
+          }
         }
       }
 

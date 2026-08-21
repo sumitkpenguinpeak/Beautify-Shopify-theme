@@ -178,7 +178,7 @@
       "view_product_list": "View product list",
       "description": "Description",
       "inventory_in_stock": "In stock",
-      "inventory_in_stock_show_count_html": "<strong>{{ quantity }}</strong> in stock",
+      "inventory_in_stock_show_count_html": "<strong>{{ quantity }}</strong> items in stock available",
       "inventory_low_stock": "Low stock",
       "inventory_low_stock_one_item_html": "Hurry up, only <strong>{{ quantity }}</strong> item left in stock.",
       "inventory_low_stock_many_items_html": "Hurry up, only <strong>{{ quantity }}</strong> items left in stock.",
