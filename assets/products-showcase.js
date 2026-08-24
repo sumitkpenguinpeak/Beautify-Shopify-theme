@@ -43,10 +43,10 @@ if (!customElements.get('products-showcase')) {
           threshold: 2,
         };
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this.querySelector('.swiper'), this.sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this.querySelector('.swiper'), this.sliderOptions);
         this.sliderInstance.init();
 
-        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+        const focusableElements = PenguinTheme.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', () => {

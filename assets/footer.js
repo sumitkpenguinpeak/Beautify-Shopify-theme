@@ -7,7 +7,7 @@ if (!customElements.get("footer-details")) {
     connectedCallback() {
       this.openDefault = this.dataset.openDefault === 'true';
 
-      if (FoxTheme.config.mqlTablet) {
+      if (PenguinTheme.config.mqlTablet) {
         if (!this.openDefault) this.open = false;
       }
 

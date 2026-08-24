@@ -8,7 +8,7 @@ if (!customElements.get('recently-viewed-products')) {
         if ('requestIdleCallback' in window) {
           requestIdleCallback(this.init.bind(this), { timeout: 1500 });
         } else {
-          FoxTheme.Motion.inView(this, this.init.bind(this), { margin: '0px 0px 400px 0px' });
+          PenguinTheme.Motion.inView(this, this.init.bind(this), { margin: '0px 0px 400px 0px' });
         }
       }
 
@@ -49,7 +49,7 @@ if (!customElements.get('recently-viewed-products')) {
       }
 
       getQueryUrl() {
-        const items = JSON.parse(window.localStorage.getItem('sleektheme:recently-viewed') || '[]');
+        const items = JSON.parse(window.localStorage.getItem('luviatheme:recently-viewed') || '[]');
         const productId = parseInt(this.dataset.productId);
         const productsToShow = parseInt(this.dataset.productsToShow);
 

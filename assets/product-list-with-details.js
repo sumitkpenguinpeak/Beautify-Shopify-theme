@@ -16,7 +16,7 @@ if (!customElements.get('product-list-with-details')) {
           return;
         }
 
-        if (FoxTheme.config.mqlMobile) {
+        if (PenguinTheme.config.mqlMobile) {
           return;
         }
 

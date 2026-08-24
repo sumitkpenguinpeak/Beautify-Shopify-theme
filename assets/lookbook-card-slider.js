@@ -32,7 +32,7 @@ if (!customElements.get('lookbook-card-slider')) {
 
       initSlider() {
         const items = parseInt(this.dataset.items);
-        const columnGap = FoxTheme.utils.getGridColumnGap(this.sliderWrapper);
+        const columnGap = PenguinTheme.utils.getGridColumnGap(this.sliderWrapper);
 
         this.sliderOptions = {
           init: false,
@@ -71,7 +71,7 @@ if (!customElements.get('lookbook-card-slider')) {
         this.sliderCounter = this.querySelector('.swiper-pagination-counter');
         this.sliderWrapper.querySelector('.swiper-wrapper').classList.remove('f-grid');
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this.sliderWrapper, this.sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this.sliderWrapper, this.sliderOptions);
         this.sliderInstance.init();
         this.sliderInstance.slider.init();
 
@@ -84,7 +84,7 @@ if (!customElements.get('lookbook-card-slider')) {
 
         window.addEventListener(
           'resize',
-          FoxTheme.utils.debounce(() => {
+          PenguinTheme.utils.debounce(() => {
             this.calcNavButtonsPosition();
           }, 100)
         );

@@ -27,7 +27,7 @@ if (!customElements.get('collection-showcase')) {
           threshold: 2,
         };
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this.querySelector('.swiper'), sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this.querySelector('.swiper'), sliderOptions);
         this.sliderInstance.init();
       }
     }

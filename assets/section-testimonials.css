@@ -31,5 +31,5 @@
 
 .testimonials .btfy-testimonials__items .f-column .testimonial {
     border: 1px solid rgb(var(--color-border));
-    border-radius: var(--blocks-radius) 
+    border-radius: var(--blocks-radius);
 }

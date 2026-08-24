@@ -72,10 +72,10 @@ class GiftWrapping extends HTMLElement {
   }
 
   updateCart(body) {
-    fetch(`${FoxTheme.routes.cart_update_url}`, { ...FoxTheme.utils.fetchConfig(), ...{ body } })
+    fetch(`${PenguinTheme.routes.cart_update_url}`, { ...PenguinTheme.utils.fetchConfig(), ...{ body } })
       .then((response) => response.json())
       .then((parsedState) => {
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: parsedState });
+        PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: parsedState });
       })
       .catch((error) => {
         console.error('Error updating cart:', error);
@@ -93,12 +93,12 @@ class GiftNote extends HTMLElement {
   constructor() {
     super();
 
-    this.addEventListener('change', FoxTheme.utils.debounce(this.updateGiftNote.bind(this), 300));
+    this.addEventListener('change', PenguinTheme.utils.debounce(this.updateGiftNote.bind(this), 300));
   }
 
   updateGiftNote(event) {
     const requestBody = JSON.stringify({ attributes: { 'gift-note': event.target.value } });
-    fetch(`${FoxTheme.routes.cart_update_url}`, { ...FoxTheme.utils.fetchConfig(), ...{ body: requestBody } });
+    fetch(`${PenguinTheme.routes.cart_update_url}`, { ...PenguinTheme.utils.fetchConfig(), ...{ body: requestBody } });
   }
 }
 customElements.define('gift-note', GiftNote);

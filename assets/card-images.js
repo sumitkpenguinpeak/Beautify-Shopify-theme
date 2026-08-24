@@ -39,7 +39,7 @@ if (!customElements.get('card-images')) {
     }
 
     initSlider() {
-      const columnGap = FoxTheme.utils.getGridColumnGap(this.sliderWrapper);
+      const columnGap = PenguinTheme.utils.getGridColumnGap(this.sliderWrapper);
 
       const sliderOptions = {
         slidesPerView: 1,
@@ -70,9 +70,9 @@ if (!customElements.get('card-images')) {
         this.classList.add(this.classes.swiper);
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
-        this.sliderInstance = new window.FoxTheme.Carousel(this, sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this, sliderOptions);
         this.sliderInstance.init();
-        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+        const focusableElements = PenguinTheme.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', () => {

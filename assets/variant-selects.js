@@ -20,7 +20,7 @@ if (!customElements.get('variant-selects')) {
         this.addEventListener('change', (event) => {
           const target = this.getInputForEventTarget(event.target);
           this.updateSelectedSwatchValue(event);
-          FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.optionValueSelectionChange, {
+          PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.optionValueSelectionChange, {
             data: {
               event,
               target,

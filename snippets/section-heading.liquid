@@ -82,7 +82,7 @@
               style: section_settings.heading_highlight_style
             %}
             {% if section_settings.highlight_heading %}
-              <span class="hight_light_heading">{{ section_settings.highlight_heading }}</span>
+              <span class="hight_light_heading {% if section_settings.highlight_heading_break %} heading-break{% endif %}">{{ section_settings.highlight_heading }}</span>
             {% endif %}
           </motion-element>
         </{{ heading_tag }}>

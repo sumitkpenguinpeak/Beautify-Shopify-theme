@@ -34,7 +34,7 @@ if (!customElements.get('slideshow-component')) {
       }
 
       initSlider() {
-        const additionModules = [FoxTheme.Swiper.Autoplay, FoxTheme.Swiper.EffectFade];
+        const additionModules = [PenguinTheme.Swiper.Autoplay, PenguinTheme.Swiper.EffectFade];
 
         this.sliderOptions = {
           slidesPerView: 1,
@@ -91,14 +91,14 @@ if (!customElements.get('slideshow-component')) {
           };
         }
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this, this.sliderOptions, additionModules);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this, this.sliderOptions, additionModules);
         this.sliderInstance.init();
 
         this.sliderInstance.slider.on('realIndexChange', this.handleSlideChange.bind(this));
         this.selectedIndex = this.sliderInstance.slider.realIndex;
 
         if (this.sliderInstance) {
-          if (this.layout === 'centered' && !FoxTheme.config.mqlMobile) {
+          if (this.layout === 'centered' && !PenguinTheme.config.mqlMobile) {
             const motionTextElements = Array.from(this.querySelectorAll('motion-element[data-text]'));
             motionTextElements &&
               motionTextElements.forEach((motionTextElement) => {
@@ -113,7 +113,7 @@ if (!customElements.get('slideshow-component')) {
           this.selectedElement = this.sliderInstance.slider.slides[this.sliderInstance.slider.activeIndex];
           this.onReady(this.selectedElement, this.sliderInstance.slider.slides);
           // Fix accessibility
-          const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+          const focusableElements = PenguinTheme.a11y.getFocusableElements(this);
           if (this.layout === 'centered') {
             focusableElements.forEach((element) => {
               element.addEventListener('focusin', () => {
@@ -135,11 +135,11 @@ if (!customElements.get('slideshow-component')) {
 
       onReady(selectedElement) {
         if (selectedElement.dataset.type === 'video') {
-          const videoElement = FoxTheme.utils.displayedMedia(selectedElement.querySelectorAll('video-element'));
+          const videoElement = PenguinTheme.utils.displayedMedia(selectedElement.querySelectorAll('video-element'));
           videoElement?.play();
         }
 
-        if (!FoxTheme.config.motionReduced) {
+        if (!PenguinTheme.config.motionReduced) {
           const motionEls = selectedElement.querySelectorAll('motion-element');
           motionEls.forEach((motionEl) => {
             if (!motionEl || motionEl.classList.contains('is-animated')) return;
@@ -183,7 +183,7 @@ if (!customElements.get('slideshow-component')) {
 
           fromElements.forEach((fromElement) => {
             if (fromElement.dataset.type === 'video') {
-              const videoElement = FoxTheme.utils.displayedMedia([fromElement.querySelector('video-element')]);
+              const videoElement = PenguinTheme.utils.displayedMedia([fromElement.querySelector('video-element')]);
               videoElement && videoElement.pause();
             }
 
@@ -199,7 +199,7 @@ if (!customElements.get('slideshow-component')) {
             setTimeout(() => {
               if (toElement.classList.contains('swiper-slide-active')) {
                 if (toElement.dataset.type === 'video') {
-                  const videoElement = FoxTheme.utils.displayedMedia([toElement.querySelector('video-element')]);
+                  const videoElement = PenguinTheme.utils.displayedMedia([toElement.querySelector('video-element')]);
                   videoElement && videoElement.play();
                 }
 

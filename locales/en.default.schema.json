@@ -400,7 +400,7 @@
               "label": "Color swatch"
             },
             "options__2": {
-              "label": "Variant image"
+              "label": "Variant image" 
             },
             "options__3": {
               "label": "Shopify swatch"
@@ -609,7 +609,7 @@
       "settings": {
         "type_header_font": {
           "label": "Font",
-          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
+          "info": "Selecting a different font can affect the speed of your store."
         },
         "heading_scale": {
           "label": "Font size scale"
@@ -667,7 +667,7 @@
         },
         "type_body_font": {
           "label": "Font",
-          "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https://help.shopify.com/manual/online-store/os/store-speed/improving-speed#fonts)"
+          "info": "Selecting a different font can affect the speed of your store."
         },
         "bolder_font_weight": {
           "label": "Bolder font weight",
@@ -2041,7 +2041,7 @@
           "content": "Country/region selector"
         },
         "header__4": {
-          "info": "To add a country/region, go to your [market settings.](/admin/settings/markets) or [Read How-to](https://foxecom.link/nxqz-w)"
+          "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
         },
         "enable_country_selector": {
           "label": "Enable country/region selector"
@@ -2164,7 +2164,7 @@
         },
         "enable_country_selector": {
           "label": "Enable country/region selector",
-          "info": "To add a country/region, go to your [market settings.](/admin/settings/markets) or [Read How-to](https://foxecom.link/nxqz-w)"
+          "info": "To add a country/region, go to your [market settings.](/admin/settings/markets)"
         },
         "enable_megamenu_mobile": {
           "label": "Enable on mobile"
@@ -2343,7 +2343,7 @@
       "name": "Collection banner",
       "settings": {
         "paragraph": {
-          "content": "Add a description or image by editing your collection. [Learn more](https://help.shopify.com/manual/products/collections/collection-layout)"
+          "content": "Add a description or image by editing your collection."
         },
         "settings_header": {
           "label": "Settings"
@@ -2752,7 +2752,7 @@
                 "info": "Show different size chart for specific collection or product."
               },
               "paragraph_2": {
-                "content": "Create a custom metafield for product with namespace and key: \"foxtheme.size_chart\". [Add metafield](/admin/metafields/product)"
+                "content": "Create a custom metafield for product with namespace and key: \"PenguinTheme.size_chart\". [Add metafield](/admin/metafields/product)"
               }
             }
           }

@@ -69,7 +69,7 @@
             "heading_size": "h1",
             "heading_highlight_style": "none",
             "subheading": "",
-            "description": "<p>Sustainability is the epitome of allure in modern fashion. Our workout wear collection embodies this ethos, seamlessly blending eco-consciousness with undeniable sexiness. From sleek designs to flattering cuts, each piece exudes confidence and style while leaving a minimal environmental footprint. l world where human progress is in harmony with the planet's.</p>",
+            "description": "<p>Sustainability is the epitome of allure in modern fashion. Our workout wear collection embodies this ethos, seamlessly blending eco-consciousness with undeniable sexiness. From luvia designs to flattering cuts, each piece exudes confidence and style while leaving a minimal environmental footprint. l world where human progress is in harmony with the planet's.</p>",
             "text_size": "text-lg",
             "button_label": "",
             "button_link": "",
@@ -400,7 +400,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Free Shipping"
           }
@@ -409,7 +408,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Money Guarantee"
           }
@@ -418,7 +416,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Flexible Payment"
           }
@@ -427,7 +424,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Online Support"
           }
@@ -436,7 +432,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Return within 7 days"
           }

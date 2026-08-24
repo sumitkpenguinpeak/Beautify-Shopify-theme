@@ -87,7 +87,7 @@ if (!customElements.get('sticky-atc-bar')) {
           if (!this.currentVariant) {
             this.updateButton(true, '', true);
           } else {
-            this.updateButton(!this.currentVariant.available, FoxTheme.variantStrings.soldOut);
+            this.updateButton(!this.currentVariant.available, PenguinTheme.variantStrings.soldOut);
           }
         });
 
@@ -141,7 +141,7 @@ if (!customElements.get('sticky-atc-bar')) {
           return;
         }
 
-        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(PenguinTheme.config.mediaQueryMobile);
         mql.onchange = this.checkDevice.bind(this);
         this.checkDevice();
 
@@ -181,7 +181,7 @@ if (!customElements.get('sticky-atc-bar')) {
           if (text) addButtonText.textContent = text;
         } else {
           addButton.removeAttribute('disabled');
-          addButtonText.textContent = FoxTheme.variantStrings.addToCart;
+          addButtonText.textContent = PenguinTheme.variantStrings.addToCart;
         }
       }
 
@@ -196,8 +196,8 @@ if (!customElements.get('sticky-atc-bar')) {
           compareAtPrice: ['.f-price-item--regular'],
           unitPriceWrapper: '.f-price__unit-wrapper',
         };
-        const moneyFormat = FoxTheme.settings.moneyFormat;
-        const { priceWrapper, salePrice, unitPriceWrapper, compareAtPrice } = FoxTheme.utils.queryDomNodes(
+        const moneyFormat = PenguinTheme.settings.moneyFormat;
+        const { priceWrapper, salePrice, unitPriceWrapper, compareAtPrice } = PenguinTheme.utils.queryDomNodes(
           selectors,
           this
         );
@@ -219,22 +219,22 @@ if (!customElements.get('sticky-atc-bar')) {
           priceWrapper.classList.remove(classes.soldOut);
         }
 
-        if (salePrice) salePrice.innerHTML = FoxTheme.Currency.formatMoney(price, moneyFormat);
+        if (salePrice) salePrice.innerHTML = PenguinTheme.Currency.formatMoney(price, moneyFormat);
 
         if (compareAtPrice && compareAtPrice.length && compare_at_price > price) {
           compareAtPrice.forEach(
-            (item) => (item.innerHTML = FoxTheme.Currency.formatMoney(compare_at_price, moneyFormat))
+            (item) => (item.innerHTML = PenguinTheme.Currency.formatMoney(compare_at_price, moneyFormat))
           );
         } else {
-          compareAtPrice.forEach((item) => (item.innerHTML = FoxTheme.Currency.formatMoney(price, moneyFormat)));
+          compareAtPrice.forEach((item) => (item.innerHTML = PenguinTheme.Currency.formatMoney(price, moneyFormat)));
         }
 
         if (unit_price_measurement && unitPrice) {
           unitPriceWrapper.classList.remove('hidden');
-          const unitPriceContent = `<span>${FoxTheme.Currency.formatMoney(
+          const unitPriceContent = `<span>${PenguinTheme.Currency.formatMoney(
             this.currentVariant.unit_price,
             moneyFormat
-          )}</span>/<span data-unit-price-base-unit>${FoxTheme.Currency.getBaseUnit(this.currentVariant)}</span>`;
+          )}</span>/<span data-unit-price-base-unit>${PenguinTheme.Currency.getBaseUnit(this.currentVariant)}</span>`;
           unitPrice.innerHTML = unitPriceContent;
         } else {
           unitPriceWrapper.classList.add('hidden');
@@ -242,7 +242,7 @@ if (!customElements.get('sticky-atc-bar')) {
       }
 
       syncWithMainProductForm() {
-        FoxTheme.pubsub.subscribe(FoxTheme.pubsub.PUB_SUB_EVENTS.variantChange, (event) => {
+        PenguinTheme.pubsub.subscribe(PenguinTheme.pubsub.PUB_SUB_EVENTS.variantChange, (event) => {
           const isMainProduct = event.data.sectionId === this.mainProductInfo.dataset.section;
           if (!isMainProduct) return;
           const variant = event.data.variant;
@@ -255,7 +255,7 @@ if (!customElements.get('sticky-atc-bar')) {
           if (!variant) {
             this.updateButton(true, '', true);
           } else {
-            this.updateButton(!variant.available, FoxTheme.variantStrings.soldOut);
+            this.updateButton(!variant.available, PenguinTheme.variantStrings.soldOut);
           }
 
           this.updateQuantityInput();

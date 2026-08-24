@@ -22,7 +22,7 @@ if (!customElements.get('product-slider')) {
         };
 
         this.sectionId = this.dataset.sectionId;
-        this.elements = FoxTheme.utils.queryDomNodes(this.selectors, this);
+        this.elements = PenguinTheme.utils.queryDomNodes(this.selectors, this);
         this.elements.section = this.closest(`.section-${this.sectionId}`);
 
         this.enableSlider = this.dataset.enableSlider === 'true';
@@ -35,13 +35,13 @@ if (!customElements.get('product-slider')) {
 
         if (!this.elements.productsWrap || !this.elements.products) return;
 
-        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(PenguinTheme.config.mediaQueryMobile);
         mql.onchange = this.init.bind(this);
         this.init();
       }
 
       init() {
-        if (FoxTheme.config.mqlMobile || this.shouldDestroySlider()) {
+        if (PenguinTheme.config.mqlMobile || this.shouldDestroySlider()) {
           this.destroySlider();
         } else {
           this.initSlider();
@@ -51,7 +51,7 @@ if (!customElements.get('product-slider')) {
       initSlider() {
         if (typeof this.sliderInstance === 'object') return;
 
-        const columnGap = FoxTheme.utils.getGridColumnGap(this.elements.products);
+        const columnGap = PenguinTheme.utils.getGridColumnGap(this.elements.products);
 
         this.sliderOptions = {
           slidesPerView: this.tabletItems > 3 ? 3 : parseInt(this.tabletItems),
@@ -79,7 +79,7 @@ if (!customElements.get('product-slider')) {
         this.elements.products.classList.add(this.classes.swiperWrapper);
         this.elements.swiperControls.classList.add('md:block');
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this.elements.productsWrap, this.sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this.elements.productsWrap, this.sliderOptions);
         this.sliderInstance.init();
         this.handleAccessibility();
         this.fixQuickviewDuplicate();
@@ -88,14 +88,14 @@ if (!customElements.get('product-slider')) {
 
         window.addEventListener(
           'resize',
-          FoxTheme.utils.debounce(() => {
+          PenguinTheme.utils.debounce(() => {
             this.calcNavButtonsPosition();
           }, 100),
         );
       }
 
       handleAccessibility() {
-        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+        const focusableElements = PenguinTheme.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', (event) => {
@@ -149,7 +149,7 @@ if (!customElements.get('product-slider')) {
         const recentlyViewedSection = this.closest('recently-viewed-products');
 
         if (recentlyViewedSection) {
-          const items = JSON.parse(window.localStorage.getItem('sleektheme:recently-viewed') || '[]');
+          const items = JSON.parse(window.localStorage.getItem('luviatheme:recently-viewed') || '[]');
           const productId = parseInt(recentlyViewedSection.dataset.productId);
 
           if (items.includes(productId)) {

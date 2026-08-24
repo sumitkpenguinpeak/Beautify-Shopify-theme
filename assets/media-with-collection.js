@@ -25,13 +25,13 @@ if (!customElements.get('media-with-collection')) {
         this.enableSliderMobile = this.dataset.enableSliderMobile === 'true';
         this.sliderInstance = false;
 
-        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(PenguinTheme.config.mediaQueryMobile);
         mql.onchange = this.init.bind(this);
         this.init();
       }
 
       init() {
-        if (FoxTheme.config.mqlMobile) {
+        if (PenguinTheme.config.mqlMobile) {
           if (this.enableSliderMobile) {
             this.initSlider();
           } else {
@@ -52,7 +52,7 @@ if (!customElements.get('media-with-collection')) {
         const items = parseInt(this.dataset.items);
         const itemsMobile = parseInt(this.dataset.itemsMobile);
 
-        const columnGap = FoxTheme.utils.getGridColumnGap(this.products);
+        const columnGap = PenguinTheme.utils.getGridColumnGap(this.products);
 
         this.sliderOptions = {
           init: false,
@@ -84,7 +84,7 @@ if (!customElements.get('media-with-collection')) {
 
         this.calcNavButtonsPosition();
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this.productsWrap, this.sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this.productsWrap, this.sliderOptions);
         this.sliderInstance.init();
 
         this.sliderInstance.slider.on('afterInit', this.onSlideAfterInit.bind(this));

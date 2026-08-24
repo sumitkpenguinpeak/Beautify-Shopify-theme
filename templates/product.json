@@ -256,7 +256,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Free Shipping"
           }
@@ -265,7 +264,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Money Guarantee"
           }
@@ -274,7 +272,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Flexible Payment"
           }
@@ -283,7 +280,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Online Support"
           }
@@ -292,7 +288,6 @@
           "type": "feature_item",
           "settings": {
             "color_scheme": "",
-            "icon": "check",
             "icon_style": "btn--secondary",
             "text": "Return within 7 days"
           }

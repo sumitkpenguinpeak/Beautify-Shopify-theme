@@ -30,13 +30,13 @@ if (!customElements.get('featured-collection')) {
 
         if (!this.enableSlider) return;
 
-        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(PenguinTheme.config.mediaQueryMobile);
         mql.onchange = this.init.bind(this);
         this.init();
       }
 
       init() {
-        if (FoxTheme.config.mqlMobile) {
+        if (PenguinTheme.config.mqlMobile) {
           this.destroySlider();
         } else {
           this.initSlider();
@@ -46,7 +46,7 @@ if (!customElements.get('featured-collection')) {
       initSlider() {
         if (typeof this.sliderInstance === 'object') return;
 
-        const columnGap = FoxTheme.utils.getGridColumnGap(this.sliderWrapper);
+        const columnGap = PenguinTheme.utils.getGridColumnGap(this.sliderWrapper);
 
         this.sliderOptions = {
           slidesPerView: this.tabletItems > 3 ? 3 : parseInt(this.tabletItems),
@@ -74,14 +74,14 @@ if (!customElements.get('featured-collection')) {
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this, this.sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this, this.sliderOptions);
         this.sliderInstance.init();
 
         this.fixQuickviewDuplicate();
 
         this.calcNavButtonsPosition();
 
-        window.addEventListener("resize", FoxTheme.utils.debounce(() => {
+        window.addEventListener("resize", PenguinTheme.utils.debounce(() => {
           this.calcNavButtonsPosition();
         }, 100));
       }

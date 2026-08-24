@@ -19,11 +19,11 @@ if (!customElements.get('subscription-popup')) {
 
         this.triggerOpen = this.dataset.triggerOpen;
         this.repeatOpen = this.dataset.repeatOpen;
-        this.cookieName = 'sleektheme:popup';
+        this.cookieName = 'luviatheme:popup';
 
-        window.FoxTheme.DOMready(this.handleOpen.bind(this));
+        window.PenguinTheme.DOMready(this.handleOpen.bind(this));
 
-        window.FoxTheme.utils.addEventDelegate({
+        window.PenguinTheme.utils.addEventDelegate({
           context: this,
           selector: '.btn-apply-coupon-code',
           handler: async (e, target) => {
@@ -42,7 +42,7 @@ if (!customElements.get('subscription-popup')) {
       handleOpen() {
         if (Shopify.designMode) return;
 
-        let savedData = FoxTheme.utils.getStorage(this.cookieName);
+        let savedData = PenguinTheme.utils.getStorage(this.cookieName);
         if (savedData && savedData.opened) {
           return false;
         }
@@ -134,7 +134,7 @@ if (!customElements.get('subscription-popup')) {
             break;
         }
 
-        window.FoxTheme.utils.setStorage(this.cookieName, { opened: true }, expires);
+        window.PenguinTheme.utils.setStorage(this.cookieName, { opened: true }, expires);
       }
     }
   );

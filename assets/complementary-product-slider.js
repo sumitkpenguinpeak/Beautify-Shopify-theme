@@ -26,7 +26,7 @@ if (!customElements.get('complementary-product-slider')) {
 
       connectedCallback() {
         const slider = this.querySelector('.swiper');
-        this.sliderInstance = new window.FoxTheme.Carousel(slider, this.sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(slider, this.sliderOptions);
         this.sliderInstance.init();
 
         this.fixQuickviewDuplicate();

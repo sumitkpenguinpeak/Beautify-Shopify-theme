@@ -10,7 +10,7 @@ if (!customElements.get('collection-image-showcase')) {
           tabs: ['.cis__link'],
         };
 
-        this.elements = FoxTheme.utils.queryDomNodes(this.selectors, this);
+        this.elements = PenguinTheme.utils.queryDomNodes(this.selectors, this);
         this.hoverTracker = null;
       }
 

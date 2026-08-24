@@ -40,8 +40,8 @@ if (!customElements.get('product-info')) {
       connectedCallback() {
         this.initializeProductSwapUtility();
 
-        this.onVariantChangeUnsubscriber = FoxTheme.pubsub.subscribe(
-          FoxTheme.pubsub.PUB_SUB_EVENTS.optionValueSelectionChange,
+        this.onVariantChangeUnsubscriber = PenguinTheme.pubsub.subscribe(
+          PenguinTheme.pubsub.PUB_SUB_EVENTS.optionValueSelectionChange,
           this.handleOptionValueChange.bind(this)
         );
 
@@ -183,10 +183,10 @@ if (!customElements.get('product-info')) {
           const isDisabled = !newAddButton || newAddButton.hasAttribute('disabled');
           this.updateButtonsState(isDisabled, {
             updateText: true,
-            text: isDisabled ? FoxTheme.variantStrings.soldOut : null,
+            text: isDisabled ? PenguinTheme.variantStrings.soldOut : null,
           });
 
-          FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.variantChange, {
+          PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.variantChange, {
             data: {
               sectionId: this.sectionId,
               html,
@@ -316,7 +316,7 @@ if (!customElements.get('product-info')) {
               if (variantId) {
                 addButton.removeAttribute('disabled');
                 if (updateText && addButtonText) {
-                  addButtonText.textContent = this.decoded(FoxTheme.variantStrings.addToCart);
+                  addButtonText.textContent = this.decoded(PenguinTheme.variantStrings.addToCart);
                 }
               }
             }
@@ -360,7 +360,7 @@ if (!customElements.get('product-info')) {
       setUnavailable() {
         this.updateButtonsState(true, {
           updateText: true,
-          text: FoxTheme.variantStrings.unavailable,
+          text: PenguinTheme.variantStrings.unavailable,
         });
         const price = document.getElementById(`price-${this.dataset.section}`);
         const inventory = document.getElementById(`Inventory-${this.dataset.section}`);
@@ -380,15 +380,15 @@ if (!customElements.get('product-info')) {
 
         this.setQuantityBoundries();
         if (!this.hasAttribute('data-original-section')) {
-          this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(
-            FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+          this.cartUpdateUnsubscriber = PenguinTheme.pubsub.subscribe(
+            PenguinTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
             this.fetchQuantityRules.bind(this)
           );
         }
       }
 
       setQuantityBoundries() {
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.quantityBoundries, {
+        PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.quantityBoundries, {
           data: {
             sectionId: this.sectionId,
             productId: this.productId,
@@ -419,7 +419,7 @@ if (!customElements.get('product-info')) {
       updateQuantityRules(sectionId, productId, parsedHTML) {
         if (!this.quantityInput) return;
 
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.quantityRules, {
+        PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.quantityRules, {
           data: {
             sectionId,
             productId,

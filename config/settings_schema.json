@@ -1,19 +1,15 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Sleek",
-    "theme_version": "2.2.0",
-    "theme_author": "FoxEcom",
-    "theme_documentation_url": "https://docs.foxecom.com/sleek-theme",
-    "theme_support_url": "https://help.foxecom.com/"
+    "theme_name": "Luvia",
+    "theme_version": "1.0.0",
+    "theme_author": "PenguinTheme",
+    "theme_documentation_url": "https://docs.PenguinTheme.com/luvia-theme",
+    "theme_support_url": "https://help.PenguinTheme.com/"
   },
   {
     "name": "t:settings_schema.general.name",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "[Read How-to]"
-      },
       {
         "type": "header",
         "content": "t:settings_schema.general.settings.header__rtl.content"
@@ -97,10 +93,6 @@
   {
     "name": "t:settings_schema.colors.name",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "[Read How-to]"
-      },
       {
         "type": "color_scheme_group",
         "id": "color_schemes",
@@ -421,6 +413,42 @@
         "unit": "%",
         "label": "t:settings_schema.typography.settings.heading_letter_spacing.label",
         "default": 0
+      },
+      {
+        "type": "select",
+        "id": "heading_font_weight",
+        "label": "t:settings_schema.global.settings.font_weight.label",
+        "options": [
+          {
+            "value": "300",
+            "label": "t:settings_schema.global.settings.font_weight.options__1.label"
+          },
+          {
+            "value": "400",
+            "label": "t:settings_schema.global.settings.font_weight.options__2.label"
+          },
+          {
+            "value": "500",
+            "label": "t:settings_schema.global.settings.font_weight.options__3.label"
+          },
+          {
+            "value": "600",
+            "label": "t:settings_schema.global.settings.font_weight.options__4.label"
+          },
+          {
+            "value": "700",
+            "label": "t:settings_schema.global.settings.font_weight.options__5.label"
+          },
+          {
+            "value": "800",
+            "label": "t:settings_schema.global.settings.font_weight.options__6.label"
+          },
+          {
+            "value": "900",
+            "label": "t:settings_schema.global.settings.font_weight.options__7.label"
+          }
+        ],
+        "default": "700"
       },
       {
         "type": "checkbox",
@@ -779,10 +807,6 @@
     "name": "t:settings_schema.layout.name",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "[Read How-to](https://foxecom.link/zyllj1)"
-      },
-      {
         "type": "range",
         "id": "theme_width",
         "min": 1000,
@@ -979,10 +1003,6 @@
   {
     "name": "t:settings_schema.product_cards.name",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "[Read How-to](https://foxecom.link/-ou_xy)"
-      },
       {
         "type": "select",
         "id": "pcard_style",
@@ -1325,10 +1345,6 @@
     "name": "t:settings_schema.color_swatches.name",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "[Read How-to](https://foxecom.link/cgnsla)"
-      },
-      {
         "type": "text",
         "id": "color_swatch_trigger",
         "label": "t:settings_schema.color_swatches.settings.color_swatch_trigger.label",
@@ -1347,10 +1363,6 @@
   {
     "name": "t:settings_schema.cart.name",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "[Read How-to](https://foxecom.link/fi_zgz)"
-      },
       {
         "type": "select",
         "id": "cart_type",
@@ -1501,10 +1513,6 @@
   {
     "name": "t:settings_schema.search_input.name",
     "settings": [
-      {
-        "type": "paragraph",
-        "content": "[Read How-to](https://foxecom.link/5OBZxui)"
-      },
       {
         "type": "header",
         "content": "t:settings_schema.search_input.settings.header.content"

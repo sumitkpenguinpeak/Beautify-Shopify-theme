@@ -84,6 +84,8 @@
                         loading: 'lazy',
                         class: 'btfy-feature-icon'
                     }}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                   {% endif %}
               </div>
             {%- endif -%}
@@ -105,10 +107,6 @@
   "name": "Feature list",
   "tag": "section",
   "settings": [
-    {
-      "type": "paragraph",
-      "content": "[Read How-to](https://foxecom.link/nM7ykHm)"
-    },
     {
       "type": "header",
       "content": "t:sections.all.general.name"

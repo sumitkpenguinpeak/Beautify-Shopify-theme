@@ -14,8 +14,8 @@ if (!customElements.get('image-comparison')) {
 
         this.init();
 
-        if (!FoxTheme.config.motionReduced) {
-          FoxTheme.Motion.inView(this.querySelector('.image-comparison__animation-trigger'), this.animation.bind(this));
+        if (!PenguinTheme.config.motionReduced) {
+          PenguinTheme.Motion.inView(this.querySelector('.image-comparison__animation-trigger'), this.animation.bind(this));
         }
       }
 
@@ -67,7 +67,7 @@ if (!customElements.get('image-comparison')) {
           x = event.pageX - this.offsetLeft;
           distance = this.clientWidth;
 
-          if (FoxTheme.config.isRTL) {
+          if (PenguinTheme.config.isRTL) {
             x = distance - x; // Reverse the x position for RTL
           }
         } else {

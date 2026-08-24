@@ -5,7 +5,7 @@ if (!customElements.get('countdown-timer')) {
       constructor() {
         super();
 
-        FoxTheme.Motion.inView(this.closest('.countdown__wrapper'), this.init.bind(this), {
+        PenguinTheme.Motion.inView(this.closest('.countdown__wrapper'), this.init.bind(this), {
           margin: '200px 0px 0px 0px',
         });
       }

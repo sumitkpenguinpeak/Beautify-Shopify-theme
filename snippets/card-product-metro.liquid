@@ -34,8 +34,8 @@
     assign featured_media = product.featured_media.preview_image
   endif
 
-  if product.metafields.foxtheme.landscape_image.value != blank
-    assign landscape_image = product.metafields.foxtheme.landscape_image.value
+  if product.metafields.PenguinTheme.landscape_image.value != blank
+    assign landscape_image = product.metafields.PenguinTheme.landscape_image.value
   endif
 
   if image_ratio == blank

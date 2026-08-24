@@ -8,7 +8,7 @@ if (!customElements.get('product-recommendations')) {
         if ('requestIdleCallback' in window) {
           requestIdleCallback(this.init.bind(this), { timeout: 1500 });
         } else {
-          FoxTheme.Motion.inView(this, this.init.bind(this), { margin: '0px 0px 400px 0px' });
+          PenguinTheme.Motion.inView(this, this.init.bind(this), { margin: '0px 0px 400px 0px' });
         }
       }
 

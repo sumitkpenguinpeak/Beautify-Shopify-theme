@@ -12,7 +12,7 @@
 {%- unless product.has_only_default_variant -%}
   {% liquid
     assign size_option_name = block.settings.size_title | downcase
-    assign size_chart_content = product.metafields.foxtheme.size_chart.value.content
+    assign size_chart_content = product.metafields.PenguinTheme.size_chart.value.content
     assign size_chart_modal_id = 'SizeChartModal-' | append: block.id
 
     if size_chart_content == blank and block.settings.size_chart_from_page != blank

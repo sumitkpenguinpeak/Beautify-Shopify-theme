@@ -59,7 +59,7 @@ if (!customElements.get('customcontent-component')) {
     }
 
     init() {
-      if (FoxTheme.config.mqlMobile) {
+      if (PenguinTheme.config.mqlMobile) {
         this.destroySlider();
       } else {
         this.initSlider();
@@ -76,7 +76,7 @@ if (!customElements.get('customcontent-component')) {
       }
 
       const columnGap =
-        FoxTheme.utils.getGridColumnGap(this.sliderWrapper);
+        PenguinTheme.utils.getGridColumnGap(this.sliderWrapper);
 
       const nextEl = this.section
         ? this.section.querySelector(this.selectors.nextEl)
@@ -119,7 +119,7 @@ if (!customElements.get('customcontent-component')) {
       this.sliderWrapper.classList.remove(this.classes.grid);
       this.sliderWrapper.classList.add(this.classes.swiperWrapper);
 
-      this.sliderInstance = new window.FoxTheme.Carousel(
+      this.sliderInstance = new window.PenguinTheme.Carousel(
         this,
         sliderOptions
       );
@@ -159,7 +159,7 @@ if (!customElements.get('customcontent-component')) {
       }
 
       const focusableElements =
-        FoxTheme.a11y.getFocusableElements(this);
+        PenguinTheme.a11y.getFocusableElements(this);
 
       focusableElements.forEach((element) => {
         element.addEventListener('focusin', () => {

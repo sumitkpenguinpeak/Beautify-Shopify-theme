@@ -215,6 +215,7 @@
   {{ settings.type_header_font | font_face: font_display: 'swap' }}
   {{ heading_font_italic | font_face: font_display: 'swap'}}
   {% liquid
+
     if settings.subheading_font == 'heading'
       if subheading_font_weight != heading_font_weight
         assign extra_font_weight = settings.type_header_font | font_modify: 'weight', subheading_font_weight
@@ -477,6 +478,7 @@
     }
   }
 {% endstyle %}
+
 
 {%- unless settings.type_body_font.system? -%}
   {% comment %}theme-check-disable AssetPreload{% endcomment %}

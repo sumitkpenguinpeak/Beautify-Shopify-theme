@@ -39,7 +39,7 @@ if (!customElements.get('collection-list')) {
     }
 
     init() {
-      if (FoxTheme.config.mqlMobile) {
+      if (PenguinTheme.config.mqlMobile) {
         this.destroySlider();
       } else {
         this.initSlider();
@@ -47,7 +47,7 @@ if (!customElements.get('collection-list')) {
     }
 
     initSlider() {
-      const columnGap = FoxTheme.utils.getGridColumnGap(this.sliderWrapper);
+      const columnGap = PenguinTheme.utils.getGridColumnGap(this.sliderWrapper);
 
       const sliderOptions = {
         slidesPerView: this.tabletItems > 3 ? 3 : parseInt(this.tabletItems),
@@ -75,10 +75,10 @@ if (!customElements.get('collection-list')) {
         this.classList.add(this.classes.swiper);
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
-        this.sliderInstance = new window.FoxTheme.Carousel(this, sliderOptions);
+        this.sliderInstance = new window.PenguinTheme.Carousel(this, sliderOptions);
         this.sliderInstance.init();
 
-        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+        const focusableElements = PenguinTheme.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', () => {

@@ -4,7 +4,7 @@ class PredictiveSearch extends HTMLFormElement {
     this.cachedMap = new Map();
     this.focusElement = this.input;
     this.resetButton.addEventListener('click', this.clear.bind(this));
-    this.input.addEventListener('input', FoxTheme.utils.debounce(this.onChange.bind(this), 300));
+    this.input.addEventListener('input', PenguinTheme.utils.debounce(this.onChange.bind(this), 300));
     this.input.addEventListener('focus', this.onFocus.bind(this));
     this.searchContent = this.querySelector('.search__content');
     this.searchRecommendationEmpty = this.dataset.searchRecommendationEmpty === 'true';
@@ -46,12 +46,12 @@ class PredictiveSearch extends HTMLFormElement {
   }
 
   setupURL() {
-    const url = new URL(`${window.shopUrl}${FoxTheme.routes.predictive_search_url}`);
+    const url = new URL(`${window.shopUrl}${PenguinTheme.routes.predictive_search_url}`);
     return (
       url.searchParams.set('q', this.getQuery()),
       url.searchParams.set('resources[limit]', this.dataset.resultsLimit || 3),
       url.searchParams.set('resources[limit_scope]', 'each'),
-      url.searchParams.set('section_id', FoxTheme.utils.getSectionId(this)),
+      url.searchParams.set('section_id', PenguinTheme.utils.getSectionId(this)),
       url
     );
   }
@@ -103,7 +103,7 @@ class PredictiveSearch extends HTMLFormElement {
       });
   }
   renderSearchResults(responseText) {
-    const id = 'PredictiveSearchResults-' + FoxTheme.utils.getSectionId(this);
+    const id = 'PredictiveSearchResults-' + PenguinTheme.utils.getSectionId(this);
     const targetElement = document.getElementById(id);
 
     if (targetElement) {

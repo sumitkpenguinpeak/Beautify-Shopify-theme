@@ -67,9 +67,9 @@ calc({{ settings.page_width }} * {{ col_products_width }} / 100 / {{ columns_des
                     {{ product.description }}
                   </div>
                 {%- endif -%}
-                {%- if product.metafields.foxtheme.feature_list.value != blank -%}
+                {%- if product.metafields.PenguinTheme.feature_list.value != blank -%}
                   <ul class="plwd-product__block icon-with-text icon-with-text--vertical list-unstyled">
-                    {% for feature in product.metafields.foxtheme.feature_list.value %}
+                    {% for feature in product.metafields.PenguinTheme.feature_list.value %}
                       <li class="icon-with-text__item">
                         {%- render 'icons', icon: 'check' -%}
                         <span class="inline-richtext">

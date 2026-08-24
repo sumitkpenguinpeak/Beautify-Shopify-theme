@@ -90,7 +90,7 @@
                           style: block.settings.heading_highlight_style
                         %}
                          {% if section.settings.highlight_heading %}
-                        <span class="hight_light_heading">{{ section.settings.highlight_heading }}</span>
+                        <span class="hight_light_heading block">{{ section.settings.highlight_heading }}</span>
                         {% endif %}
                       </motion-element>
                     </{{ block.settings.heading_tag }}>
@@ -523,10 +523,6 @@
   "max_blocks": 6,
   "settings": [
     {
-      "type": "paragraph",
-      "content": "[Read How-to](https://foxecom.link/znnzfo)"
-    },
-    {
       "type": "header",
       "content": "t:sections.all.general.name"
     },
@@ -593,6 +589,12 @@
       "id": "highlight_heading",
       "label": "t:sections.all.hightheading.label",
       "default": "High Light"
+    },
+    {
+      "type": "checkbox",
+      "id": "highlight_heading_break",
+      "label": "Break highlight heading",
+      "default": false
     },
     {
       "type": "select",

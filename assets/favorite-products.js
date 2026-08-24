@@ -53,13 +53,13 @@ if (!customElements.get('favorite-products')) {
           threshold: 2,
         };
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this.querySelector('.swiper'), this.sliderOptions, [
-          FoxTheme.Swiper.EffectFade,
+        this.sliderInstance = new window.PenguinTheme.Carousel(this.querySelector('.swiper'), this.sliderOptions, [
+          PenguinTheme.Swiper.EffectFade,
         ]);
         this.sliderInstance.init();
         this.sliderInstance.slider.on('realIndexChange', this.onSlideChange.bind(this));
 
-        const focusableElements = FoxTheme.a11y.getFocusableElements(this);
+        const focusableElements = PenguinTheme.a11y.getFocusableElements(this);
 
         focusableElements.forEach((element) => {
           element.addEventListener('focusin', () => {

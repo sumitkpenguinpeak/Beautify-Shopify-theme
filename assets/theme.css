@@ -6730,7 +6730,7 @@ shopify-account::part(dialog)::backdrop {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: -0.5rem;
+  margin: 10px 0px 0px 0px;
 }
 .btfy-list-payment__item {
   align-items: center;
@@ -6842,7 +6842,7 @@ shopify-account::part(dialog)::backdrop {
 
 @media (min-width: 768px) {
   .btfy-list-payment {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 }
 @media (min-width: 1024px) {
@@ -6972,3 +6972,5 @@ shopify-account::part(dialog)::backdrop {
   .quick-view__content .product--slider-freemode [id^="GalleryViewer"] { height: auto; }
   .quick-view .quick-view__content .product__info-wrapper { padding-top: 0rem !important; }
 }
+
+.hight_light_heading.heading-break { display: block; }

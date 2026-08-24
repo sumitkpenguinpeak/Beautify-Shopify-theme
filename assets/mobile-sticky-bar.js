@@ -10,7 +10,7 @@ if (!customElements.get('mobile-sticky-bar')) {
       connectedCallback() {
         document.body.classList.add('mobile-sticky-bar-enabled');
         this.lastScrollTop = 0;
-        this.scrollHandler = FoxTheme.utils.debounce(this.onScrollHandler.bind(this), 10);
+        this.scrollHandler = PenguinTheme.utils.debounce(this.onScrollHandler.bind(this), 10);
         this.init();
       }
 

@@ -147,8 +147,8 @@
                         {%- if section.settings.pcard_description_display != 'none' -%}
                           <div class="btfy-product-showcase__description rte {{ section.settings.pcard_description_size }}">
                             <div class="text-limit-{{ section.settings.pcard_description_display }}">
-                              {%- if product.metafields.foxtheme.showcase_description.value != blank -%}
-                                {{ product.metafields.foxtheme.showcase_description.value }}
+                              {%- if product.metafields.PenguinTheme.showcase_description.value != blank -%}
+                                {{ product.metafields.PenguinTheme.showcase_description.value }}
                               {%- else -%}
                                 {{- product.description -}}
                               {%- endif -%}
@@ -238,10 +238,6 @@
     "groups": ["header", "footer", "custom.overlay"]
   },
   "settings": [
-    {
-      "type": "paragraph",
-      "content": "[Read How-to](https://foxecom.link/0nJDU21)"
-    },
     {
       "type": "header",
       "content": "t:sections.all.general.name"

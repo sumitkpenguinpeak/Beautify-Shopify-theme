@@ -19,7 +19,7 @@
     "body_font_size": 16,
     "type_header_font": "dm_sans_n5",
     "heading_scale": 100,
-    "heading_letter_spacing": -4,
+    "heading_letter_spacing": 0,
     "subheading_font": "body",
     "subheading_font_weight": "500",
     "subheading_letter_spacing": 0,
@@ -321,9 +321,9 @@
       }
     }
   },
-  "installed_preset_name": "Sleek",
+  "installed_preset_name": "luvia",
   "presets": {
-    "Sleek": {
+    "luvia": {
       "logo_width": 110,
       "logo_width_mobile": 90,
       "type_body_font": "dm_sans_n4",

@@ -15,13 +15,13 @@
 
     assign product_thumbnail = product.featured_media
     assign product_showcase_image = product_thumbnail
-    if product.metafields.foxtheme.showcase_image.value != blank
-      assign product_showcase_image = product.metafields.foxtheme.showcase_image.value
+    if product.metafields.PenguinTheme.showcase_image.value != blank
+      assign product_showcase_image = product.metafields.PenguinTheme.showcase_image.value
     endif
 
     assign product_showcase_video = blank
-    if product.metafields.foxtheme.showcase_video.value != blank
-      assign product_showcase_video = product.metafields.foxtheme.showcase_video.value
+    if product.metafields.PenguinTheme.showcase_video.value != blank
+      assign product_showcase_video = product.metafields.PenguinTheme.showcase_video.value
     elsif first_media_type == 'video'
       assign product_showcase_video = product.media.first
     endif
@@ -132,9 +132,9 @@
       </div>
       <div class="pcard__info flex items-center justify-between gap-2 flex-grow">
         <div class="pcard__info-main">
-          <h3 class="pcard__title text-pcard-title">
+          <h4 class="pcard__title text-pcard-title">
             <span class="text-limit-1-line">{{- product.title -}}</span>
-          </h3>
+          </h4>
           {% render 'price', product: product %}
         </div>
         {%- if enable_quick_add -%}

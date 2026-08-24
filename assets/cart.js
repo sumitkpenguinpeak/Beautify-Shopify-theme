@@ -1,7 +1,7 @@
 class CartDrawer extends DrawerComponent {
   constructor() {
     super();
-    window.FoxKitSections = FoxTheme.utils.getSectionId(this);
+    window.FoxKitSections = PenguinTheme.utils.getSectionId(this);
 
     this.onCartRefreshListener = this.onCartRefresh.bind(this);
     this.getSectionToRenderListener = this.getSectionToRender.bind(this);
@@ -29,14 +29,14 @@ class CartDrawer extends DrawerComponent {
   }
 
   getSectionToRender(event) {
-    event.detail.sections.push(FoxTheme.utils.getSectionId(this));
+    event.detail.sections.push(PenguinTheme.utils.getSectionId(this));
   }
 
   show(focusElement = null, animate = true) {
     super.show(focusElement, animate);
 
     if (this.open) {
-      FoxTheme.a11y.trapFocus(this, this.focusElement);
+      PenguinTheme.a11y.trapFocus(this, this.focusElement);
     }
   }
 
@@ -47,7 +47,7 @@ class CartDrawer extends DrawerComponent {
     // if (!cartElement) return;
 
     // try {
-    //   const response = await fetch(`${FoxTheme.routes.root_url}?section_id=${this.sectionId}`);
+    //   const response = await fetch(`${PenguinTheme.routes.root_url}?section_id=${this.sectionId}`);
     //   const responseText = await response.text();
 
     //   const parser = new DOMParser();
@@ -66,8 +66,8 @@ class CartDrawer extends DrawerComponent {
     try {
       // Fetch both HTML and JSON data in parallel for better performance
       const [htmlResponse, cartResponse] = await Promise.all([
-        fetch(`${FoxTheme.routes.root_url}?section_id=${this.sectionId}`),
-        fetch(`${FoxTheme.routes.cart_url}.js`),
+        fetch(`${PenguinTheme.routes.root_url}?section_id=${this.sectionId}`),
+        fetch(`${PenguinTheme.routes.cart_url}.js`),
       ]);
 
       if (!htmlResponse.ok || !cartResponse.ok) {
@@ -89,7 +89,7 @@ class CartDrawer extends DrawerComponent {
       cartData.sections = {};
       cartData.sections[this.sectionId] = sectionToRender.innerHTML;
 
-      FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, {
+      PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, {
         cart: cartData,
       });
 
@@ -109,11 +109,11 @@ class CartItems extends HTMLElement {
 
     this.addEventListener('change', (event) => {
       if (event.target && event.target.closest('quantity-input')) {
-        FoxTheme.utils.debounce(this.onChange(event), 300);
+        PenguinTheme.utils.debounce(this.onChange(event), 300);
       }
     });
-    this.cartUpdateUnsubscriber = FoxTheme.pubsub.subscribe(
-      FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+    this.cartUpdateUnsubscriber = PenguinTheme.pubsub.subscribe(
+      PenguinTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
       this.onCartUpdate.bind(this)
     );
 
@@ -156,10 +156,10 @@ class CartItems extends HTMLElement {
       loadTemplateContent(this.cartItemQuantitys, '.cart-item__quantity-wrapper');
     };
 
-    const mqlTablet = window.matchMedia(FoxTheme.config.mediaQueryTablet);
-    FoxTheme.config.mqlTablet = mqlTablet.matches;
+    const mqlTablet = window.matchMedia(PenguinTheme.config.mediaQueryTablet);
+    PenguinTheme.config.mqlTablet = mqlTablet.matches;
 
-    if (FoxTheme.config.mqlTablet) {
+    if (PenguinTheme.config.mqlTablet) {
       handleTabletMatch();
     } else {
       handleTabletUnmatch();
@@ -169,12 +169,12 @@ class CartItems extends HTMLElement {
       if (event.matches) {
         handleTabletMatch();
       } else {
-        FoxTheme.config.mqlTablet = false;
+        PenguinTheme.config.mqlTablet = false;
         handleTabletUnmatch();
       }
     };
 
-    window.FoxKitSections = FoxTheme.utils.getSectionId(this);
+    window.FoxKitSections = PenguinTheme.utils.getSectionId(this);
   }
 
   cartUpdateUnsubscriber = undefined;
@@ -203,11 +203,11 @@ class CartItems extends HTMLElement {
     let message = '';
 
     if (inputValue < parseInt(target.getAttribute('data-min'))) {
-      message = FoxTheme.quickOrderListStrings.min_error.replace('[min]', target.getAttribute('data-min'));
+      message = PenguinTheme.quickOrderListStrings.min_error.replace('[min]', target.getAttribute('data-min'));
     } else if (inputValue > parseInt(target.max)) {
-      message = FoxTheme.quickOrderListStrings.max_error.replace('[max]', target.max);
+      message = PenguinTheme.quickOrderListStrings.max_error.replace('[max]', target.max);
     } else if (inputValue % parseInt(target.step) !== 0) {
-      message = FoxTheme.quickOrderListStrings.step_error.replace('[step]', target.step);
+      message = PenguinTheme.quickOrderListStrings.step_error.replace('[step]', target.step);
     }
 
     if (message) {
@@ -229,7 +229,7 @@ class CartItems extends HTMLElement {
       return;
     }
 
-    const sectionId = FoxTheme.utils.getSectionId(this);
+    const sectionId = PenguinTheme.utils.getSectionId(this);
     const sectionToRender = new DOMParser().parseFromString(event.cart.sections[sectionId], 'text/html');
 
     const cartDrawer = document.querySelector(`#CartDrawer-${sectionId}`);
@@ -282,15 +282,15 @@ class CartItems extends HTMLElement {
       document.getElementById(`CartItem-${event.line}`) || document.getElementById(`CartDrawer-Item-${event.line}`);
 
     if (lineItem && lineItem.querySelector(`[name="${event.name}"]`)) {
-      FoxTheme.a11y.trapFocus(mainCart || cartDrawer, lineItem.querySelector(`[name="${event.name}"]`));
+      PenguinTheme.a11y.trapFocus(mainCart || cartDrawer, lineItem.querySelector(`[name="${event.name}"]`));
     } else if (event.cart.item_count === 0) {
       cartDrawer
-        ? FoxTheme.a11y.trapFocus(cartDrawer, cartDrawer.querySelector('a'))
-        : FoxTheme.a11y.trapFocus(document.querySelector('.cart__empty'), document.querySelector('a'));
+        ? PenguinTheme.a11y.trapFocus(cartDrawer, cartDrawer.querySelector('a'))
+        : PenguinTheme.a11y.trapFocus(document.querySelector('.cart__empty'), document.querySelector('a'));
     } else {
       cartDrawer
-        ? FoxTheme.a11y.trapFocus(cartDrawer, cartDrawer.querySelector('.cart-item__title'))
-        : FoxTheme.a11y.trapFocus(mainCart, mainCart.querySelector('.cart-item__title'));
+        ? PenguinTheme.a11y.trapFocus(cartDrawer, cartDrawer.querySelector('.cart-item__title'))
+        : PenguinTheme.a11y.trapFocus(mainCart, mainCart.querySelector('.cart-item__title'));
     }
 
     document.dispatchEvent(
@@ -308,7 +308,7 @@ class CartItems extends HTMLElement {
       this.setValidity(target, errors);
       return;
     } else {
-      window.location.href = FoxTheme.routes.cart_url;
+      window.location.href = PenguinTheme.routes.cart_url;
     }
 
     alert(errors);
@@ -328,10 +328,10 @@ class CartItems extends HTMLElement {
       sections: sectionsToBundle,
     });
 
-    fetch(`${FoxTheme.routes.cart_change_url}`, { ...FoxTheme.utils.fetchConfig(), ...{ body } })
+    fetch(`${PenguinTheme.routes.cart_change_url}`, { ...PenguinTheme.utils.fetchConfig(), ...{ body } })
       .then((response) => response.json())
       .then((parsedState) => {
-        FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, {
+        PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, {
           sources: 'cart-items',
           cart: parsedState,
           target,
@@ -345,7 +345,7 @@ class CartItems extends HTMLElement {
   }
 
   showLoader(line) {
-    const sectionId = FoxTheme.utils.getSectionId(this);
+    const sectionId = PenguinTheme.utils.getSectionId(this);
     const loaders = document.querySelectorAll(`#Loader-${sectionId}-${line}`);
     if (loaders) {
       loaders.forEach((loader) => {
@@ -355,7 +355,7 @@ class CartItems extends HTMLElement {
   }
 
   hideLoader(line) {
-    const sectionId = FoxTheme.utils.getSectionId(this);
+    const sectionId = PenguinTheme.utils.getSectionId(this);
     const loaders = document.querySelectorAll(`#Loader-${sectionId}-${line}`);
     if (loaders) {
       loaders.forEach((loader) => {
@@ -412,7 +412,7 @@ class CartAddonAccordion extends AccordionDetails {
   }
 
   handleAfterAnimated() {
-    if (this.open) FoxTheme.a11y.trapFocus(this, this.focusElement);
+    if (this.open) PenguinTheme.a11y.trapFocus(this, this.focusElement);
   }
 }
 customElements.define('cart-addon-accordion', CartAddonAccordion, { extends: 'details' });
@@ -421,7 +421,7 @@ class CartNote extends HTMLElement {
   constructor() {
     super();
 
-    this.addEventListener('change', FoxTheme.utils.debounce(this.onChange.bind(this), 300));
+    this.addEventListener('change', PenguinTheme.utils.debounce(this.onChange.bind(this), 300));
 
     if (this.button && this.cartNoteDetailsSummary) {
       this.button.addEventListener('click', () => {
@@ -440,7 +440,7 @@ class CartNote extends HTMLElement {
 
   onChange(event) {
     const body = JSON.stringify({ note: event.target.value });
-    fetch(`${FoxTheme.routes.cart_update_url}`, { ...FoxTheme.utils.fetchConfig(), ...{ body } });
+    fetch(`${PenguinTheme.routes.cart_update_url}`, { ...PenguinTheme.utils.fetchConfig(), ...{ body } });
   }
 }
 customElements.define('cart-note', CartNote);
@@ -496,7 +496,7 @@ class CartDiscount extends HTMLFormElement {
     const discounts = this.getDiscounts();
 
     if (discounts.includes(newDiscountCode)) {
-      this.displayFormErrors(FoxTheme.cartStrings.duplicateDiscountError);
+      this.displayFormErrors(PenguinTheme.cartStrings.duplicateDiscountError);
       return;
     }
 
@@ -507,7 +507,7 @@ class CartDiscount extends HTMLFormElement {
       new CustomEvent('cart:grouped-sections', { bubbles: true, detail: { sections: sectionsToBundle } })
     );
 
-    const config = FoxTheme.utils.fetchConfig('javascript');
+    const config = PenguinTheme.utils.fetchConfig('javascript');
     config.headers['X-Requested-With'] = 'XMLHttpRequest';
     delete config.headers['Content-Type'];
 
@@ -521,7 +521,7 @@ class CartDiscount extends HTMLFormElement {
     this.submitEl.setAttribute('aria-disabled', 'true');
     this.submitEl.classList.add('btn--loading');
 
-    fetch(FoxTheme.routes.cart_update_url, config)
+    fetch(PenguinTheme.routes.cart_update_url, config)
       .then((response) => response.json())
       .then(async (parsedState) => {
         if (
@@ -530,7 +530,7 @@ class CartDiscount extends HTMLFormElement {
           })
         ) {
           this.couponEl.value = '';
-          this.displayFormErrors(FoxTheme.cartStrings.applyDiscountError);
+          this.displayFormErrors(PenguinTheme.cartStrings.applyDiscountError);
           return;
         }
 
@@ -538,7 +538,7 @@ class CartDiscount extends HTMLFormElement {
           this.cartAddonDrawer.hide();
         }
 
-        const cartJson = await (await fetch(`${FoxTheme.routes.cart_url}`, { ...FoxTheme.utils.fetchConfig() })).json();
+        const cartJson = await (await fetch(`${PenguinTheme.routes.cart_url}`, { ...PenguinTheme.utils.fetchConfig() })).json();
         cartJson['sections'] = parsedState['sections'];
 
         this.updateCartState(cartJson);
@@ -553,7 +553,7 @@ class CartDiscount extends HTMLFormElement {
   }
 
   updateCartState = (cartJson) => {
-    FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+    PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
   };
 
   displayFormErrors = (errorMessage = false) => {
@@ -620,7 +620,7 @@ class CartDiscountRemove extends HTMLButtonElement {
       new CustomEvent('cart:grouped-sections', { bubbles: true, detail: { sections: sectionsToBundle } })
     );
 
-    const config = FoxTheme.utils.fetchConfig('javascript');
+    const config = PenguinTheme.utils.fetchConfig('javascript');
     config.headers['X-Requested-With'] = 'XMLHttpRequest';
     delete config.headers['Content-Type'];
 
@@ -631,10 +631,10 @@ class CartDiscountRemove extends HTMLButtonElement {
 
     config.body = formData;
 
-    fetch(FoxTheme.routes.cart_update_url, config)
+    fetch(PenguinTheme.routes.cart_update_url, config)
       .then((response) => response.json())
       .then(async (parsedState) => {
-        const cartJson = await (await fetch(`${FoxTheme.routes.cart_url}`, { ...FoxTheme.utils.fetchConfig() })).json();
+        const cartJson = await (await fetch(`${PenguinTheme.routes.cart_url}`, { ...PenguinTheme.utils.fetchConfig() })).json();
         cartJson['sections'] = parsedState['sections'];
 
         this.updateCartState(cartJson);
@@ -645,7 +645,7 @@ class CartDiscountRemove extends HTMLButtonElement {
   }
 
   updateCartState = (cartJson) => {
-    FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+    PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
   };
 }
 customElements.define('cart-discount-remove', CartDiscountRemove, { extends: 'button' });
@@ -747,11 +747,11 @@ class ShippingCalculator extends HTMLFormElement {
     const body = JSON.stringify({
       shipping_address: { zip, country, province },
     });
-    let sectionUrl = `${FoxTheme.routes.cart_url}/shipping_rates.json`;
+    let sectionUrl = `${PenguinTheme.routes.cart_url}/shipping_rates.json`;
 
     sectionUrl = sectionUrl.replace('//', '/');
 
-    fetch(sectionUrl, { ...FoxTheme.utils.fetchConfig('javascript'), ...{ body } })
+    fetch(sectionUrl, { ...PenguinTheme.utils.fetchConfig('javascript'), ...{ body } })
       .then((response) => response.json())
       .then((parsedState) => {
         if (parsedState.shipping_rates) {
@@ -775,7 +775,7 @@ class ShippingCalculator extends HTMLFormElement {
     });
     this.resultsElement.innerHTML = `
       <div class="alert alert--error blocks-radius grid gap-2">
-        <p class="font-body-bolder m-0">${FoxTheme.shippingCalculatorStrings.error}</p>
+        <p class="font-body-bolder m-0">${PenguinTheme.shippingCalculatorStrings.error}</p>
         <ul class="list-disc grid gap-1 text-sm" role="list">${shippingRatesList.join('')}</ul>
       </div>
     `;
@@ -791,10 +791,10 @@ class ShippingCalculator extends HTMLFormElement {
       } grid gap-2 leading-tight">
         <p class="font-body-bolder m-0">${
           shippingRates.length === 0
-            ? FoxTheme.shippingCalculatorStrings.notFound
+            ? PenguinTheme.shippingCalculatorStrings.notFound
             : shippingRates.length === 1
-            ? FoxTheme.shippingCalculatorStrings.oneResult
-            : FoxTheme.shippingCalculatorStrings.multipleResults
+            ? PenguinTheme.shippingCalculatorStrings.oneResult
+            : PenguinTheme.shippingCalculatorStrings.multipleResults
         }</p>
         ${
           shippingRatesList === ''
@@ -818,7 +818,7 @@ class CartDrawerProductsRecommendation extends HTMLElement {
       if (isSafari) {
         this.init();
       } else {
-        FoxTheme.Motion.inView(this, this.init.bind(this), { margin: '600px 0px 600px 0px' });
+        PenguinTheme.Motion.inView(this, this.init.bind(this), { margin: '600px 0px 600px 0px' });
       }
     }
   }
@@ -868,7 +868,7 @@ class CartDrawerProductsRecommendation extends HTMLElement {
   }
 
   initCarousel() {
-    this.carousel = new FoxTheme.Carousel(this.slideContainer, {
+    this.carousel = new PenguinTheme.Carousel(this.slideContainer, {
       slidesPerView: 1,
       spaceBetween: 10,
       loop: false,
@@ -896,7 +896,7 @@ class MainCart extends HTMLElement {
   }
 
   getSectionToRender(event) {
-    event.detail.sections.push(FoxTheme.utils.getSectionId(this));
+    event.detail.sections.push(PenguinTheme.utils.getSectionId(this));
   }
 }
 customElements.define('main-cart', MainCart);
@@ -909,7 +909,7 @@ class FreeShippingGoal extends HTMLElement {
     };
     this.goal = Number(this.dataset.minimumAmount) * Number(window.Shopify.currency.rate || 1) || 0;
     this.progress = this.querySelector('progress-bar');
-    this.money_format = window.FoxTheme.settings.moneyFormat;
+    this.money_format = window.PenguinTheme.settings.moneyFormat;
   }
 
   connectedCallback() {
@@ -941,7 +941,7 @@ class FreeShippingGoal extends HTMLElement {
       this.progress.dataset.max = this.goal;
     } else {
       let spend = (this.goal - this.cartTotal) * 100;
-      this.querySelector(this.selectors.leftToSpend).innerHTML = FoxTheme.Currency.formatMoney(
+      this.querySelector(this.selectors.leftToSpend).innerHTML = PenguinTheme.Currency.formatMoney(
         spend,
         this.money_format
       );
@@ -958,12 +958,12 @@ window.FoxKitAddToCart = async (payload) => {
   if (!payload?.properties?.['_FoxKit offer']) return;
 
   const cartJson = await (
-    await fetch(`${FoxTheme.routes.cart_url}`, {
-      ...FoxTheme.utils.fetchConfig(),
+    await fetch(`${PenguinTheme.routes.cart_url}`, {
+      ...PenguinTheme.utils.fetchConfig(),
     })
   ).json();
   cartJson['sections'] = payload['sections'];
-  FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
+  PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.cartUpdate, { cart: cartJson });
 
   document.dispatchEvent(
     new CustomEvent('product-ajax:added', {

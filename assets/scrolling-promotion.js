@@ -2,9 +2,9 @@ if (!customElements.get('scrolling-promotion')) {
   class ScrollingPromotion extends HTMLElement {
     constructor() {
       super();
-      if (FoxTheme.config.motionReduced) return;
+      if (PenguinTheme.config.motionReduced) return;
       this.promotion = this.querySelector('.promotion');
-      FoxTheme.Motion.inView(this, this.init.bind(this), { margin: '200px 0px 200px 0px' });
+      PenguinTheme.Motion.inView(this, this.init.bind(this), { margin: '200px 0px 200px 0px' });
     }
     init() {
       if (this.childElementCount === 1) {

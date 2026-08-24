@@ -13,7 +13,7 @@ if (!customElements.get('press-slider')) {
         this.mainSlider = this.main.querySelector('.swiper');
         this.thumbsSlider = this.thumbs.querySelector('.swiper');
 
-        const mql = window.matchMedia(FoxTheme.config.mediaQueryMobile);
+        const mql = window.matchMedia(PenguinTheme.config.mediaQueryMobile);
         mql.onchange = this.init.bind(this);
         this.init();
       }
@@ -68,7 +68,7 @@ if (!customElements.get('press-slider')) {
           threshold: 2,
         };
 
-        if (FoxTheme.config.mqlMobile) {
+        if (PenguinTheme.config.mqlMobile) {
           this.thumbsOptions = Object.assign({}, this.thumbsOptions, {
             centeredSlides: true,
             slideToClickedSlide: true,
@@ -80,7 +80,7 @@ if (!customElements.get('press-slider')) {
       initSlider() {
         this.setSliderOptions();
 
-        this.thumbsInstance = new FoxTheme.Carousel(this.thumbsSlider, this.thumbsOptions);
+        this.thumbsInstance = new PenguinTheme.Carousel(this.thumbsSlider, this.thumbsOptions);
         this.thumbsInstance.init();
 
         this.mainOptions.thumbs = {
@@ -88,7 +88,7 @@ if (!customElements.get('press-slider')) {
           autoScrollOffset: 2,
         };
 
-        this.sliderInstance = new FoxTheme.Carousel(this.mainSlider, this.mainOptions, [FoxTheme.Swiper.Thumbs]);
+        this.sliderInstance = new PenguinTheme.Carousel(this.mainSlider, this.mainOptions, [PenguinTheme.Swiper.Thumbs]);
         this.sliderInstance.init();
 
         this.sliderInstance.slider.on('realIndexChange', (swiper) => {

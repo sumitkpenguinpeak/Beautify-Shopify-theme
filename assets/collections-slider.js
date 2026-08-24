@@ -38,7 +38,7 @@ if (!customElements.get('collections-slider')) {
           item.addEventListener('mouseover', this.onMouseOver.bind(this));
         });
 
-        FoxTheme.Motion.inView(this, this.playInView.bind(this));
+        PenguinTheme.Motion.inView(this, this.playInView.bind(this));
 
         if (Shopify.designMode) {
           document.addEventListener('shopify:block:select', (e) => {
@@ -135,9 +135,9 @@ if (!customElements.get('collections-slider')) {
           };
         }
 
-        this.sliderInstance = new window.FoxTheme.Carousel(this.sliderWrapper, this.sliderOptions, [
-          FoxTheme.Swiper.Autoplay,
-          FoxTheme.Swiper.EffectFade,
+        this.sliderInstance = new window.PenguinTheme.Carousel(this.sliderWrapper, this.sliderOptions, [
+          PenguinTheme.Swiper.Autoplay,
+          PenguinTheme.Swiper.EffectFade,
         ]);
         this.sliderInstance.init();
       }

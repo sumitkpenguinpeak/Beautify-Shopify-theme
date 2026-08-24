@@ -14,7 +14,7 @@ class FacetShort extends HTMLSelectElement {
   }
 
   initMotionInView() {
-    FoxTheme.Motion.inView(this, this.calcSelectWidth.bind(this), { margin: '200px 0px 200px 0px' });
+    PenguinTheme.Motion.inView(this, this.calcSelectWidth.bind(this), { margin: '200px 0px 200px 0px' });
   }
 
   calcSelectWidth() {
@@ -51,7 +51,7 @@ class FacetShort extends HTMLSelectElement {
     if (form) {
       const url = new URL(window.location.href);
       url.searchParams.set('sort_by', event.target.value);
-      url.searchParams.set('section_id', FoxTheme.utils.getSectionId(form));
+      url.searchParams.set('section_id', PenguinTheme.utils.getSectionId(form));
       url.searchParams.delete('page');
       form.renderSection(url.toString(), event);
     }
@@ -188,7 +188,7 @@ class FacetForm extends HTMLFormElement {
       }
     });
 
-    url.searchParams.set('section_id', FoxTheme.utils.getSectionId(this));
+    url.searchParams.set('section_id', PenguinTheme.utils.getSectionId(this));
     return url;
   }
 
@@ -201,15 +201,15 @@ class FacetForm extends HTMLFormElement {
   beforeRenderSection() {
     const container = document.getElementById('ProductGridContainer');
     const loadings = document.querySelectorAll('[data-facet-loading]');
-    const translateY = FoxTheme.config.motionReduced ? 0 : 50;
+    const translateY = PenguinTheme.config.motionReduced ? 0 : 50;
 
-    FoxTheme.Motion.timeline([[container, { y: translateY, opacity: 0 }, { duration: 0 }]]);
+    PenguinTheme.Motion.timeline([[container, { y: translateY, opacity: 0 }, { duration: 0 }]]);
 
     setTimeout(() => {
       const target = document.querySelector('.collection');
       window.scrollTo({
         top: target.getBoundingClientRect().top + window.scrollY - 95,
-        behavior: FoxTheme.config.motionReduced ? 'auto' : 'smooth',
+        behavior: PenguinTheme.config.motionReduced ? 'auto' : 'smooth',
       });
       if (loadings) {
         loadings.forEach((loading) => {
@@ -223,14 +223,14 @@ class FacetForm extends HTMLFormElement {
     const container = document.getElementById('ProductGridContainer');
     const items = container.querySelectorAll('.product-card');
     const loadings = document.querySelectorAll('[data-facet-loading]');
-    const translateY = FoxTheme.config.motionReduced ? 0 : 50;
+    const translateY = PenguinTheme.config.motionReduced ? 0 : 50;
 
-    FoxTheme.Motion.timeline([
+    PenguinTheme.Motion.timeline([
       [container, { y: [translateY, 0], opacity: [0, 1] }],
       [
         items,
         { y: [translateY, 0], opacity: [0, 1], visibility: ['hidden', 'visible'] },
-        { duration: 0.5, delay: FoxTheme.config.motionReduced ? 0 : FoxTheme.Motion.stagger(0.1) },
+        { duration: 0.5, delay: PenguinTheme.config.motionReduced ? 0 : PenguinTheme.Motion.stagger(0.1) },
       ],
     ]);
 
@@ -269,7 +269,7 @@ class FacetForm extends HTMLFormElement {
             this.renderSortBy(responseText);
             this.renderSortByMobile(responseText);
 
-            FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.facetUpdate, { responseText: responseText });
+            PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.facetUpdate, { responseText: responseText });
             this.cachedMap.set(url, responseText);
 
             this.afterRenderSection();
@@ -291,7 +291,7 @@ class FacetForm extends HTMLFormElement {
       this.renderSortBy(responseText);
       this.renderSortByMobile(responseText);
 
-      FoxTheme.pubsub.publish(FoxTheme.pubsub.PUB_SUB_EVENTS.facetUpdate, { responseText: responseText });
+      PenguinTheme.pubsub.publish(PenguinTheme.pubsub.PUB_SUB_EVENTS.facetUpdate, { responseText: responseText });
 
       this.afterRenderSection();
     }, 250);
@@ -379,7 +379,7 @@ class FacetRemove extends HTMLAnchorElement {
       event.preventDefault();
 
       const url = new URL(this.href);
-      url.searchParams.set('section_id', FoxTheme.utils.getSectionId(form));
+      url.searchParams.set('section_id', PenguinTheme.utils.getSectionId(form));
       form.renderSection(url.toString(), event);
     }
   }
@@ -395,8 +395,8 @@ class FacetCount extends HTMLElement {
   facetUpdateUnsubscriber = undefined;
 
   connectedCallback() {
-    this.facetUpdateUnsubscriber = FoxTheme.pubsub.subscribe(
-      FoxTheme.pubsub.PUB_SUB_EVENTS.facetUpdate,
+    this.facetUpdateUnsubscriber = PenguinTheme.pubsub.subscribe(
+      PenguinTheme.pubsub.PUB_SUB_EVENTS.facetUpdate,
       this.onFacetUpdate.bind(this)
     );
   }
@@ -430,7 +430,7 @@ class LoadMoreButton extends HTMLButtonElement {
     this.addEventListener('click', this.onClickHandler);
 
     if (this.getAttribute('type') == 'infinite') {
-      FoxTheme.Motion.inView(this, this.onClickHandler, { margin: '200px 0px 200px 0px' });
+      PenguinTheme.Motion.inView(this, this.onClickHandler, { margin: '200px 0px 200px 0px' });
     }
   }
 
@@ -487,7 +487,7 @@ class LoadMoreButton extends HTMLButtonElement {
 
   setUrl() {
     const url = new URL(this.getAttribute('action'));
-    url.searchParams.set('section_id', FoxTheme.utils.getSectionId(this));
+    url.searchParams.set('section_id', PenguinTheme.utils.getSectionId(this));
     return url;
   }
 
@@ -502,7 +502,7 @@ customElements.define('load-more-button', LoadMoreButton, { extends: 'button' })
 class LayoutSwitcher extends HTMLElement {
   constructor() {
     super();
-    this.cookieName = 'sleektheme:collection-layout';
+    this.cookieName = 'luviatheme:collection-layout';
 
     this.initLayoutMode();
     this.buttons.forEach((button) => {
@@ -520,7 +520,7 @@ class LayoutSwitcher extends HTMLElement {
   }
 
   initLayoutMode() {
-    if (FoxTheme.config.hasLocalStorage) {
+    if (PenguinTheme.config.hasLocalStorage) {
       const layoutMode = window.localStorage.getItem(this.cookieName);
 
       if (layoutMode !== null) {
@@ -557,7 +557,7 @@ class LayoutSwitcher extends HTMLElement {
 
     target.classList.add('btn--active');
 
-    if (FoxTheme.config.hasLocalStorage) {
+    if (PenguinTheme.config.hasLocalStorage) {
       window.localStorage.setItem(this.cookieName, layoutMode);
     }
   }
