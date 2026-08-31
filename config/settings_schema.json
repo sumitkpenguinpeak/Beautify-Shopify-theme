@@ -1044,7 +1044,7 @@
         "id": "pcard_color_scheme",
         "label": "t:settings_schema.product_cards.settings.pcard_color_scheme.label",
         "default": "scheme-2",
-        "visible_if": "{{ settings.pcard_style == 'card' }}"
+        "visible_if": "{{ settings.pcard_style == 'standard' }}"
       },
       {
         "type": "select",

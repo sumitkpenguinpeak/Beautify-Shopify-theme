@@ -700,7 +700,7 @@
         "video_placement": "first",
         "enable_parallax": false,
         "parallax_direction": "vertical",
-        "text_alignment": "center",
+        "text_alignment": "left",
         "padding_top": 100,
         "padding_bottom": 0,
         "show_section_divider": false,

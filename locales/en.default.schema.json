@@ -3230,9 +3230,6 @@
         "name": "Email signup"
       }
     },
-    "layered-images-with-text": {
-      "name": "Layered images with text"
-    },
     "favorite-products": {
       "name": "Favorite products",
       "blocks": {
@@ -3413,63 +3410,6 @@
     },
     "lookbook-cards": {
       "name": "Lookbook cards"
-    },
-    "image-comparison": {
-      "name": "Before/after image slider",
-      "settings": {
-        "header__image_settings": {
-          "content": "Before/after image settings"
-        },
-        "direction": {
-          "label": "Direction",
-          "options__1": {
-            "label": "Horizontal"
-          },
-          "options__2": {
-            "label": "Vertical"
-          }
-        },
-        "image_height": {
-          "label": "Image height",
-          "options__1": {
-            "label": "Adapt to image"
-          },
-          "options__2": {
-            "label": "Small"
-          },
-          "options__3": {
-            "label": "Medium"
-          },
-          "options__4": {
-            "label": "Large"
-          }
-        },
-        "image_heading_style": {
-          "label": "Image heading style",
-          "options__1": {
-            "label": "Badges"
-          },
-          "options__2": {
-            "label": "Plain text"
-          }
-        },
-        "product": {
-          "label": "Product"
-        }
-      },
-      "blocks": {
-        "image": {
-          "name": "Image",
-          "settings": {
-            "heading": {
-              "label": "Image heading"
-            }
-          }
-        }
-      },
-      "presets": {
-        "name": "Before/after image slider"
-      }
     },
     "media-with-collection": {
       "name": "Media with collection",

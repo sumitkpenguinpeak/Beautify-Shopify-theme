@@ -89,7 +89,7 @@
                           text: block.settings.heading,
                           style: block.settings.heading_highlight_style
                         %}
-                         {% if section.settings.highlight_heading %}
+                        {% if section.settings.highlight_heading %}
                         <span class="hight_light_heading block">{{ section.settings.highlight_heading }}</span>
                         {% endif %}
                       </motion-element>
@@ -583,12 +583,6 @@
       "id": "heading",
       "label": "t:sections.all.heading.label",
       "default": "Custom content"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "highlight_heading",
-      "label": "t:sections.all.hightheading.label",
-      "default": "High Light"
     },
     {
       "type": "checkbox",
@@ -1694,6 +1688,12 @@
           "type": "text",
           "id": "subheading",
           "label": "t:sections.all.subheading.label"
+        },
+         {
+          "type": "inline_richtext",
+          "id": "highlight_heading",
+          "label": "t:sections.all.hightheading.label",
+          "default": "High Light"
         },
         {
           "type": "richtext",

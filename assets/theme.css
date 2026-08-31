@@ -1137,7 +1137,7 @@ h6,
   line-height: calc(1 + 0.6 / var(--font-subheading-scale));
 }
 
-.heading-pattern {  width: 15px; height: 2px; background-color: rgb(0,0,0); display: inline-block; vertical-align: middle; margin-right: 10px; margin-top: -4px; }
+.heading-pattern {  width: 15px; height: 2px; background-color: rgb(var(--color-foreground)); display: inline-block; vertical-align: middle; margin-right: 10px; margin-top: -4px; }
 .btfy-slideshow__title.rich-text__heading strong, .btfy-slideshow__title.rich-text__heading span {
   color: rgb(var(--color-text-highlight));  
 }
@@ -2207,8 +2207,7 @@ button .button-icon,
   .btfy-slideshow__text .btfy-slideshow__buttons .block { justify-content: center; }
 }
 .btfy-slideshow__buttons .block {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   gap: 20px; 
   flex-wrap: wrap; 
 }
@@ -2314,7 +2313,7 @@ button .button-icon,
 }
 .btn--link {
   font-size: calc(var(--font-body-size) * 0.9);
-  line-height: 2rem;
+  line-height: 3rem;
   padding: 0.1rem 0 !important;
   font-family: var(--font-body-family);
   font-weight: var(--font-body-weight);
@@ -3569,12 +3568,14 @@ input:is([type=radio])::after {
   --translate-x: 0;
   --translate-y: 100%;
   top: auto;
-  bottom: 0;
+  bottom: 0px;
   height: auto;
   max-height: 100%;
 }
 .drawer--bottom[active] > .drawer__inner {
-  --translate-y: 0;
+  --translate-y: 10%;
+  max-width: 100%;
+  --translate-x: 0%;
 }
 .drawer--middle .drawer__inner {
   max-width: 60vw;
@@ -3753,7 +3754,6 @@ input:is([type=radio])::after {
   max-width: 100%;
 }
 .quick-view .product__info-container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -3955,7 +3955,7 @@ input:is([type=radio])::after {
   gap: 0.4rem;
 }
 .btfy-product-card__image-wrapper .btfy-product-card__image[style*=--aspect-ratio]:before { 
-  padding-top: 100%;
+  padding-top: 110%;
 }
 .btfy-product-card__info .product-card__swatches {
   margin-top: 0.4rem;
@@ -6974,3 +6974,5 @@ shopify-account::part(dialog)::backdrop {
 }
 
 .hight_light_heading.heading-break { display: block; }
+
+.btfy-product-showcase .btfy-product-showcase__thumbnail [style*=--aspect-ratio]:before { padding-top: 110%; }

@@ -13,7 +13,6 @@
   position: relative;
   overflow: hidden;
   max-width: 100%;
-  margin: 0px auto;
 }
 .tabs__nav {
   display: inline-grid;

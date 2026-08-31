@@ -95,3 +95,6 @@
   .contact-form-cards { padding: 14px; }
   .contact-infobox .info-number { right: 8px; font-size: 62px; }
 }
+
+.contact-form__info .btfy-card-media { border-radius: 0px; }
+.contact-form__info .btfy-card-media .btfy-card-media__media[style*=--aspect-ratio]:before { padding-top: 100%; }

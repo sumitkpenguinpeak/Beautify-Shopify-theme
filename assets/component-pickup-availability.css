@@ -72,12 +72,21 @@ pickup-availability[available] {
   gap: 0.8rem;
   flex-wrap: wrap;
   width: calc(100% - 50px);
+  align-items: center;
 }
 
 .pickup-availability-button {
   margin-left: auto;   
 }
 
-.pickup-availability-button.btn--link:after {
-    bottom: 0.8rem;
+
+
+.product__pickup-availabilities .pickup-availability-info .pickup-availability__text {
+    max-width: calc(100% - 170px);
+    width: 100%;
+}
+
+@media screen and (max-width: 580px) {
+   .product__pickup-availabilities .pickup-availability-info .pickup-availability__text { max-width: 100%; }
+   .product__pickup-availabilities .pickup-availability-button { margin-left: 0px; }
 }

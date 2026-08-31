@@ -29,7 +29,7 @@
         "image_overlay_opacity": 0,
         "image_position": "right",
         "image_height": "extra-small",
-        "text_alignment": "center",
+        "text_alignment": "left",
         "enable_parallax": true,
         "parallax_direction": "vertical",
         "image_height_mobile": "auto",

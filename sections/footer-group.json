@@ -5,17 +5,17 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "newsletter_3qCrWc": {
-          "type": "newsletter",
+         "image_text_F3FNhx": {
+          "type": "image_text",
           "settings": {
-            "block_width": 38,
-            "heading": "Our Newsletter",
-            "heading_size": "h2",
-            "newsletter_description": "<p>Subscribe for store updates and discounts.</p>",
-            "newsletter_term": "",
-            "newsletter_text_alignment": "left",
-            "form_width": 465,
-            "order_first": true
+            "block_width": 26,
+            "heading": "About LUVIA",
+            "heading_size": "h4",
+            "image_width": 150,
+            "text": "<p>We only carry designs we believe in ethically and aesthetically – original, authentic pieces that are made to last.</p>",
+            "button_label": "Learn more",
+            "open_default": false,
+            "show_divider": false
           }
         },
         "menu_DEKGYP": {
@@ -38,25 +38,25 @@
             "show_divider": false
           }
         },
-        "image_text_F3FNhx": {
-          "type": "image_text",
+        "newsletter_3qCrWc": {
+          "type": "newsletter",
           "settings": {
-            "block_width": 26,
-            "heading": "About LUVIA",
-            "heading_size": "h4",
-            "image_width": 150,
-            "text": "<p>We only carry designs we believe in ethically and aesthetically – original, authentic pieces that are made to last.</p>",
-            "button_label": "Learn more",
-            "open_default": false,
-            "show_divider": false
+            "block_width": 38,
+            "heading": "Our Newsletter",
+            "heading_size": "h2",
+            "newsletter_description": "<p>Subscribe for store updates and discounts.</p>",
+            "newsletter_term": "",
+            "newsletter_text_alignment": "left",
+            "form_width": 465,
+            "order_first": true
           }
         }
       },
       "block_order": [
-        "newsletter_3qCrWc",
+       "image_text_F3FNhx",
         "menu_DEKGYP",
         "menu_4eCrBB",
-        "image_text_F3FNhx"
+         "newsletter_3qCrWc",
       ],
       "custom_css": [
         ".form-control {--color-border: var(--color-field);}"

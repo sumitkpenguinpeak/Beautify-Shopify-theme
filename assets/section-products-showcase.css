@@ -46,6 +46,7 @@
     right: auto;
     margin: 0;
   }
+  .btfy-section--products-showcase .btfy-product-showcase { border: 1px solid rgb(var(--color-border));  border-radius: var(--blocks-radius); }
 }
 @media (min-width: 1024px) {
   .btfy-section--products-showcase.slider-enabled .swiper-slide {
@@ -73,4 +74,3 @@
 }
 
 
-.btfy-section--products-showcase .btfy-product-showcase { border: 1px solid rgb(var(--color-border));  border-radius: var(--blocks-radius); }

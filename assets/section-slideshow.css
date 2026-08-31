@@ -26,9 +26,9 @@
 .slideshow-wrapper.slideshow-controls-position--below .swiper-pagination {
   --color-swiper-controls: 0, 0, 0;
 }
-.slideshow-wrapper .swiper-pagination {
+/* .slideshow-wrapper .swiper-pagination {
   --color-swiper-controls: var(--color-foreground);
-}
+} */
 .slideshow-wrapper:not(.slideshow-layout--split) .slideshow__content {
   background: none;
   width: 100%;
