@@ -73,4 +73,10 @@
   border-radius: var(--blocks-radius) 0px 0px var(--blocks-radius);
 }
 
+@media screen and (max-width: 767.98px) {  
+  .btfy-product-showcase .btfy-product-showcase__thumbnail .blocks-radius {
+     border-radius : var(--blocks-radius);
+  }
+}
+
 

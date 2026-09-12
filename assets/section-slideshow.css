@@ -42,7 +42,7 @@
 .slideshow-height--large {
   --slide-height: 42rem;
 }
-.slideshow-height--adapt .slideshow__content {
+.slideshow-height--adapt .slideshow__content { 
   position: absolute;
   width: auto !important;
   top: 0;

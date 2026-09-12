@@ -49,96 +49,6 @@
         </{{ section.settings.heading_tag }}>
       </div>
       {% if blog.articles_count > 0 %}
-        {% for block in section.blocks %}
-          <div class="main-blog__block main-blog__{{ block.type }}">
-            {% case block.type %}
-              {% when 'featured_post' %}
-                <div class="hero hero--{{ block.settings.image_height }}">
-                  <a
-                    href="{{ featured_post.url }}"
-                    class="hero__wrapper block relative blocks-radius"
-                    aria-label="{{ featured_post.title }}"
-                  >
-                    <motion-element class="block" data-motion="zoom-out">
-                      {% if featured_post.image %}
-                        {% liquid
-                          assign image_alt = featured_post.image.alt | escape
-                          assign image_ratio = featured_post.image.aspect_ratio
-                        %}
-                        <div
-                          class="hero__media"
-                          {% if block.settings.image_height == 'adapt' %}
-                            style="--aspect-ratio: {{ image_ratio }};"
-                          {% endif %}
-                        >
-                          {%- capture sizes -%}min({{ settings.page_width }}, 100vw){%- endcapture -%}
-                          {{-
-                            featured_post.image
-                            | image_url: width: featured_post.image.width
-                            | image_tag:
-                              loading: loading,
-                              fetchpriority: fetchpriority,
-                              sizes: sizes,
-                              width: featured_post.image.width,
-                              height: featured_post.image.height,
-                              widths: '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200',
-                              alt: image_alt
-                          -}}
-                          {% if block.settings.image_overlay_opacity > 0 %}
-                            <div
-                              class="bg-overlay"
-                              style="--color-overlay-alpha: {{ block.settings.image_overlay_opacity }};"
-                            ></div>
-                          {% endif %}
-                        </div>
-                      {% endif %}
-                    </motion-element>
-                    <div class="hero__content text-center{% if featured_post.image %} content-overlay content-overlay--bottom-center{% endif %} color-{{ block.settings.color_scheme }}">
-                      <div class="rich-text">
-                        <div class="rich-text__subheading text-subheading">
-                          {{ featured_post.published_at | time_tag: format: 'date' }}
-                        </div>
-                        <{{ block.settings.heading_tag }} class="rich-text__heading {{ block.settings.heading_size }}">
-                          {{ featured_post.title }}
-                        </{{ block.settings.heading_tag }}>
-                        <div class="rich-text__buttons">
-                          <button class="btn btn--primary">
-                            {{- 'blogs.article.article_button_label' | t -}}
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-
-              {% when 'tags' %}
-                <div class="swipe-mobile text-{{ block.settings.alignment }}">
-                  <ul class="inline-flex items-center flex-nowrap md:flex-wrap font-navigation">
-                    <li>
-                      <a
-                        href="{{ blog.url }}"
-                        class="reversed-link{% unless current_tags %} active{% endunless %}"
-                      >
-                        {{ 'sections.main-blog.all_posts' | t }}
-                      </a>
-                    </li>
-                    {% if blog.tags.size > 0 %}
-                      {% for tag in blog.tags limit: block.settings.limit %}
-                        <li>
-                          <a
-                            href="{{ blog.url }}/tagged/{{ tag | handle }}"
-                            class="reversed-link{% if current_tags contains tag %} active{% endif %}"
-                          >
-                            {{- tag -}}
-                          </a>
-                        </li>
-                      {% endfor %}
-                    {% endif %}
-                  </ul>
-                </div>
-            {% endcase %}
-          </div>
-        {% endfor %}
         <grid-list class="main-blog__items f-grid f-grid-1-cols md:f-grid-{{ columns_tablet }}-cols lg:f-grid-{{ columns_desktop }}-cols f-grid--gap-{{ section.settings.column_gap }}">
           {%- for article in blog.articles offset: offset -%}
             <div class="f-column">
@@ -153,7 +63,6 @@
             </div>
           {%- endfor -%}
         </grid-list>
-
         {%- if paginate.pages > 1 -%}
           {%- render 'pagination', paginate: paginate -%}
         {%- endif -%}
@@ -304,7 +213,7 @@
           "label": "t:sections.all.grid.column_gap.options__xl.label"
         }
       ],
-      "default": "extra-large",
+      "default": "medium",
       "label": "t:sections.all.grid.column_gap.label"
     },
     {

@@ -2162,6 +2162,11 @@ button,
   text-transform: var(--buttons-transform, var(--buttons-transform-default));
   box-sizing: border-box;
 }
+@media (max-width: 767.98px) {  
+  button, .btn { 
+    --buttons-padding: 3rem;
+  }
+}
 button[disabled],
 .btn[disabled] {
   /* opacity: 0.5; */
@@ -2208,20 +2213,33 @@ button .button-icon,
 }
 .btfy-slideshow__buttons .block {
   display: inline-flex;
-  gap: 20px; 
+  gap: 20px;
   flex-wrap: wrap; 
 }
 
+@media (max-width: 767.98px) {  
+  .btfy-slideshow__buttons .block { gap: 12px; }
+}
+
 @media (hover: hover) { 
-  .btfy-quick--action .btn:not(.btn--plain):not(.btn--underline,.btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover { background-color: transparent; color: rgb(var(--color-foreground)); }
+  .btfy-quick--action .btn:not(.btn--plain):not(.btn--underline,
+  .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover { 
+    background-color: transparent; 
+    color: rgb(var(--color-foreground)); 
+  }
   .btn--bordered-icon:hover .button-icon,
-  .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover {
+  .btn:not(.btn--plain):not(.btn--underline, 
+  .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover {
     --color-border: var(--color-button-hover-background);
     color: rgb(var(--color-button-hover-text));
     border-color: rgb(var(--color-border));
     background-color: rgb(var(--color-button-hover-background));
   }
-  .btfy-quick--action .btfy-product-card__quickview::before,  .btfy-quick--action .btfy-product-card__quickview::after, .btfy-quick--action .btfy-product-card__atc::before, .btfy-quick--action .btfy-product-card__atc::after { display: none; }
+  .btfy-quick--action .btfy-product-card__quickview::before,  .btfy-quick--action .btfy-product-card__quickview::after, 
+  .btfy-quick--action .btfy-product-card__atc::before, 
+  .btfy-quick--action .btfy-product-card__atc::after { 
+    display: none; 
+  }
   .btn--bordered-icon:hover .button-icon::after, .btn--bordered-icon:hover .button-icon::before,
   .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover::after,
   .btn:not(.btn--plain):not(.btn--underline, .btn--inherit):not(.btn--bordered-icon):not(.spr-button):hover::before {
@@ -2252,13 +2270,11 @@ button .button-icon,
   color: rgb(var(--color-button-text));
   border: 0;
 }
-
 .btn--primary svg,
 .btn--secondary svg {
     fill: currentColor;
     transition: 0.3s ease;
 }
-
 .btn--secondary {
   background: rgb(var(--color-secondary-button));
   color: rgb(var(--color-secondary-button-text));
@@ -2303,7 +2319,8 @@ button .button-icon,
     animation: text-underlined 0.6s;
   }
 }
-.btn--underline.btn--loading:after, .btn--link.btn--loading:after {
+.btn--underline.btn--loading:after,
+.btn--link.btn--loading:after {
   display: none;
 }
 .btn--underline {
@@ -6281,7 +6298,7 @@ input:is([type=radio])::after {
 }
 @media (max-width: 639.98px) {
   .header__buttons {
-    column-gap: 0.1rem;
+    column-gap: 0.3rem;
   }
 }
 .header[is=sticky-header] {
@@ -6330,7 +6347,7 @@ input:is([type=radio])::after {
 }
 @media (max-width: 1023.98px) {
   .btfy-header-mobile--center {
-    --header-grid-template: "icons-left logo icons" / minmax(4rem, 0.5fr) auto minmax(6rem, 1fr);
+    --header-grid-template: "icons-left logo icons" / minmax(4rem, 1fr) auto minmax(6rem, 1fr);
     column-gap: 1.5rem;
   }
 }
